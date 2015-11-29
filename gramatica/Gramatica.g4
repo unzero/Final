@@ -84,7 +84,7 @@ stmt
  
  
 print_fun
- : 'print(' test ')' ';'
+ : 'print' '(' test ')' ';'
  ; 
  
  
@@ -346,10 +346,11 @@ iterable
  : '[' list_element? ']'									#iterable_list
  | '{' map_element? '}'										#iterable_map
  | '(' test ',' test ')'									#iterable_tuple
- | GENERATE '{' test '}'											#iterable_generate
- | iterable FILTER '{' lambda_test '}'								#iterable_filter
- | iterable PARTITION '{' lambda_test '}'							#iterable_partition
+ | GENERATE '{' test '}'									#iterable_generate
+ | iterable FILTER '{' lambda_test '}'						#iterable_filter
+ | iterable PARTITION '{' lambda_test '}'					#iterable_partition
  | NAME														#iterable_name
+ | iterable '++' iterable										#iterable_addition
  ;
 
 list_element
@@ -367,9 +368,6 @@ map_element
 submap_element
  : ',' test ':' test 
  ;
-
-
-
 
 
  
@@ -457,6 +455,8 @@ test
  | '(' test	')'												#testTest
  | expr comp_op expr										#testExprComp
  | expr	 													#testExpr
+ | test IN iterable											#test_iterable_in
+ | iterable '==' iterable 									#test_iterable_eq
  ;
 
 expr
@@ -628,10 +628,6 @@ assert_stmt
  | '<='
  | '<>'
  | '!='
- | IN
- | NOT IN
- | IS
- | IS NOT
  ;
 
 /// integer        ::=  decimalinteger | octinteger | hexinteger | bininteger
@@ -835,40 +831,12 @@ fragment BYTES_ESCAPE_SEQ
  * 
  */
 
-DOT : '.';
-ELLIPSIS : '...';
-STAR : '*';
-OPEN_PAREN : '(';
-CLOSE_PAREN : ')';
-COMMA : ',';
-COLON : ':';
-SEMI_COLON : ';';
-POWER : '**';
-ASSIGN : '=';
-OPEN_BRACK : '[';
-CLOSE_BRACK : ']';
-OR_OP : '|';
-XOR : '^';
-AND_OP : '&';
-LEFT_SHIFT : '<<';
-RIGHT_SHIFT : '>>';
-ADD : '+';
-MINUS : '-';
-DIV : '/';
-MOD : '%';
-IDIV : '//';
-NOT_OP : '~';
-
-
-
-
-
-
 MATCH : 'match';
 CASE : 'case';
 GENERATE : 'generate' ;
 PARTITION : 'partition';
 FILTER : 'filter';
+CONCAT : '::' ;
 
 
 

@@ -190,6 +190,11 @@ class GramaticaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by GramaticaParser#iterable_addition.
+    def visitIterable_addition(self, ctx):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by GramaticaParser#iterable_filter.
     def visitIterable_filter(self, ctx):
         return self.visitChildren(ctx)
@@ -245,6 +250,11 @@ class GramaticaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by GramaticaParser#test_iterable_eq.
+    def visitTest_iterable_eq(self, ctx):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by GramaticaParser#testNot.
     def visitTestNot(self, ctx):
         return self.visitChildren(ctx)
@@ -252,6 +262,11 @@ class GramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by GramaticaParser#testExpr.
     def visitTestExpr(self, ctx):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by GramaticaParser#test_iterable_in.
+    def visitTest_iterable_in(self, ctx):
         return self.visitChildren(ctx)
 
 

@@ -2,6 +2,7 @@ from antlr4 import *
 from GramaticaLexer import GramaticaLexer
 from GramaticaParser import GramaticaParser
 from GramaticaExtVisitor import GramaticaExtVisitor
+import traceback
 
 class Analizador:
     
@@ -25,8 +26,13 @@ class Analizador:
             tree = parser.single_input()
             visitor = GramaticaExtVisitor(self)
             visitor.visit(tree)
-        except FloatingPointError as ex:
-            return str(ex)
+        except RuntimeError as ex:
+            ret = str(ex)+"\n\n"
+            ret += "---------------------------------------------------INICIO DE LA TRAZA---------------------------------------------\n"
+            ret += str(traceback.format_exc())
+            ret += "----------------------------------------------------FIN DE LA TRAZA-----------------------------------------------\n"
+            return ret
+        
         ret = "\n".join(self.log)
         ret += "\n"
         return ret+"Satisfactorio!!"    

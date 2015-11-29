@@ -136,7 +136,7 @@
           <object class="GtkVBox" id="vbox2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="spacing">10</property>
+            <property name="spacing">20</property>
             <child>
               <object class="GtkScrolledWindow" id="scrolledwindow1">
                 <property name="visible">True</property>
@@ -147,6 +147,7 @@
                   <object class="GtkTextView" id="input_textview">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="wrap_mode">word</property>
                   </object>
                 </child>
               </object>
@@ -170,6 +171,8 @@
                       <object class="GtkTextView" id="console_textview">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="editable">False</property>
+                        <property name="wrap_mode">word</property>
                       </object>
                     </child>
                   </object>

@@ -32,7 +32,23 @@ class GramaticaExtVisitor(GramaticaVisitor):
     
     def visitPrint_fun(self,ctx):
         valor = super(GramaticaExtVisitor,self).visit(ctx.test())
-        self.an.agregarRegistro(str(valor.valor))
+        ret = ""
+        if valor.tipo == "ITERATOR" and valor.subtipo == "LIST":
+            ret = "[";
+            for x in valor.valor:
+                ret += str(x.valor)+", "
+            ret = ret[0:len(ret)-2]
+            ret += "]"
+        elif valor.tipo == "ITERATOR" and valor.subtipo == "TUPLE":
+            ret = "("+str(valor.valor[0].valor)+", "+str(valor.valor[1].valor)+")"
+        elif valor.tipo == "ITERATOR" and valor.subtipo == "MAP":
+            ret = "{"
+            for ky in valor.valor:
+                ret += str(ky)+":"+str(valor.valor[ky].valor)+ ", "
+            ret += "}"
+        else:
+            ret = str(valor.valor)
+        self.an.agregarRegistro(str(ret))
     
     
     
@@ -64,7 +80,6 @@ class GramaticaExtVisitor(GramaticaVisitor):
         self.pilaValores.append(nombre)
         valor = super(GramaticaExtVisitor,self).visit(ctx.test())
         simbolo = self.tablaDeSimbolosActual.resolver(nombre)
-        print(str(self.tablaDeSimbolosActual))
         if simbolo.tipo == valor.tipo and simbolo.valor == valor.valor:
             ret = self.evaluarInstrucciones(ctx.stmt())
             if ret != None:
@@ -104,7 +119,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def visitWhile_stmt(self, ctx):
         valor = super(GramaticaExtVisitor,self).visit(ctx.test())
         if valor.tipo != "BOOL":
-            raise RuntimeError('La expresion debe ser logica')
+            ln = -1
+            self.raiseError(ln, 'La expresion del while debe ser de tipo logica', "logic-expected")
         while valor.valor :
             self.evaluarInstrucciones(ctx.stmt())
             valor = super(GramaticaExtVisitor,self).visit(ctx.test())
@@ -121,7 +137,6 @@ class GramaticaExtVisitor(GramaticaVisitor):
         return nodo
     
     def visitReturn_stmt(self, ctx):
-        print(str(self.tablaDeSimbolosActual))
         return super(GramaticaExtVisitor,self).visit(ctx.test())
     
     def visitAssig_stmtVar(self, ctx):
@@ -129,16 +144,16 @@ class GramaticaExtVisitor(GramaticaVisitor):
         simbolo = Simbolo(ctx.NAME(),valor.tipo,valor.valor)
         simbolo.subtipo = valor.subtipo
         self.tablaDeSimbolosActual.agregarSimbolo(ctx.NAME(), simbolo)
-        print(str(self.tablaDeSimbolosActual))
         return None
     
     def visitAssig_stmtIterable(self, ctx):
         simbolo = self.tablaDeSimbolosActual.resolver(ctx.NAME())
         if simbolo == None:
-            raise RuntimeError('Error, no se encontro el simbolo')
+            ln = -1
+            self.raiseError(ln, 'No se ha encontrado el simbolo', ctx.NAME())
         elif simbolo.tipo != "ITERATOR":
-            raise RuntimeError('Error, no es de tipo iterable')
-        
+            ln = -1
+            self.raiseError(ln, 'El simbolo es no iterable', "iterable-expected")
         indice = super(GramaticaExtVisitor,self).visit(ctx.test(0))
         valor = super(GramaticaExtVisitor,self).visit(ctx.test(1))
         simbolo.valor[indice] = valor
@@ -148,11 +163,14 @@ class GramaticaExtVisitor(GramaticaVisitor):
         nm = ctx.NAME()
         iterab = super(GramaticaExtVisitor,self).visit(ctx.iterable())
         if iterab == None:
-            pass
+            ln = -1
+            self.raiseError(ln, 'No es posible obtener el iterable', "iterable-gen")
         elif iterab.tipo != "ITERATOR":
-            raise RuntimeError('El simbolo no es iterable')
+            ln = -1
+            self.raiseError(ln, 'El simbolo no es iterable', "iterable-expected")
         elif iterab.subtipo == "TUPLE":
-            raise RuntimeError('No se recomienda iterar sobre tuplas')
+            ln = -1
+            self.raiseError(ln, 'No es posible realizar un recorrido sobre una tupla', "iterable-tuple")
         self.tablaDeSimbolosActual = TablaSimbolos(self.tablaDeSimbolosActual,self.tablaDeSimbolosActual.contexto)
         self.tablaDeSimbolosActual.agregarSimbolo(nm,Simbolo(nm,None,None))
         for tmp in iterab.valor:
@@ -193,7 +211,6 @@ class GramaticaExtVisitor(GramaticaVisitor):
         if ctx.map_element() != None:
             indice = super(GramaticaExtVisitor,self).visit(ctx.map_element().test(0))
             valor = super(GramaticaExtVisitor,self).visit(ctx.map_element().test(1))
-            #print(str(indice.tipo))
             nodo.valor[indice.valor] = valor
         if ctx.map_element() != None and ctx.map_element().submap_element() != None:
             for el in ctx.map_element().submap_element():
@@ -236,16 +253,20 @@ class GramaticaExtVisitor(GramaticaVisitor):
                 nodo.valor.append(tmp)
             return nodo
         else:
-            raise RuntimeError('Error en el generador, este debe ser de tipo cadena')
+            ln = -1
+            self.raiseError(ln, 'Error en el generador, este debe ser de tipo cadena o entero', "non-iterable")
     
     def visitIterable_filter(self, ctx):
         iterab = super(GramaticaExtVisitor,self).visit(ctx.iterable())
         if iterab == None:
-            raise RuntimeError('Error el evaluar la lista')
+            ln = -1
+            self.raiseError(ln, 'Error al evaluar el iterador', "iterator-eval")
         if iterab.tipo != "ITERATOR":
-            raise RuntimeError('Error, el objeto no es iterable')
+            ln = -1
+            self.raiseError(ln, 'El objeto especificado no es de tipo iterable', "iterable-expected")
         if iterab.subtipo == "TUPLE":
-            raise RuntimeError('No es posible realizar un recorrido sobre una tupla')
+            ln = -1
+            self.raiseError(ln, 'No es posible realizar un recorrido sobre una tupla', "iterable-tuple")
         filtrada = None
         if iterab.subtipo == "LIST":
             filtrada = []
@@ -263,11 +284,10 @@ class GramaticaExtVisitor(GramaticaVisitor):
                 ty = iterab.valor[tmp].tipo
             simbolo = Simbolo(ctx.lambda_test().NAME(),ty,ac)
             self.tablaDeSimbolosActual.agregarSimbolo(simbolo.nombre, simbolo)
-            #print(self.tablaDeSimbolosActual)
             res = super(GramaticaExtVisitor,self).visit(ctx.lambda_test().test())
-            #print(res)
             if res.tipo != "BOOL":
-                raise RuntimeError('Error, no es posible filtrar bajo esa funcion')
+                ln = -1
+                self.raiseError(ln, 'No es posible filtrar bajo la funcion especificada', "lambda-filter-error")
             if res.valor == True and iterab.subtipo == "LIST":
                 filtrada.append(tmp)
             elif res.valor == True and iterab.subtipo =="MAP":
@@ -285,10 +305,11 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def visitIterable_name(self,ctx):
         valor = self.tablaDeSimbolosActual.resolver(ctx.NAME())
         if valor == None:
-            raise RuntimeError('Error, simbolo no encontrado')
-        
+            ln = -1
+            self.raiseError(ln, 'El simbolo no se ha encontrado', ctx.NAME())
         if valor.tipo != "ITERATOR":
-            raise RuntimeError('Error, el nombre no es de tipo iterador')
+            ln = -1
+            self.raiseError(ln, 'El nombre no es de tipo iterador', ctx.NAME())
         
         nodo = Nodo()
         nodo.tipo = valor.tipo
@@ -296,6 +317,67 @@ class GramaticaExtVisitor(GramaticaVisitor):
         nodo.valor = valor.valor
         return nodo
     
+    
+    def unirIterables(self,iterab1,iterab2):
+        if iterab1 == None or iterab2 == None:
+            ln = -1
+            self.raiseError(ln, "No se han proporcionado elementos para operar", "operators-expected")
+        if iterab1.tipo != "ITERATOR" or iterab2.tipo != "ITERATOR":
+            ln = -1
+            self.raiseError(ln, "Se han proporcionado tipos no iterables", "iterable-expected")
+        if iterab1.subtipo == "MAP" or iterab2.subtipo == "MAP":
+            print(iterab1.subtipo)
+            print(iterab2.subtipo)
+            if iterab1.subtipo == "MAP" and iterab2.subtipo == "MAP":
+                nodo = Nodo()
+                nodo.tipo = "ITERATOR"
+                nodo.subtipo = "MAP"
+                nodo.valor = {}
+                for k in iterab2.valor:
+                    nodo.valor[k] = iterab2.valor[k]
+                for k in iterab1.valor:
+                    nodo.valor[k] = iterab1.valor[k]
+                return nodo
+            elif iterab1.subtipo == "TUPLE" and iterab2.subtipo == "MAP":
+                nodo = Nodo()
+                nodo.tipo = "ITERATOR"
+                nodo.subtipo = "MAP"
+                nodo.valor = iterab2.valor
+                nodo.valor[iterab1.valor[0].valor] = iterab1.valor[1]
+                return nodo
+            else:
+                ln = -1
+                self.raiseError(ln, "No es posible concatenar un mapa con algun otro iterable", "tuple,map-expected")
+        nodo = Nodo()
+        nodo.tipo = "ITERATOR"
+        nodo.subtipo = "LIST"
+        nodo.valor = []
+        for k in iterab1.valor:
+            nodo.valor.append(k)
+        for k in iterab2.valor:
+            nodo.valor.append(k)
+        return nodo
+            
+    def visitIterable_addition(self,ctx):
+        vl = super(GramaticaExtVisitor,self).visit(ctx.iterable(0))
+        iterab = super(GramaticaExtVisitor,self).visit(ctx.iterable(1))
+        if iterab == None or vl == None:
+            ln = -1
+            self.raiseError(ln, "No se han proporcionado elementos para operar", "operators-expected")
+        if iterab.tipo != "ITERATOR":
+            ln = -1
+            self.raiseError(ln, "No es posible realizar esta operacion sobre un elemento no iterable", "iterable-expected")
+        if vl.tipo == "ITERATOR":
+            return self.unirIterables(vl, iterab)
+        if iterab.tipo == "MAP":
+            ln = -1
+            self.raiseError(ln, "No es posible agregar ese elemento en un mapa", "tuple,map-expected")
+        nodo = Nodo()
+        nodo.tipo = "ITERATOR"
+        nodo.subtipo = "LIST"
+        nodo.valor = [vl] + iterab.valor
+        return nodo
+         
     #
     #
     #
@@ -314,7 +396,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.tipo = "BOOL"
             nodo.valor = valorI.valor and valorD.tipo
         else:
-            raise RuntimeError('Error en los operandos')
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion and-test")
         return nodo
     
     def visitTestOr(self, ctx):
@@ -325,7 +408,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.tipo = "BOOL"
             nodo.valor = valorI.valor or valorD.tipo
         else:
-            raise RuntimeError('Error en los operandos')
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion or-test")
         return nodo
         
     def visitTestNot(self, ctx):
@@ -335,7 +419,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.tipo = "BOOL"
             nodo.valor = not valor.valor
         else:
-            raise RuntimeError('Error en los operandos')
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion not-test")
         return nodo
     
     def visitTestExprComp(self, ctx):
@@ -344,6 +429,9 @@ class GramaticaExtVisitor(GramaticaVisitor):
         nodo = Nodo()
         nodo.tipo = "BOOL"
         op = ctx.comp_op().getText()
+        if valorI.tipo == "ITERATOR" or valorD.tipo == "ITERATOR":
+            ln = -1
+            self.raiseError(ln, "No es posible realizar este tipo de operacion con elementos iterables", "primitive-expected")
         if op == "<":
             nodo.valor = valorI.valor < valorD.valor
         elif op == ">":
@@ -360,6 +448,23 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.valor = valorI.valor != valorD.valor
         return nodo
     
+    def visitTest_iterable_in(self,ctx):
+        vl = super(GramaticaExtVisitor,self).visit(ctx.test())
+        iterab = super(GramaticaExtVisitor,self).visit(ctx.iterable())
+        if iterab == None or vl == None:
+            ln = -1
+            self.raiseError(ln, "No se han proporcionado elementos para operar", "operators-expected")
+        if iterab.tipo != "ITERATOR":
+            ln = -1
+            self.raiseError(ln, "No es posible realizar esta operacion sobre un elemento no iterable", "iterable-expected")
+        nodo = Nodo()
+        nodo.tipo = "BOOL"
+        nodo.valor = False
+        for t in iterab:
+            if t.tipo == vl.tipo and t.valor == vl.valor:
+                nodo.valor = True
+                return nodo
+        return nodo
     #
     #
     #
@@ -381,8 +486,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
                 nodo.tipo = "INTEGER"      
             nodo.valor = valorI.valor ** valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVA POTENCIA: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion potencia")
         return nodo
     
     def visitExprMultiply(self, ctx):
@@ -396,8 +501,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
                 nodo.tipo = "INTEGER"      
             nodo.valor = valorI.valor * valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVA MULTIPLICACION: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion multiplicacion")
         return nodo
     
     def visitExprDivision(self, ctx):
@@ -411,8 +516,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
                 nodo.tipo = "INTEGER"      
             nodo.valor = valorI.valor / valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVA DIVISION: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion division")
         return nodo
     
     def visitExprModule(self, ctx):
@@ -423,8 +528,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.tipo = "INTEGER"     
             nodo.valor = valorI.valor % valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVO MODULO: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion modulo")
         return nodo
     
     def visitExprPlus(self, ctx):
@@ -438,8 +543,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
                 nodo.tipo = "INTEGER"      
             nodo.valor = valorI.valor + valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVA SUMA: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion suma")
         return nodo
     
     def visitExprMinus(self, ctx):
@@ -453,8 +558,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
                 nodo.tipo = "INTEGER"      
             nodo.valor = valorI.valor - valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVA RESTA: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion resta")
         return nodo
     
     def visitExprShiftLeft(self, ctx):
@@ -465,8 +570,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.tipo = "INTEGER"     
             nodo.valor = valorI.valor << valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVO SHIFT LEFT: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion shift-left")
         return nodo
     
     def visitExprShiftRight(self, ctx):
@@ -477,8 +582,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.tipo = "INTEGER"     
             nodo.valor = valorI.valor >> valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        #print("NUEVO SHIFT RIGHT: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion shift-right")
         return nodo
     
     def visitExprAnd(self, ctx):
@@ -489,10 +594,33 @@ class GramaticaExtVisitor(GramaticaVisitor):
             nodo.tipo = "INTEGER"     
             nodo.valor = valorI.valor & valorD.valor
         else:
-            raise RuntimeError('Error en los operandos')
-        print("NUEVO AND: "+str(nodo))
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion bit-and")
         return nodo
     
+    def visitExprOr(self, ctx):
+        valorI = super(GramaticaExtVisitor,self).visit(ctx.expr(0))
+        valorD = super(GramaticaExtVisitor,self).visit(ctx.expr(1))
+        nodo = Nodo()
+        if valorI.tipo == "INTEGER" or valorD.tipo == "INTEGER":
+            nodo.tipo = "INTEGER"     
+            nodo.valor = valorI.valor | valorD.valor
+        else:
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion bit-or")
+        return nodo
+    
+    def visitExprXor(self, ctx):
+        valorI = super(GramaticaExtVisitor,self).visit(ctx.expr(0))
+        valorD = super(GramaticaExtVisitor,self).visit(ctx.expr(1))
+        nodo = Nodo()
+        if valorI.tipo == "INTEGER" or valorD.tipo == "INTEGER":
+            nodo.tipo = "INTEGER"     
+            nodo.valor = valorI.valor ^ valorD.valor
+        else:
+            ln = -1
+            self.raiseError(ln, 'Error en los operandos', "Operacion bit-xor")
+        return nodo
     
     #
     #
@@ -505,12 +633,11 @@ class GramaticaExtVisitor(GramaticaVisitor):
     #
     
     def visitAtomName(self, ctx):
-        #print("Solicitud atomica")
-        #print(str(self.tablaDeSimbolosActual))
         nodo = Nodo()
         valor = self.evaluarSimbolo(ctx.NAME())
-        nodo.tipo = valor[0]
-        nodo.valor = valor[1]
+        nodo.tipo = valor.tipo
+        nodo.valor = valor.valor
+        nodo.subtipo = valor.subtipo
         #self.pilaValores.append(nodo)
         return nodo
     
@@ -549,9 +676,11 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def visitAtomIterableAccess(self, ctx):
         simbolo = self.tablaDeSimbolosActual.resolver(ctx.NAME())
         if simbolo == None:
-            raise RuntimeError('Simbolo no encontrado')
+            ln = -1
+            self.raiseError(ln, 'Simbolo no encontrado', ctx.NAME())
         elif simbolo.tipo != "ITERATOR":
-            raise RuntimeError('El objeto no es iterable')
+            ln = -1
+            self.raiseError(ln, 'El objeto no es interable', ctx.NAME())
         indice = super(GramaticaExtVisitor,self).visit(ctx.test())
         return simbolo.valor[indice.valor]
         
@@ -614,8 +743,9 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def evaluarSimbolo(self,nombre):
         valor = self.tablaDeSimbolosActual.resolver(nombre)
         if valor == None:
-            raise RuntimeError('Error Simbolo no encontrado: '+str(nombre))
-        return (valor.tipo,valor.valor)
+            ln = -1
+            self.raiseError(ln, 'Error simbolo no encontrado', nombre)
+        return valor
     
     
     def numerico(self,nodo):
@@ -631,7 +761,6 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def evaluarInstrucciones(self,instrucciones):
         for inst in instrucciones:
             r = super(GramaticaExtVisitor,self).visit(inst)
-            print(str(r))
             if inst.flow_stmt() != None and inst.flow_stmt().return_stmt() != None:
                 return r
         return None
@@ -643,9 +772,11 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def evaluarFuncion(self,ctx):
         simbolo = self.tablaDeSimbolosActual.resolver(ctx.NAME())
         if simbolo == None:
-            raise RuntimeError('Error en el simbolo')
+            ln = -1
+            self.raiseError(ln, 'Error en el simbolo', ctx.NAME())
         if simbolo.tipo != "FUNCION":
-            raise RuntimeError('Error, el simbolo no puede ser evaluado como una funcion')
+            ln = -1
+            self.raiseError(ln,'Error, el simbolo no puede ser evaluado como una funcion',ctx.NAME())
         parametros = []
         if ctx.parameters() != None :
             parametros.append(ctx.parameters().test())
@@ -654,13 +785,12 @@ class GramaticaExtVisitor(GramaticaVisitor):
                     parametros.append(param.test())
         
         if len(parametros) != len(simbolo.argumentos ):
-            raise RuntimeError('Error en la cantidad de parametros')
+            ln = -1
+            self.raiseError(ln, "Error en la cantidad de parametros", ctx.NAME())
         nuevaTablaSimbolos  = TablaSimbolos(self.tablaDeSimbolosActual,self.tablaDeSimbolosActual.contexto+1)
         for i in xrange(0,len(parametros)):
             argument = self.evaluarArgumento(parametros[i])
-            print(str(simbolo.argumentos[i]))
             simboloNuevo = Simbolo(simbolo.argumentos[i],argument[0],argument[1])
-            print(str(simboloNuevo))
             nuevaTablaSimbolos.agregarSimbolo(simbolo.argumentos[i], simboloNuevo)
         self.tablaDeSimbolosActual = nuevaTablaSimbolos
         r = super(GramaticaExtVisitor,self).visit(simbolo.valor)
@@ -668,3 +798,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
         if r != None:
             return r;
         return None
+    
+    def raiseError(self,ln,msg,smb):
+        ret = "Airi dice: Error en la linea "+str(ln)+" se ha producido el siguiente error: "+str(msg)+" con el simbolo: "+str(smb)+", por favor revise la entrada"
+        raise RuntimeError(ret)

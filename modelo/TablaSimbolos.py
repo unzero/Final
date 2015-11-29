@@ -12,16 +12,14 @@ class TablaSimbolos:
         self.tablaSimbolos[str(nombre)] = simbolo
 
     def resolver(self,nombre):
-        return self.resolverNombre(self,str(nombre))
+        return self.resolverNombre(self,str(nombre),self.contexto)
 
-    def resolverNombre(self,tablaActual,nombre):
+    def resolverNombre(self,tablaActual,nombre,partida):
         if tablaActual == None:
             return None
         if nombre in tablaActual.tablaSimbolos.keys():
             return tablaActual.tablaSimbolos[nombre]
-        if tablaActual.padre == None or tablaActual.padre.contexto != tablaActual.contexto:
-            return None
-        return self.resolverNombre(tablaActual.padre,nombre)
+        return self.resolverNombre(tablaActual.padre,nombre,partida)
 
     def destruirTabla(self):
         ret = self.padre

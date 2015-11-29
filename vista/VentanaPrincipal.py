@@ -24,6 +24,7 @@ class VentanaPrincipal:
         self.window.show()
         self.window.set_title("Airi")
         self.filename = None
+        self.getComponent("input_textview").place_cursor_onscreen()
         
         
     def getComponent(self,name):

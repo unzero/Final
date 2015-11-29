@@ -337,6 +337,15 @@ class GramaticaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GramaticaParser#iterable_addition.
+    def enterIterable_addition(self, ctx):
+        pass
+
+    # Exit a parse tree produced by GramaticaParser#iterable_addition.
+    def exitIterable_addition(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by GramaticaParser#iterable_filter.
     def enterIterable_filter(self, ctx):
         pass
@@ -436,6 +445,15 @@ class GramaticaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by GramaticaParser#test_iterable_eq.
+    def enterTest_iterable_eq(self, ctx):
+        pass
+
+    # Exit a parse tree produced by GramaticaParser#test_iterable_eq.
+    def exitTest_iterable_eq(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by GramaticaParser#testNot.
     def enterTestNot(self, ctx):
         pass
@@ -451,6 +469,15 @@ class GramaticaListener(ParseTreeListener):
 
     # Exit a parse tree produced by GramaticaParser#testExpr.
     def exitTestExpr(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by GramaticaParser#test_iterable_in.
+    def enterTest_iterable_in(self, ctx):
+        pass
+
+    # Exit a parse tree produced by GramaticaParser#test_iterable_in.
+    def exitTest_iterable_in(self, ctx):
         pass
 
 
