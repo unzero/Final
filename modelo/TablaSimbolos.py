@@ -9,7 +9,23 @@ class TablaSimbolos:
         self.tablaSimbolos = {}
     
     def agregarSimbolo(self,nombre,simbolo):
+        if self.existeSimbolo(str(nombre)):
+            r = self.agregadoRecursivo(self,str(nombre),simbolo)
+            if not r:
+                print("ERROR")
+            return
         self.tablaSimbolos[str(nombre)] = simbolo
+
+    def existeSimbolo(self,nombre):
+        return self.resolver(nombre) != None
+    
+    def agregadoRecursivo(self,tablaActual,nombre,simbolo):
+        if tablaActual == None:
+            return False
+        if nombre in tablaActual.tablaSimbolos.keys():
+            tablaActual.tablaSimbolos[str(nombre)] = simbolo
+            return True
+        return self.agregadoRecursivo(tablaActual.padre,nombre,simbolo)
 
     def resolver(self,nombre):
         return self.resolverNombre(self,str(nombre),self.contexto)

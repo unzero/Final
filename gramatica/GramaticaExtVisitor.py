@@ -101,7 +101,6 @@ class GramaticaExtVisitor(GramaticaVisitor):
     
     def visitIf_stmt(self, ctx):
         cond = super(GramaticaExtVisitor,self).visit(ctx.test())
-        print(cond)
         if self.evaluarIf(cond,ctx.stmt()) :
             return None
         if len(ctx.elif_stmt()) > 0:
@@ -274,7 +273,6 @@ class GramaticaExtVisitor(GramaticaVisitor):
         else:
             filtrada = {}
         self.tablaDeSimbolosActual = TablaSimbolos(self.tablaDeSimbolosActual,self.tablaDeSimbolosActual.contexto)   
-        print(iterab) 
         for tmp in iterab.valor:
             ac = None
             ty = None
@@ -290,11 +288,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
             if res.tipo != "BOOL":
                 ln = -1
                 self.raiseError(ln, 'No es posible filtrar bajo la funcion especificada', "lambda-filter-error")
-            print(tmp)
-            print(res)
-            print(str(self.tablaDeSimbolosActual))
             if res.valor == True and iterab.subtipo == "LIST":
-                print(tmp)
                 filtrada.append(tmp)
             elif res.valor == True and iterab.subtipo =="MAP":
                 filtrada[tmp] = iterab.valor[tmp]
@@ -303,6 +297,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
         nodo.subtipo = iterab.subtipo
         nodo.tipo = "ITERATOR"
         nodo.valor = filtrada
+        print(nodo)
         return nodo
         
     def visitIterable_partition(self, ctx):
@@ -332,8 +327,6 @@ class GramaticaExtVisitor(GramaticaVisitor):
             ln = -1
             self.raiseError(ln, "Se han proporcionado tipos no iterables", "iterable-expected")
         if iterab1.subtipo == "MAP" or iterab2.subtipo == "MAP":
-            print(iterab1.subtipo)
-            print(iterab2.subtipo)
             if iterab1.subtipo == "MAP" and iterab2.subtipo == "MAP":
                 nodo = Nodo()
                 nodo.tipo = "ITERATOR"
@@ -398,9 +391,12 @@ class GramaticaExtVisitor(GramaticaVisitor):
         valorI = super(GramaticaExtVisitor,self).visit(ctx.test(0))
         valorD = super(GramaticaExtVisitor,self).visit(ctx.test(1))
         nodo = Nodo()
+        print(valorI)
+        print(valorD)
         if valorI.tipo == "BOOL" and valorD.tipo == "BOOL":
             nodo.tipo = "BOOL"
             nodo.valor = valorI.valor and valorD.valor
+            print(nodo.valor)
         else:
             ln = -1
             self.raiseError(ln, 'Error en los operandos', "Operacion and-test")
@@ -451,6 +447,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
         elif op == "<>":
             nodo.valor = valorI.valor <> valorD.valor
         elif op == "!=":
+            print(valorI)
+            print(valorD)
             nodo.valor = valorI.valor != valorD.valor
         return nodo
     
