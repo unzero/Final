@@ -238,15 +238,15 @@ sub_parameters
  
 
 if_stmt
- : IF test '{' stmt* '}' elif_stmt*  else_stmt?
+ : IF test ':' '{' stmt* '}' elif_stmt*  else_stmt?
  ;
 
 elif_stmt
- : ELIF test '{' stmt* '}'
+ : ELIF test ':' '{' stmt* '}'
  ;
 
 else_stmt
- : ELSE '{' stmt* '}' 
+ : ELSE ':' '{' stmt* '}' 
  ;
 
 while_stmt
