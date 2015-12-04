@@ -32,8 +32,10 @@ class GramaticaExtVisitor(GramaticaVisitor):
     
     def visitPrint_fun(self,ctx):
         valor = super(GramaticaExtVisitor,self).visit(ctx.test())
-        ret = ""
-        if valor.tipo == "ITERATOR" and valor.subtipo == "LIST":
+        ret = "";
+        if valor == None:
+            ret = "None"
+        elif valor.tipo == "ITERATOR" and valor.subtipo == "LIST":
             ret = "[";
             for x in valor.valor:
                 ret += str(x.valor)+", "
@@ -80,8 +82,11 @@ class GramaticaExtVisitor(GramaticaVisitor):
         self.pilaValores.append(nombre)
         valor = super(GramaticaExtVisitor,self).visit(ctx.test())
         simbolo = self.tablaDeSimbolosActual.resolver(nombre)
+        print("llamada")
+        print(str(self.tablaDeSimbolosActual))
         if simbolo.tipo == valor.tipo and simbolo.valor == valor.valor:
             ret = self.evaluarInstrucciones(ctx.stmt())
+            print(ret)
             if ret != None:
                 return ret
         return None
@@ -531,6 +536,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
         if valorI.tipo == "INTEGER" or valorD.tipo == "INTEGER":
             nodo.tipo = "INTEGER"     
             nodo.valor = valorI.valor % valorD.valor
+            print(str(valorI)+" : "+str(valorD));
         else:
             ln = -1
             self.raiseError(ln, 'Error en los operandos', "Operacion modulo")
@@ -642,6 +648,8 @@ class GramaticaExtVisitor(GramaticaVisitor):
         nodo.tipo = valor.tipo
         nodo.valor = valor.valor
         nodo.subtipo = valor.subtipo
+        print("se ha solicitado: "+str(ctx.NAME())+" con valor: "+str(nodo))
+        print("en :"+str(self.tablaDeSimbolosActual))
         #self.pilaValores.append(nodo)
         return nodo
     
@@ -791,11 +799,13 @@ class GramaticaExtVisitor(GramaticaVisitor):
         if len(parametros) != len(simbolo.argumentos ):
             ln = -1
             self.raiseError(ln, "Error en la cantidad de parametros", ctx.NAME())
-        nuevaTablaSimbolos  = TablaSimbolos(self.tablaDeSimbolosActual,self.tablaDeSimbolosActual.contexto+1)
+        nuevaTablaSimbolos  = TablaSimbolos(None,self.tablaDeSimbolosActual.contexto+1)
         for i in xrange(0,len(parametros)):
             argument = self.evaluarArgumento(parametros[i])
-            simboloNuevo = Simbolo(simbolo.argumentos[i],argument[0],argument[1])
+            print("argumento: "+str(argument))
+            simboloNuevo = Simbolo(simbolo.argumentos[i],argument[0],argument[1])   
             nuevaTablaSimbolos.agregarSimbolo(simbolo.argumentos[i], simboloNuevo)
+        nuevaTablaSimbolos.padre = self.tablaDeSimbolosActual
         self.tablaDeSimbolosActual = nuevaTablaSimbolos
         r = super(GramaticaExtVisitor,self).visit(simbolo.valor)
         self.tablaDeSimbolosActual = self.tablaDeSimbolosActual.destruirTabla()
