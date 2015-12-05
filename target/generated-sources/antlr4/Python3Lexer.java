@@ -1,4 +1,4 @@
-// Generated from Python3.g4 by ANTLR 4.4
+// Generated from Python3.g4 by ANTLR 4.5.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class Python3Lexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -35,20 +35,6 @@ public class Python3Lexer extends Lexer {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] tokenNames = {
-		"'\\u0000'", "'\\u0001'", "'\\u0002'", "'\\u0003'", "'\\u0004'", "'\\u0005'", 
-		"'\\u0006'", "'\\u0007'", "'\b'", "'\t'", "'\n'", "'\\u000B'", "'\f'", 
-		"'\r'", "'\\u000E'", "'\\u000F'", "'\\u0010'", "'\\u0011'", "'\\u0012'", 
-		"'\\u0013'", "'\\u0014'", "'\\u0015'", "'\\u0016'", "'\\u0017'", "'\\u0018'", 
-		"'\\u0019'", "'\\u001A'", "'\\u001B'", "'\\u001C'", "'\\u001D'", "'\\u001E'", 
-		"'\\u001F'", "' '", "'!'", "'\"'", "'#'", "'$'", "'%'", "'&'", "'''", 
-		"'('", "')'", "'*'", "'+'", "','", "'-'", "'.'", "'/'", "'0'", "'1'", 
-		"'2'", "'3'", "'4'", "'5'", "'6'", "'7'", "'8'", "'9'", "':'", "';'", 
-		"'<'", "'='", "'>'", "'?'", "'@'", "'A'", "'B'", "'C'", "'D'", "'E'", 
-		"'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", 
-		"'P'", "'Q'", "'R'", "'S'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", 
-		"'Z'", "'['", "'\\'"
-	};
 	public static final String[] ruleNames = {
 		"DEF", "RETURN", "RAISE", "FROM", "IMPORT", "AS", "GLOBAL", "NONLOCAL", 
 		"ASSERT", "IF", "ELIF", "ELSE", "WHILE", "FOR", "IN", "TRY", "FINALLY", 
@@ -71,6 +57,68 @@ public class Python3Lexer extends Lexer {
 		"LONG_BYTES_CHAR", "BYTES_ESCAPE_SEQ", "SPACES", "COMMENT", "LINE_JOINING", 
 		"ID_START", "ID_CONTINUE"
 	};
+
+	private static final String[] _LITERAL_NAMES = {
+		null, "'def'", "'return'", "'raise'", "'from'", "'import'", "'as'", "'global'", 
+		"'nonlocal'", "'assert'", "'if'", "'elif'", "'else'", "'while'", "'for'", 
+		"'in'", "'try'", "'finally'", "'with'", "'except'", "'lambda'", "'or'", 
+		"'and'", "'not'", "'is'", "'None'", "'True'", "'False'", "'class'", "'yield'", 
+		"'del'", "'pass'", "'continue'", "'break'", null, null, null, null, null, 
+		null, null, null, null, null, "'.'", "'...'", "'*'", "'('", "')'", "','", 
+		"':'", "';'", "'**'", "'='", "'['", "']'", "'|'", "'^'", "'&'", "'<<'", 
+		"'>>'", "'+'", "'-'", "'/'", "'%'", "'//'", "'~'", "'{'", "'}'", "'<'", 
+		"'>'", "'=='", "'>='", "'<='", "'<>'", "'!='", "'@'", "'->'", "'+='", 
+		"'-='", "'*='", "'@='", "'/='", "'%='", "'&='", "'|='", "'^='", "'<<='", 
+		"'>>='", "'**='", "'//='"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, "DEF", "RETURN", "RAISE", "FROM", "IMPORT", "AS", "GLOBAL", "NONLOCAL", 
+		"ASSERT", "IF", "ELIF", "ELSE", "WHILE", "FOR", "IN", "TRY", "FINALLY", 
+		"WITH", "EXCEPT", "LAMBDA", "OR", "AND", "NOT", "IS", "NONE", "TRUE", 
+		"FALSE", "CLASS", "YIELD", "DEL", "PASS", "CONTINUE", "BREAK", "NEWLINE", 
+		"NAME", "STRING_LITERAL", "BYTES_LITERAL", "DECIMAL_INTEGER", "OCT_INTEGER", 
+		"HEX_INTEGER", "BIN_INTEGER", "FLOAT_NUMBER", "IMAG_NUMBER", "DOT", "ELLIPSIS", 
+		"STAR", "OPEN_PAREN", "CLOSE_PAREN", "COMMA", "COLON", "SEMI_COLON", "POWER", 
+		"ASSIGN", "OPEN_BRACK", "CLOSE_BRACK", "OR_OP", "XOR", "AND_OP", "LEFT_SHIFT", 
+		"RIGHT_SHIFT", "ADD", "MINUS", "DIV", "MOD", "IDIV", "NOT_OP", "OPEN_BRACE", 
+		"CLOSE_BRACE", "LESS_THAN", "GREATER_THAN", "EQUALS", "GT_EQ", "LT_EQ", 
+		"NOT_EQ_1", "NOT_EQ_2", "AT", "ARROW", "ADD_ASSIGN", "SUB_ASSIGN", "MULT_ASSIGN", 
+		"AT_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN", "AND_ASSIGN", "OR_ASSIGN", "XOR_ASSIGN", 
+		"LEFT_SHIFT_ASSIGN", "RIGHT_SHIFT_ASSIGN", "POWER_ASSIGN", "IDIV_ASSIGN", 
+		"SKIP", "UNKNOWN_CHAR"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
 
 
 
@@ -180,9 +228,6 @@ public class Python3Lexer extends Lexer {
 	public String getGrammarFileName() { return "Python3.g4"; }
 
 	@Override
-	public String[] getTokenNames() { return tokenNames; }
-
-	@Override
 	public String[] getRuleNames() { return ruleNames; }
 
 	@Override
@@ -197,92 +242,122 @@ public class Python3Lexer extends Lexer {
 	@Override
 	public void action(RuleContext _localctx, int ruleIndex, int actionIndex) {
 		switch (ruleIndex) {
-		case 33: NEWLINE_action((RuleContext)_localctx, actionIndex); break;
-		case 46: OPEN_PAREN_action((RuleContext)_localctx, actionIndex); break;
-		case 47: CLOSE_PAREN_action((RuleContext)_localctx, actionIndex); break;
-		case 53: OPEN_BRACK_action((RuleContext)_localctx, actionIndex); break;
-		case 54: CLOSE_BRACK_action((RuleContext)_localctx, actionIndex); break;
-		case 66: OPEN_BRACE_action((RuleContext)_localctx, actionIndex); break;
-		case 67: CLOSE_BRACE_action((RuleContext)_localctx, actionIndex); break;
-		}
-	}
-	private void OPEN_PAREN_action(RuleContext _localctx, int actionIndex) {
-		switch (actionIndex) {
-		case 1: opened++; break;
+		case 33:
+			NEWLINE_action((RuleContext)_localctx, actionIndex);
+			break;
+		case 46:
+			OPEN_PAREN_action((RuleContext)_localctx, actionIndex);
+			break;
+		case 47:
+			CLOSE_PAREN_action((RuleContext)_localctx, actionIndex);
+			break;
+		case 53:
+			OPEN_BRACK_action((RuleContext)_localctx, actionIndex);
+			break;
+		case 54:
+			CLOSE_BRACK_action((RuleContext)_localctx, actionIndex);
+			break;
+		case 66:
+			OPEN_BRACE_action((RuleContext)_localctx, actionIndex);
+			break;
+		case 67:
+			CLOSE_BRACE_action((RuleContext)_localctx, actionIndex);
+			break;
 		}
 	}
 	private void NEWLINE_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
-		case 0: 
-		     String newLine = getText().replaceAll("[^\r\n]+", "");
-		     String spaces = getText().replaceAll("[\r\n]+", "");
-		     int next = _input.LA(1);
+		case 0:
 
-		     if (opened > 0 || next == '\r' || next == '\n' || next == '#') {
-		       // If we're inside a list or on a blank line, ignore all indents, 
-		       // dedents and line breaks.
-		       skip();
-		     }
-		     else {
-		       emit(commonToken(NEWLINE, newLine));
+			     String newLine = getText().replaceAll("[^\r\n]+", "");
+			     String spaces = getText().replaceAll("[\r\n]+", "");
+			     int next = _input.LA(1);
 
-		       int indent = getIndentationCount(spaces);
-		       int previous = indents.isEmpty() ? 0 : indents.peek();
+			     if (opened > 0 || next == '\r' || next == '\n' || next == '#') {
+			       // If we're inside a list or on a blank line, ignore all indents, 
+			       // dedents and line breaks.
+			       skip();
+			     }
+			     else {
+			       emit(commonToken(NEWLINE, newLine));
 
-		       if (indent == previous) {
-		         // skip indents of the same size as the present indent-size
-		         skip();
-		       }
-		       else if (indent > previous) {
-		         indents.push(indent);
-		         emit(commonToken(Python3Parser.INDENT, spaces));
-		       }
-		       else {
-		         // Possibly emit more than 1 DEDENT token.
-		         while(!indents.isEmpty() && indents.peek() > indent) {
-		           this.emit(createDedent());
-		           indents.pop();
-		         }
-		       }
-		     }
-		    break;
+			       int indent = getIndentationCount(spaces);
+			       int previous = indents.isEmpty() ? 0 : indents.peek();
+
+			       if (indent == previous) {
+			         // skip indents of the same size as the present indent-size
+			         skip();
+			       }
+			       else if (indent > previous) {
+			         indents.push(indent);
+			         emit(commonToken(Python3Parser.INDENT, spaces));
+			       }
+			       else {
+			         // Possibly emit more than 1 DEDENT token.
+			         while(!indents.isEmpty() && indents.peek() > indent) {
+			           this.emit(createDedent());
+			           indents.pop();
+			         }
+			       }
+			     }
+			   
+			break;
 		}
 	}
-	private void OPEN_BRACE_action(RuleContext _localctx, int actionIndex) {
+	private void OPEN_PAREN_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
-		case 5: opened++; break;
-		}
-	}
-	private void CLOSE_BRACE_action(RuleContext _localctx, int actionIndex) {
-		switch (actionIndex) {
-		case 6: opened--; break;
-		}
-	}
-	private void CLOSE_BRACK_action(RuleContext _localctx, int actionIndex) {
-		switch (actionIndex) {
-		case 4: opened--; break;
+		case 1:
+			opened++;
+			break;
 		}
 	}
 	private void CLOSE_PAREN_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
-		case 2: opened--; break;
+		case 2:
+			opened--;
+			break;
 		}
 	}
 	private void OPEN_BRACK_action(RuleContext _localctx, int actionIndex) {
 		switch (actionIndex) {
-		case 3: opened++; break;
+		case 3:
+			opened++;
+			break;
+		}
+	}
+	private void CLOSE_BRACK_action(RuleContext _localctx, int actionIndex) {
+		switch (actionIndex) {
+		case 4:
+			opened--;
+			break;
+		}
+	}
+	private void OPEN_BRACE_action(RuleContext _localctx, int actionIndex) {
+		switch (actionIndex) {
+		case 5:
+			opened++;
+			break;
+		}
+	}
+	private void CLOSE_BRACE_action(RuleContext _localctx, int actionIndex) {
+		switch (actionIndex) {
+		case 6:
+			opened--;
+			break;
 		}
 	}
 	@Override
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 33: return NEWLINE_sempred((RuleContext)_localctx, predIndex);
+		case 33:
+			return NEWLINE_sempred((RuleContext)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean NEWLINE_sempred(RuleContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 0: return atStartOfInput();
+		case 0:
+			return atStartOfInput();
 		}
 		return true;
 	}

@@ -8,5 +8,5 @@ class Nodo():
         self.subtipo = None
         
     def __str__(self):
-        return "["+str(self.tipo)+", "+str(self.valor)+"]"
+        return "("+str(self.tipo)+", "+str(self.valor)+")"
     

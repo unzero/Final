@@ -1,4 +1,4 @@
-// Generated from Gramatica.g4 by ANTLR 4.4
+// Generated from Gramatica.g4 by ANTLR 4.5.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -10,24 +10,24 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class GramaticaLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__31=1, T__30=2, T__29=3, T__28=4, T__27=5, T__26=6, T__25=7, T__24=8, 
-		T__23=9, T__22=10, T__21=11, T__20=12, T__19=13, T__18=14, T__17=15, T__16=16, 
-		T__15=17, T__14=18, T__13=19, T__12=20, T__11=21, T__10=22, T__9=23, T__8=24, 
-		T__7=25, T__6=26, T__5=27, T__4=28, T__3=29, T__2=30, T__1=31, T__0=32, 
-		DECIMAL_INTEGER=33, OCT_INTEGER=34, HEX_INTEGER=35, BIN_INTEGER=36, FLOAT_NUMBER=37, 
-		IMAG_NUMBER=38, STRING=39, STRING_LITERAL=40, BYTES_LITERAL=41, MATCH=42, 
-		CASE=43, GENERATE=44, PARTITION=45, FILTER=46, CONCAT=47, AT=48, ARROW=49, 
-		ADD_ASSIGN=50, SUB_ASSIGN=51, MULT_ASSIGN=52, AT_ASSIGN=53, DIV_ASSIGN=54, 
-		MOD_ASSIGN=55, AND_ASSIGN=56, OR_ASSIGN=57, XOR_ASSIGN=58, LEFT_SHIFT_ASSIGN=59, 
-		RIGHT_SHIFT_ASSIGN=60, POWER_ASSIGN=61, IDIV_ASSIGN=62, DEF=63, RETURN=64, 
-		RAISE=65, FROM=66, IMPORT=67, AS=68, GLOBAL=69, NONLOCAL=70, ASSERT=71, 
-		IF=72, ELIF=73, ELSE=74, WHILE=75, FOR=76, IN=77, TRY=78, FINALLY=79, 
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
+		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
+		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, T__30=31, 
+		T__31=32, DECIMAL_INTEGER=33, OCT_INTEGER=34, HEX_INTEGER=35, BIN_INTEGER=36, 
+		FLOAT_NUMBER=37, IMAG_NUMBER=38, STRING=39, STRING_LITERAL=40, BYTES_LITERAL=41, 
+		MATCH=42, CASE=43, GENERATE=44, PARTITION=45, FILTER=46, CONCAT=47, AT=48, 
+		ARROW=49, ADD_ASSIGN=50, SUB_ASSIGN=51, MULT_ASSIGN=52, AT_ASSIGN=53, 
+		DIV_ASSIGN=54, MOD_ASSIGN=55, AND_ASSIGN=56, OR_ASSIGN=57, XOR_ASSIGN=58, 
+		LEFT_SHIFT_ASSIGN=59, RIGHT_SHIFT_ASSIGN=60, POWER_ASSIGN=61, IDIV_ASSIGN=62, 
+		DEF=63, RETURN=64, RAISE=65, FROM=66, IMPORT=67, AS=68, GLOBAL=69, NONLOCAL=70, 
+		ASSERT=71, IF=72, ELIF=73, ELSE=74, WHILE=75, FOR=76, IN=77, TRY=78, FINALLY=79, 
 		WITH=80, EXCEPT=81, LAMBDA=82, OR=83, AND=84, NOT=85, IS=86, NONE=87, 
 		TRUE=88, FALSE=89, CLASS=90, YIELD=91, DEL=92, PASS=93, CONTINUE=94, BREAK=95, 
 		NAME=96, SKIP=97, UNKNOWN_CHAR=98;
@@ -35,25 +35,11 @@ public class GramaticaLexer extends Lexer {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] tokenNames = {
-		"'\\u0000'", "'\\u0001'", "'\\u0002'", "'\\u0003'", "'\\u0004'", "'\\u0005'", 
-		"'\\u0006'", "'\\u0007'", "'\b'", "'\t'", "'\n'", "'\\u000B'", "'\f'", 
-		"'\r'", "'\\u000E'", "'\\u000F'", "'\\u0010'", "'\\u0011'", "'\\u0012'", 
-		"'\\u0013'", "'\\u0014'", "'\\u0015'", "'\\u0016'", "'\\u0017'", "'\\u0018'", 
-		"'\\u0019'", "'\\u001A'", "'\\u001B'", "'\\u001C'", "'\\u001D'", "'\\u001E'", 
-		"'\\u001F'", "' '", "'!'", "'\"'", "'#'", "'$'", "'%'", "'&'", "'''", 
-		"'('", "')'", "'*'", "'+'", "','", "'-'", "'.'", "'/'", "'0'", "'1'", 
-		"'2'", "'3'", "'4'", "'5'", "'6'", "'7'", "'8'", "'9'", "':'", "';'", 
-		"'<'", "'='", "'>'", "'?'", "'@'", "'A'", "'B'", "'C'", "'D'", "'E'", 
-		"'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", 
-		"'P'", "'Q'", "'R'", "'S'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", 
-		"'Z'", "'['", "'\\'", "']'", "'^'", "'_'", "'`'", "'a'", "'b'"
-	};
 	public static final String[] ruleNames = {
-		"T__31", "T__30", "T__29", "T__28", "T__27", "T__26", "T__25", "T__24", 
-		"T__23", "T__22", "T__21", "T__20", "T__19", "T__18", "T__17", "T__16", 
-		"T__15", "T__14", "T__13", "T__12", "T__11", "T__10", "T__9", "T__8", 
-		"T__7", "T__6", "T__5", "T__4", "T__3", "T__2", "T__1", "T__0", "DECIMAL_INTEGER", 
+		"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
+		"T__9", "T__10", "T__11", "T__12", "T__13", "T__14", "T__15", "T__16", 
+		"T__17", "T__18", "T__19", "T__20", "T__21", "T__22", "T__23", "T__24", 
+		"T__25", "T__26", "T__27", "T__28", "T__29", "T__30", "T__31", "DECIMAL_INTEGER", 
 		"OCT_INTEGER", "HEX_INTEGER", "BIN_INTEGER", "FLOAT_NUMBER", "IMAG_NUMBER", 
 		"STRING", "STRING_LITERAL", "BYTES_LITERAL", "SHORT_STRING", "LONG_STRING", 
 		"LONG_STRING_ITEM", "LONG_STRING_CHAR", "STRING_ESCAPE_SEQ", "NON_ZERO_DIGIT", 
@@ -72,6 +58,68 @@ public class GramaticaLexer extends Lexer {
 		"ID_CONTINUE"
 	};
 
+	private static final String[] _LITERAL_NAMES = {
+		null, "'print'", "'('", "')'", "';'", "'{'", "'}'", "'=>'", "','", "':'", 
+		"'='", "'['", "']'", "'++'", "'=='", "'**'", "'*'", "'/'", "'%'", "'+'", 
+		"'-'", "'<<'", "'>>'", "'&'", "'|'", "'^'", "'...'", "'<'", "'>'", "'>='", 
+		"'<='", "'<>'", "'!='", null, null, null, null, null, null, null, null, 
+		null, "'match'", "'case'", "'generate'", "'partition'", "'filter'", "'::'", 
+		"'@'", "'->'", "'+='", "'-='", "'*='", "'@='", "'/='", "'%='", "'&='", 
+		"'|='", "'^='", "'<<='", "'>>='", "'**='", "'//='", "'def'", "'return'", 
+		"'raise'", "'from'", "'import'", "'as'", "'global'", "'nonlocal'", "'assert'", 
+		"'if'", "'elif'", "'else'", "'while'", "'for'", "'in'", "'try'", "'finally'", 
+		"'with'", "'except'", "'lambda'", "'or'", "'and'", "'not'", "'is'", "'None'", 
+		"'True'", "'False'", "'class'", "'yield'", "'del'", "'pass'", "'continue'", 
+		"'break'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, null, null, null, null, null, null, null, null, "DECIMAL_INTEGER", 
+		"OCT_INTEGER", "HEX_INTEGER", "BIN_INTEGER", "FLOAT_NUMBER", "IMAG_NUMBER", 
+		"STRING", "STRING_LITERAL", "BYTES_LITERAL", "MATCH", "CASE", "GENERATE", 
+		"PARTITION", "FILTER", "CONCAT", "AT", "ARROW", "ADD_ASSIGN", "SUB_ASSIGN", 
+		"MULT_ASSIGN", "AT_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN", "AND_ASSIGN", 
+		"OR_ASSIGN", "XOR_ASSIGN", "LEFT_SHIFT_ASSIGN", "RIGHT_SHIFT_ASSIGN", 
+		"POWER_ASSIGN", "IDIV_ASSIGN", "DEF", "RETURN", "RAISE", "FROM", "IMPORT", 
+		"AS", "GLOBAL", "NONLOCAL", "ASSERT", "IF", "ELIF", "ELSE", "WHILE", "FOR", 
+		"IN", "TRY", "FINALLY", "WITH", "EXCEPT", "LAMBDA", "OR", "AND", "NOT", 
+		"IS", "NONE", "TRUE", "FALSE", "CLASS", "YIELD", "DEL", "PASS", "CONTINUE", 
+		"BREAK", "NAME", "SKIP", "UNKNOWN_CHAR"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
 
 	public GramaticaLexer(CharStream input) {
 		super(input);
@@ -80,9 +128,6 @@ public class GramaticaLexer extends Lexer {
 
 	@Override
 	public String getGrammarFileName() { return "Gramatica.g4"; }
-
-	@Override
-	public String[] getTokenNames() { return tokenNames; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -110,18 +155,18 @@ public class GramaticaLexer extends Lexer {
 		"\4U\tU\4V\tV\4W\tW\4X\tX\4Y\tY\4Z\tZ\4[\t[\4\\\t\\\4]\t]\4^\t^\4_\t_\4"+
 		"`\t`\4a\ta\4b\tb\4c\tc\4d\td\4e\te\4f\tf\4g\tg\4h\th\4i\ti\4j\tj\4k\t"+
 		"k\4l\tl\4m\tm\4n\tn\4o\to\4p\tp\4q\tq\4r\tr\4s\ts\4t\tt\4u\tu\4v\tv\4"+
-		"w\tw\4x\tx\4y\ty\4z\tz\4{\t{\4|\t|\4}\t}\4~\t~\4\177\t\177\3\2\3\2\3\3"+
-		"\3\3\3\3\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\7\3\7\3\7\3\b\3\b\3\b\3\t\3\t\3"+
-		"\n\3\n\3\13\3\13\3\f\3\f\3\f\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\3\17"+
-		"\3\17\3\20\3\20\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23\3\24\3\24\3\24"+
-		"\3\25\3\25\3\26\3\26\3\27\3\27\3\30\3\30\3\30\3\31\3\31\3\31\3\32\3\32"+
-		"\3\33\3\33\3\34\3\34\3\34\3\35\3\35\3\35\3\36\3\36\3\37\3\37\3 \3 \3!"+
-		"\3!\3\"\5\"\u0151\n\"\3\"\3\"\7\"\u0155\n\"\f\"\16\"\u0158\13\"\3\"\6"+
-		"\"\u015b\n\"\r\"\16\"\u015c\5\"\u015f\n\"\3#\3#\3#\6#\u0164\n#\r#\16#"+
-		"\u0165\3$\3$\3$\6$\u016b\n$\r$\16$\u016c\3%\3%\3%\6%\u0172\n%\r%\16%\u0173"+
-		"\3&\3&\5&\u0178\n&\3\'\3\'\5\'\u017c\n\'\3\'\3\'\3(\3(\3(\3(\7(\u0184"+
-		"\n(\f(\16(\u0187\13(\3(\3(\3)\5)\u018c\n)\3)\5)\u018f\n)\3)\3)\5)\u0193"+
-		"\n)\3*\3*\5*\u0197\n*\3*\3*\5*\u019b\n*\3+\3+\3+\7+\u01a0\n+\f+\16+\u01a3"+
+		"w\tw\4x\tx\4y\ty\4z\tz\4{\t{\4|\t|\4}\t}\4~\t~\4\177\t\177\3\2\3\2\3\2"+
+		"\3\2\3\2\3\2\3\3\3\3\3\4\3\4\3\5\3\5\3\6\3\6\3\7\3\7\3\b\3\b\3\b\3\t\3"+
+		"\t\3\n\3\n\3\13\3\13\3\f\3\f\3\r\3\r\3\16\3\16\3\16\3\17\3\17\3\17\3\20"+
+		"\3\20\3\20\3\21\3\21\3\22\3\22\3\23\3\23\3\24\3\24\3\25\3\25\3\26\3\26"+
+		"\3\26\3\27\3\27\3\27\3\30\3\30\3\31\3\31\3\32\3\32\3\33\3\33\3\33\3\33"+
+		"\3\34\3\34\3\35\3\35\3\36\3\36\3\36\3\37\3\37\3\37\3 \3 \3 \3!\3!\3!\3"+
+		"\"\5\"\u0151\n\"\3\"\3\"\7\"\u0155\n\"\f\"\16\"\u0158\13\"\3\"\6\"\u015b"+
+		"\n\"\r\"\16\"\u015c\5\"\u015f\n\"\3#\3#\3#\6#\u0164\n#\r#\16#\u0165\3"+
+		"$\3$\3$\6$\u016b\n$\r$\16$\u016c\3%\3%\3%\6%\u0172\n%\r%\16%\u0173\3&"+
+		"\3&\5&\u0178\n&\3\'\3\'\5\'\u017c\n\'\3\'\3\'\3(\3(\3(\3(\7(\u0184\n("+
+		"\f(\16(\u0187\13(\3(\3(\3)\5)\u018c\n)\3)\5)\u018f\n)\3)\3)\5)\u0193\n"+
+		")\3*\3*\5*\u0197\n*\3*\3*\5*\u019b\n*\3+\3+\3+\7+\u01a0\n+\f+\16+\u01a3"+
 		"\13+\3+\3+\3+\3+\7+\u01a9\n+\f+\16+\u01ac\13+\3+\5+\u01af\n+\3,\3,\3,"+
 		"\3,\3,\7,\u01b6\n,\f,\16,\u01b9\13,\3,\3,\3,\3,\3,\3,\3,\3,\7,\u01c3\n"+
 		",\f,\16,\u01c6\13,\3,\3,\3,\5,\u01cb\n,\3-\3-\5-\u01cf\n-\3.\3.\3/\3/"+
@@ -181,14 +226,14 @@ public class GramaticaLexer extends Lexer {
 		"\3\2\2\2\2\u00d3\3\2\2\2\2\u00d5\3\2\2\2\2\u00d7\3\2\2\2\2\u00d9\3\2\2"+
 		"\2\2\u00db\3\2\2\2\2\u00dd\3\2\2\2\2\u00df\3\2\2\2\2\u00e1\3\2\2\2\2\u00e3"+
 		"\3\2\2\2\2\u00e5\3\2\2\2\2\u00e7\3\2\2\2\2\u00e9\3\2\2\2\2\u00eb\3\2\2"+
-		"\2\2\u00ed\3\2\2\2\2\u00ef\3\2\2\2\2\u00f1\3\2\2\2\3\u00ff\3\2\2\2\5\u0101"+
-		"\3\2\2\2\7\u0104\3\2\2\2\t\u0106\3\2\2\2\13\u0108\3\2\2\2\r\u010b\3\2"+
-		"\2\2\17\u010e\3\2\2\2\21\u0111\3\2\2\2\23\u0113\3\2\2\2\25\u0115\3\2\2"+
-		"\2\27\u0117\3\2\2\2\31\u011a\3\2\2\2\33\u011c\3\2\2\2\35\u0122\3\2\2\2"+
-		"\37\u0124\3\2\2\2!\u0126\3\2\2\2#\u0128\3\2\2\2%\u012c\3\2\2\2\'\u012e"+
-		"\3\2\2\2)\u0131\3\2\2\2+\u0133\3\2\2\2-\u0135\3\2\2\2/\u0137\3\2\2\2\61"+
-		"\u013a\3\2\2\2\63\u013d\3\2\2\2\65\u013f\3\2\2\2\67\u0141\3\2\2\29\u0144"+
-		"\3\2\2\2;\u0147\3\2\2\2=\u0149\3\2\2\2?\u014b\3\2\2\2A\u014d\3\2\2\2C"+
+		"\2\2\u00ed\3\2\2\2\2\u00ef\3\2\2\2\2\u00f1\3\2\2\2\3\u00ff\3\2\2\2\5\u0105"+
+		"\3\2\2\2\7\u0107\3\2\2\2\t\u0109\3\2\2\2\13\u010b\3\2\2\2\r\u010d\3\2"+
+		"\2\2\17\u010f\3\2\2\2\21\u0112\3\2\2\2\23\u0114\3\2\2\2\25\u0116\3\2\2"+
+		"\2\27\u0118\3\2\2\2\31\u011a\3\2\2\2\33\u011c\3\2\2\2\35\u011f\3\2\2\2"+
+		"\37\u0122\3\2\2\2!\u0125\3\2\2\2#\u0127\3\2\2\2%\u0129\3\2\2\2\'\u012b"+
+		"\3\2\2\2)\u012d\3\2\2\2+\u012f\3\2\2\2-\u0132\3\2\2\2/\u0135\3\2\2\2\61"+
+		"\u0137\3\2\2\2\63\u0139\3\2\2\2\65\u013b\3\2\2\2\67\u013f\3\2\2\29\u0141"+
+		"\3\2\2\2;\u0143\3\2\2\2=\u0146\3\2\2\2?\u0149\3\2\2\2A\u014c\3\2\2\2C"+
 		"\u015e\3\2\2\2E\u0160\3\2\2\2G\u0167\3\2\2\2I\u016e\3\2\2\2K\u0177\3\2"+
 		"\2\2M\u017b\3\2\2\2O\u017f\3\2\2\2Q\u018b\3\2\2\2S\u0194\3\2\2\2U\u01ae"+
 		"\3\2\2\2W\u01ca\3\2\2\2Y\u01ce\3\2\2\2[\u01d0\3\2\2\2]\u01d2\3\2\2\2_"+
@@ -213,28 +258,28 @@ public class GramaticaLexer extends Lexer {
 		"\u0334\3\2\2\2\u00e7\u0338\3\2\2\2\u00e9\u033d\3\2\2\2\u00eb\u0346\3\2"+
 		"\2\2\u00ed\u034c\3\2\2\2\u00ef\u0357\3\2\2\2\u00f1\u035b\3\2\2\2\u00f3"+
 		"\u035e\3\2\2\2\u00f5\u0362\3\2\2\2\u00f7\u0369\3\2\2\2\u00f9\u036b\3\2"+
-		"\2\2\u00fb\u0372\3\2\2\2\u00fd\u0376\3\2\2\2\u00ff\u0100\7\61\2\2\u0100"+
-		"\4\3\2\2\2\u0101\u0102\7#\2\2\u0102\u0103\7?\2\2\u0103\6\3\2\2\2\u0104"+
-		"\u0105\7}\2\2\u0105\b\3\2\2\2\u0106\u0107\7=\2\2\u0107\n\3\2\2\2\u0108"+
-		"\u0109\7@\2\2\u0109\u010a\7@\2\2\u010a\f\3\2\2\2\u010b\u010c\7>\2\2\u010c"+
-		"\u010d\7>\2\2\u010d\16\3\2\2\2\u010e\u010f\7,\2\2\u010f\u0110\7,\2\2\u0110"+
-		"\20\3\2\2\2\u0111\u0112\7?\2\2\u0112\22\3\2\2\2\u0113\u0114\7\177\2\2"+
-		"\u0114\24\3\2\2\2\u0115\u0116\7`\2\2\u0116\26\3\2\2\2\u0117\u0118\7>\2"+
-		"\2\u0118\u0119\7?\2\2\u0119\30\3\2\2\2\u011a\u011b\7(\2\2\u011b\32\3\2"+
-		"\2\2\u011c\u011d\7r\2\2\u011d\u011e\7t\2\2\u011e\u011f\7k\2\2\u011f\u0120"+
-		"\7p\2\2\u0120\u0121\7v\2\2\u0121\34\3\2\2\2\u0122\u0123\7*\2\2\u0123\36"+
-		"\3\2\2\2\u0124\u0125\7,\2\2\u0125 \3\2\2\2\u0126\u0127\7.\2\2\u0127\""+
-		"\3\2\2\2\u0128\u0129\7\60\2\2\u0129\u012a\7\60\2\2\u012a\u012b\7\60\2"+
-		"\2\u012b$\3\2\2\2\u012c\u012d\7<\2\2\u012d&\3\2\2\2\u012e\u012f\7@\2\2"+
-		"\u012f\u0130\7?\2\2\u0130(\3\2\2\2\u0131\u0132\7]\2\2\u0132*\3\2\2\2\u0133"+
-		"\u0134\7>\2\2\u0134,\3\2\2\2\u0135\u0136\7~\2\2\u0136.\3\2\2\2\u0137\u0138"+
-		"\7?\2\2\u0138\u0139\7?\2\2\u0139\60\3\2\2\2\u013a\u013b\7-\2\2\u013b\u013c"+
-		"\7-\2\2\u013c\62\3\2\2\2\u013d\u013e\7_\2\2\u013e\64\3\2\2\2\u013f\u0140"+
-		"\7@\2\2\u0140\66\3\2\2\2\u0141\u0142\7?\2\2\u0142\u0143\7@\2\2\u01438"+
-		"\3\2\2\2\u0144\u0145\7>\2\2\u0145\u0146\7@\2\2\u0146:\3\2\2\2\u0147\u0148"+
-		"\7\'\2\2\u0148<\3\2\2\2\u0149\u014a\7+\2\2\u014a>\3\2\2\2\u014b\u014c"+
-		"\7-\2\2\u014c@\3\2\2\2\u014d\u014e\7/\2\2\u014eB\3\2\2\2\u014f\u0151\t"+
-		"\2\2\2\u0150\u014f\3\2\2\2\u0150\u0151\3\2\2\2\u0151\u0152\3\2\2\2\u0152"+
+		"\2\2\u00fb\u0372\3\2\2\2\u00fd\u0376\3\2\2\2\u00ff\u0100\7r\2\2\u0100"+
+		"\u0101\7t\2\2\u0101\u0102\7k\2\2\u0102\u0103\7p\2\2\u0103\u0104\7v\2\2"+
+		"\u0104\4\3\2\2\2\u0105\u0106\7*\2\2\u0106\6\3\2\2\2\u0107\u0108\7+\2\2"+
+		"\u0108\b\3\2\2\2\u0109\u010a\7=\2\2\u010a\n\3\2\2\2\u010b\u010c\7}\2\2"+
+		"\u010c\f\3\2\2\2\u010d\u010e\7\177\2\2\u010e\16\3\2\2\2\u010f\u0110\7"+
+		"?\2\2\u0110\u0111\7@\2\2\u0111\20\3\2\2\2\u0112\u0113\7.\2\2\u0113\22"+
+		"\3\2\2\2\u0114\u0115\7<\2\2\u0115\24\3\2\2\2\u0116\u0117\7?\2\2\u0117"+
+		"\26\3\2\2\2\u0118\u0119\7]\2\2\u0119\30\3\2\2\2\u011a\u011b\7_\2\2\u011b"+
+		"\32\3\2\2\2\u011c\u011d\7-\2\2\u011d\u011e\7-\2\2\u011e\34\3\2\2\2\u011f"+
+		"\u0120\7?\2\2\u0120\u0121\7?\2\2\u0121\36\3\2\2\2\u0122\u0123\7,\2\2\u0123"+
+		"\u0124\7,\2\2\u0124 \3\2\2\2\u0125\u0126\7,\2\2\u0126\"\3\2\2\2\u0127"+
+		"\u0128\7\61\2\2\u0128$\3\2\2\2\u0129\u012a\7\'\2\2\u012a&\3\2\2\2\u012b"+
+		"\u012c\7-\2\2\u012c(\3\2\2\2\u012d\u012e\7/\2\2\u012e*\3\2\2\2\u012f\u0130"+
+		"\7>\2\2\u0130\u0131\7>\2\2\u0131,\3\2\2\2\u0132\u0133\7@\2\2\u0133\u0134"+
+		"\7@\2\2\u0134.\3\2\2\2\u0135\u0136\7(\2\2\u0136\60\3\2\2\2\u0137\u0138"+
+		"\7~\2\2\u0138\62\3\2\2\2\u0139\u013a\7`\2\2\u013a\64\3\2\2\2\u013b\u013c"+
+		"\7\60\2\2\u013c\u013d\7\60\2\2\u013d\u013e\7\60\2\2\u013e\66\3\2\2\2\u013f"+
+		"\u0140\7>\2\2\u01408\3\2\2\2\u0141\u0142\7@\2\2\u0142:\3\2\2\2\u0143\u0144"+
+		"\7@\2\2\u0144\u0145\7?\2\2\u0145<\3\2\2\2\u0146\u0147\7>\2\2\u0147\u0148"+
+		"\7?\2\2\u0148>\3\2\2\2\u0149\u014a\7>\2\2\u014a\u014b\7@\2\2\u014b@\3"+
+		"\2\2\2\u014c\u014d\7#\2\2\u014d\u014e\7?\2\2\u014eB\3\2\2\2\u014f\u0151"+
+		"\t\2\2\2\u0150\u014f\3\2\2\2\u0150\u0151\3\2\2\2\u0151\u0152\3\2\2\2\u0152"+
 		"\u0156\5_\60\2\u0153\u0155\5a\61\2\u0154\u0153\3\2\2\2\u0155\u0158\3\2"+
 		"\2\2\u0156\u0154\3\2\2\2\u0156\u0157\3\2\2\2\u0157\u015f\3\2\2\2\u0158"+
 		"\u0156\3\2\2\2\u0159\u015b\7\62\2\2\u015a\u0159\3\2\2\2\u015b\u015c\3"+

@@ -12,6 +12,10 @@ import Analizador
 #AQUI NO SE MANEJA LO DE LA TABLA DE SIMBOLOS, ESO SE HACE EN OTRO LADO 
 class GramaticaExtVisitor(GramaticaVisitor):
     
+    _NONE = Simbolo("NONE","NONE","NONE")
+    _BREAK = Simbolo("BREAK","BREAK","BREAK")
+    _CONTINUE = Simbolo("CONTINUE","CONTINUE","CONTINUE")
+    
     def __init__(self,an):
         #super(GramaticaExtListener,self)
         self.tablaDeSimbolosActual = TablaSimbolos(None,0)
@@ -33,7 +37,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def visitPrint_fun(self,ctx):
         valor = super(GramaticaExtVisitor,self).visit(ctx.test())
         ret = "";
-        if valor == None:
+        if valor == self._NONE or valor == None:
             ret = "None"
         elif valor.tipo == "ITERATOR" and valor.subtipo == "LIST":
             ret = "[";
@@ -51,6 +55,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
         else:
             ret = str(valor.valor)
         self.an.agregarRegistro(str(ret))
+        return self._NONE
     
     
     
@@ -73,26 +78,29 @@ class GramaticaExtVisitor(GramaticaVisitor):
         self.pilaValores.append(str(ctx.NAME()))
         for mst in ctx.match_stmt():
             r = super(GramaticaExtVisitor,self).visit(mst)
-            if r != None:
+            if r != self._NONE:
                 return r
         self.pilaValores.pop()
+        return self._NONE
     
     def visitMatch_stmt(self, ctx):
         nombre = self.pilaValores.pop()
         self.pilaValores.append(nombre)
         valor = super(GramaticaExtVisitor,self).visit(ctx.test())
         simbolo = self.tablaDeSimbolosActual.resolver(nombre)
-        print("llamada")
+        #print("llamada")
         print(str(self.tablaDeSimbolosActual))
         if simbolo.tipo == valor.tipo and simbolo.valor == valor.valor:
             ret = self.evaluarInstrucciones(ctx.stmt())
-            print(ret)
-            if ret != None:
+            #print(ret)
+            if ret != self._NONE:
                 return ret
-        return None
+        return self._NONE
     
     def visitFunc_call(self, ctx):
-        return self.evaluarFuncion(ctx)
+        ret =  self.evaluarFuncion(ctx)
+        print(str(ret))
+        return ret
         
     #
     #
@@ -106,40 +114,25 @@ class GramaticaExtVisitor(GramaticaVisitor):
     
     def visitIf_stmt(self, ctx):
         cond = super(GramaticaExtVisitor,self).visit(ctx.test())
-        if self.evaluarIf(cond,ctx.stmt()) :
-            return None
-        if len(ctx.elif_stmt()) > 0:
+        if cond.tipo == "BOOL" and cond.valor == True:
+            print("OK, entradda en if ")
+            ret = self.evaluarInstrucciones(ctx.stmt())
+            print(str(ret))
+            return ret
+        if ctx.elif_stmt() != None and len(ctx.elif_stmt()) > 0:
             for nodo_elif in ctx.elif_stmt():
                 cond = super(GramaticaExtVisitor,self).visit(nodo_elif.test())
-                if self.evaluarIf(cond,nodo_elif.stmt()):
-                    return None
+                if cond.tipo == "BOOL" and cond.valor == True:
+                    return self.evaluarInstrucciones(nodo_elif.stmt())
         if ctx.else_stmt() != None:
-            nodo = Nodo()
-            nodo.tipo = "BOOL"
-            nodo.valor = True
-            self.evaluarIf(nodo,ctx.else_stmt().stmt())
-        return None
-    
-    
-    def visitWhile_stmt(self, ctx):
-        valor = super(GramaticaExtVisitor,self).visit(ctx.test())
-        if valor.tipo != "BOOL":
-            ln = -1
-            self.raiseError(ln, 'La expresion del while debe ser de tipo logica', "logic-expected")
-        while valor.valor :
-            self.evaluarInstrucciones(ctx.stmt())
-            valor = super(GramaticaExtVisitor,self).visit(ctx.test())
-        return None
+            return self.evaluarInstrucciones(ctx.else_stmt().stmt())
+        return self._NONE
     
     def visitBreak_stmt(self, ctx):
-        nodo = Nodo()
-        nodo.tipo = "BREAK"
-        return nodo
+        return self._BREAK
     
     def visitContinue_stmt(self, ctx):
-        nodo = Nodo()
-        nodo.tipo = "CONTINUE"
-        return nodo
+        return self._CONTINUE
     
     def visitReturn_stmt(self, ctx):
         return super(GramaticaExtVisitor,self).visit(ctx.test())
@@ -149,7 +142,46 @@ class GramaticaExtVisitor(GramaticaVisitor):
         simbolo = Simbolo(ctx.NAME(),valor.tipo,valor.valor)
         simbolo.subtipo = valor.subtipo
         self.tablaDeSimbolosActual.agregarSimbolo(ctx.NAME(), simbolo)
-        return None
+        return self._NONE
+    
+    def visitWhile_stmt(self, ctx):
+        valor = super(GramaticaExtVisitor,self).visit(ctx.test())
+        if valor.tipo != "BOOL":
+            ln = -1
+            self.raiseError(ln, 'La expresion del while debe ser de tipo logica', "logic-expected")
+        while valor.valor :
+            ret = self.evaluarInstrucciones(ctx.stmt())
+            if ret == self._BREAK:
+                break
+            elif ret != self._NONE and ret != self._CONTINUE:
+                print("entro en return "+str(ret))
+                return ret
+            valor = super(GramaticaExtVisitor,self).visit(ctx.test())
+            print("valor test: "+str(valor))
+        return self._NONE
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     def visitAssig_stmtIterable(self, ctx):
         simbolo = self.tablaDeSimbolosActual.resolver(ctx.NAME())
@@ -162,7 +194,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
         indice = super(GramaticaExtVisitor,self).visit(ctx.test(0))
         valor = super(GramaticaExtVisitor,self).visit(ctx.test(1))
         simbolo.valor[indice] = valor
-        return None
+        return self._NONE
     
     def visitFor_stmt(self, ctx):
         nm = ctx.NAME()
@@ -728,20 +760,7 @@ class GramaticaExtVisitor(GramaticaVisitor):
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
     #
     #
     #
@@ -763,19 +782,15 @@ class GramaticaExtVisitor(GramaticaVisitor):
     def numerico(self,nodo):
         return nodo.tipo == "INTEGER" or nodo.tipo == "FLOAT"
     
-    
-    def evaluarIf(self,nodo,instrucciones):
-        if nodo.tipo == "BOOL" and nodo.valor == True:
-            self.evaluarInstrucciones(instrucciones)
-            return True
-        return False
-    
     def evaluarInstrucciones(self,instrucciones):
         for inst in instrucciones:
-            r = super(GramaticaExtVisitor,self).visit(inst)
+            ret = super(GramaticaExtVisitor,self).visit(inst)
             if inst.flow_stmt() != None and inst.flow_stmt().return_stmt() != None:
-                return r
-        return None
+                return ret
+            elif ret != self._NONE:
+                print(ret)
+                return ret
+        return self._NONE
     
     def evaluarArgumento(self,arg):
         valor = super(GramaticaExtVisitor,self).visit(arg)
@@ -802,16 +817,17 @@ class GramaticaExtVisitor(GramaticaVisitor):
         nuevaTablaSimbolos  = TablaSimbolos(None,self.tablaDeSimbolosActual.contexto+1)
         for i in xrange(0,len(parametros)):
             argument = self.evaluarArgumento(parametros[i])
-            print("argumento: "+str(argument))
+            #print("argumento: "+str(argument))
             simboloNuevo = Simbolo(simbolo.argumentos[i],argument[0],argument[1])   
             nuevaTablaSimbolos.agregarSimbolo(simbolo.argumentos[i], simboloNuevo)
         nuevaTablaSimbolos.padre = self.tablaDeSimbolosActual
         self.tablaDeSimbolosActual = nuevaTablaSimbolos
-        r = super(GramaticaExtVisitor,self).visit(simbolo.valor)
+        ret = super(GramaticaExtVisitor,self).visit(simbolo.valor)
         self.tablaDeSimbolosActual = self.tablaDeSimbolosActual.destruirTabla()
-        if r != None:
-            return r;
-        return None
+        print("Evaluando: "+str(ctx.NAME())+" con valor de retorno "+str(ret))
+        if ret != self._NONE:
+            return ret;
+        return self._NONE
     
     def raiseError(self,ln,msg,smb):
         ret = "Airi dice: Error en la linea "+str(ln)+" se ha producido el siguiente error: "+str(msg)+" con el simbolo: "+str(smb)+", por favor revise la entrada"

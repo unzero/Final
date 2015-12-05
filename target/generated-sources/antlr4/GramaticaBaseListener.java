@@ -1,7 +1,6 @@
-// Generated from Gramatica.g4 by ANTLR 4.4
+// Generated from Gramatica.g4 by ANTLR 4.5.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
@@ -16,1008 +15,1008 @@ public class GramaticaBaseListener implements GramaticaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomFalse(@NotNull GramaticaParser.AtomFalseContext ctx) { }
+	@Override public void enterMatchFun(GramaticaParser.MatchFunContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomFalse(@NotNull GramaticaParser.AtomFalseContext ctx) { }
+	@Override public void exitMatchFun(GramaticaParser.MatchFunContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLambda_test(@NotNull GramaticaParser.Lambda_testContext ctx) { }
+	@Override public void enterSingle_input(GramaticaParser.Single_inputContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLambda_test(@NotNull GramaticaParser.Lambda_testContext ctx) { }
+	@Override public void exitSingle_input(GramaticaParser.Single_inputContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrint_fun(@NotNull GramaticaParser.Print_funContext ctx) { }
+	@Override public void enterStmt(GramaticaParser.StmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrint_fun(@NotNull GramaticaParser.Print_funContext ctx) { }
+	@Override public void exitStmt(GramaticaParser.StmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprModule(@NotNull GramaticaParser.ExprModuleContext ctx) { }
+	@Override public void enterPrint_fun(GramaticaParser.Print_funContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprModule(@NotNull GramaticaParser.ExprModuleContext ctx) { }
+	@Override public void exitPrint_fun(GramaticaParser.Print_funContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInteger(@NotNull GramaticaParser.IntegerContext ctx) { }
+	@Override public void enterImport_stmt(GramaticaParser.Import_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInteger(@NotNull GramaticaParser.IntegerContext ctx) { }
+	@Override public void exitImport_stmt(GramaticaParser.Import_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImport_from(@NotNull GramaticaParser.Import_fromContext ctx) { }
+	@Override public void enterImport_name(GramaticaParser.Import_nameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImport_from(@NotNull GramaticaParser.Import_fromContext ctx) { }
+	@Override public void exitImport_name(GramaticaParser.Import_nameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunc_call(@NotNull GramaticaParser.Func_callContext ctx) { }
+	@Override public void enterImport_from(GramaticaParser.Import_fromContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunc_call(@NotNull GramaticaParser.Func_callContext ctx) { }
+	@Override public void exitImport_from(GramaticaParser.Import_fromContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_name(@NotNull GramaticaParser.Iterable_nameContext ctx) { }
+	@Override public void enterFuncdef(GramaticaParser.FuncdefContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_name(@NotNull GramaticaParser.Iterable_nameContext ctx) { }
+	@Override public void exitFuncdef(GramaticaParser.FuncdefContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTestExprComp(@NotNull GramaticaParser.TestExprCompContext ctx) { }
+	@Override public void enterFuncBodyNormal(GramaticaParser.FuncBodyNormalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTestExprComp(@NotNull GramaticaParser.TestExprCompContext ctx) { }
+	@Override public void exitFuncBodyNormal(GramaticaParser.FuncBodyNormalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSingle_input(@NotNull GramaticaParser.Single_inputContext ctx) { }
+	@Override public void enterFuncBodyMatch(GramaticaParser.FuncBodyMatchContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSingle_input(@NotNull GramaticaParser.Single_inputContext ctx) { }
+	@Override public void exitFuncBodyMatch(GramaticaParser.FuncBodyMatchContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMap_element(@NotNull GramaticaParser.Map_elementContext ctx) { }
+	@Override public void enterMatch_stmt(GramaticaParser.Match_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMap_element(@NotNull GramaticaParser.Map_elementContext ctx) { }
+	@Override public void exitMatch_stmt(GramaticaParser.Match_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprMultiply(@NotNull GramaticaParser.ExprMultiplyContext ctx) { }
+	@Override public void enterLambdaParamet(GramaticaParser.LambdaParametContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprMultiply(@NotNull GramaticaParser.ExprMultiplyContext ctx) { }
+	@Override public void exitLambdaParamet(GramaticaParser.LambdaParametContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExcept_clause(@NotNull GramaticaParser.Except_clauseContext ctx) { }
+	@Override public void enterArgs(GramaticaParser.ArgsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExcept_clause(@NotNull GramaticaParser.Except_clauseContext ctx) { }
+	@Override public void exitArgs(GramaticaParser.ArgsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprOr(@NotNull GramaticaParser.ExprOrContext ctx) { }
+	@Override public void enterSub_args(GramaticaParser.Sub_argsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprOr(@NotNull GramaticaParser.ExprOrContext ctx) { }
+	@Override public void exitSub_args(GramaticaParser.Sub_argsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomName(@NotNull GramaticaParser.AtomNameContext ctx) { }
+	@Override public void enterFunc_call(GramaticaParser.Func_callContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomName(@NotNull GramaticaParser.AtomNameContext ctx) { }
+	@Override public void exitFunc_call(GramaticaParser.Func_callContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomNumber(@NotNull GramaticaParser.AtomNumberContext ctx) { }
+	@Override public void enterParameters(GramaticaParser.ParametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomNumber(@NotNull GramaticaParser.AtomNumberContext ctx) { }
+	@Override public void exitParameters(GramaticaParser.ParametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomNone(@NotNull GramaticaParser.AtomNoneContext ctx) { }
+	@Override public void enterSub_parameters(GramaticaParser.Sub_parametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomNone(@NotNull GramaticaParser.AtomNoneContext ctx) { }
+	@Override public void exitSub_parameters(GramaticaParser.Sub_parametersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturn_stmt(@NotNull GramaticaParser.Return_stmtContext ctx) { }
+	@Override public void enterIf_stmt(GramaticaParser.If_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturn_stmt(@NotNull GramaticaParser.Return_stmtContext ctx) { }
+	@Override public void exitIf_stmt(GramaticaParser.If_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_generate(@NotNull GramaticaParser.Iterable_generateContext ctx) { }
+	@Override public void enterElif_stmt(GramaticaParser.Elif_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_generate(@NotNull GramaticaParser.Iterable_generateContext ctx) { }
+	@Override public void exitElif_stmt(GramaticaParser.Elif_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhile_stmt(@NotNull GramaticaParser.While_stmtContext ctx) { }
+	@Override public void enterElse_stmt(GramaticaParser.Else_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhile_stmt(@NotNull GramaticaParser.While_stmtContext ctx) { }
+	@Override public void exitElse_stmt(GramaticaParser.Else_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFlow_stmt(@NotNull GramaticaParser.Flow_stmtContext ctx) { }
+	@Override public void enterWhile_stmt(GramaticaParser.While_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFlow_stmt(@NotNull GramaticaParser.Flow_stmtContext ctx) { }
+	@Override public void exitWhile_stmt(GramaticaParser.While_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprAtom(@NotNull GramaticaParser.ExprAtomContext ctx) { }
+	@Override public void enterReturn_stmt(GramaticaParser.Return_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprAtom(@NotNull GramaticaParser.ExprAtomContext ctx) { }
+	@Override public void exitReturn_stmt(GramaticaParser.Return_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTestOr(@NotNull GramaticaParser.TestOrContext ctx) { }
+	@Override public void enterAssig_stmtVar(GramaticaParser.Assig_stmtVarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTestOr(@NotNull GramaticaParser.TestOrContext ctx) { }
+	@Override public void exitAssig_stmtVar(GramaticaParser.Assig_stmtVarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssig_stmtVar(@NotNull GramaticaParser.Assig_stmtVarContext ctx) { }
+	@Override public void enterAssig_stmtIterable(GramaticaParser.Assig_stmtIterableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssig_stmtVar(@NotNull GramaticaParser.Assig_stmtVarContext ctx) { }
+	@Override public void exitAssig_stmtIterable(GramaticaParser.Assig_stmtIterableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImport_stmt(@NotNull GramaticaParser.Import_stmtContext ctx) { }
+	@Override public void enterFor_stmt(GramaticaParser.For_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImport_stmt(@NotNull GramaticaParser.Import_stmtContext ctx) { }
+	@Override public void exitFor_stmt(GramaticaParser.For_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMatch_stmt(@NotNull GramaticaParser.Match_stmtContext ctx) { }
+	@Override public void enterFlow_stmt(GramaticaParser.Flow_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMatch_stmt(@NotNull GramaticaParser.Match_stmtContext ctx) { }
+	@Override public void exitFlow_stmt(GramaticaParser.Flow_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTry_stmt(@NotNull GramaticaParser.Try_stmtContext ctx) { }
+	@Override public void enterBreak_stmt(GramaticaParser.Break_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTry_stmt(@NotNull GramaticaParser.Try_stmtContext ctx) { }
+	@Override public void exitBreak_stmt(GramaticaParser.Break_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_partition(@NotNull GramaticaParser.Iterable_partitionContext ctx) { }
+	@Override public void enterContinue_stmt(GramaticaParser.Continue_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_partition(@NotNull GramaticaParser.Iterable_partitionContext ctx) { }
+	@Override public void exitContinue_stmt(GramaticaParser.Continue_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComp_op(@NotNull GramaticaParser.Comp_opContext ctx) { }
+	@Override public void enterTry_stmt(GramaticaParser.Try_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComp_op(@NotNull GramaticaParser.Comp_opContext ctx) { }
+	@Override public void exitTry_stmt(GramaticaParser.Try_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLambdaParamet(@NotNull GramaticaParser.LambdaParametContext ctx) { }
+	@Override public void enterDel_stmt(GramaticaParser.Del_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLambdaParamet(@NotNull GramaticaParser.LambdaParametContext ctx) { }
+	@Override public void exitDel_stmt(GramaticaParser.Del_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssig_stmtIterable(@NotNull GramaticaParser.Assig_stmtIterableContext ctx) { }
+	@Override public void enterExcept_clause(GramaticaParser.Except_clauseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssig_stmtIterable(@NotNull GramaticaParser.Assig_stmtIterableContext ctx) { }
+	@Override public void exitExcept_clause(GramaticaParser.Except_clauseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumberComplex(@NotNull GramaticaParser.NumberComplexContext ctx) { }
+	@Override public void enterLambda_testset(GramaticaParser.Lambda_testsetContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumberComplex(@NotNull GramaticaParser.NumberComplexContext ctx) { }
+	@Override public void exitLambda_testset(GramaticaParser.Lambda_testsetContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBreak_stmt(@NotNull GramaticaParser.Break_stmtContext ctx) { }
+	@Override public void enterLambda_subset(GramaticaParser.Lambda_subsetContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBreak_stmt(@NotNull GramaticaParser.Break_stmtContext ctx) { }
+	@Override public void exitLambda_subset(GramaticaParser.Lambda_subsetContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTestExpr(@NotNull GramaticaParser.TestExprContext ctx) { }
+	@Override public void enterLambda_test(GramaticaParser.Lambda_testContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTestExpr(@NotNull GramaticaParser.TestExprContext ctx) { }
+	@Override public void exitLambda_test(GramaticaParser.Lambda_testContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElse_stmt(@NotNull GramaticaParser.Else_stmtContext ctx) { }
+	@Override public void enterIterable_generate(GramaticaParser.Iterable_generateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElse_stmt(@NotNull GramaticaParser.Else_stmtContext ctx) { }
+	@Override public void exitIterable_generate(GramaticaParser.Iterable_generateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParameters(@NotNull GramaticaParser.ParametersContext ctx) { }
+	@Override public void enterIterable_map(GramaticaParser.Iterable_mapContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParameters(@NotNull GramaticaParser.ParametersContext ctx) { }
+	@Override public void exitIterable_map(GramaticaParser.Iterable_mapContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprDivision(@NotNull GramaticaParser.ExprDivisionContext ctx) { }
+	@Override public void enterIterable_partition(GramaticaParser.Iterable_partitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprDivision(@NotNull GramaticaParser.ExprDivisionContext ctx) { }
+	@Override public void exitIterable_partition(GramaticaParser.Iterable_partitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprExpr(@NotNull GramaticaParser.ExprExprContext ctx) { }
+	@Override public void enterIterable_addition(GramaticaParser.Iterable_additionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprExpr(@NotNull GramaticaParser.ExprExprContext ctx) { }
+	@Override public void exitIterable_addition(GramaticaParser.Iterable_additionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSubmap_element(@NotNull GramaticaParser.Submap_elementContext ctx) { }
+	@Override public void enterIterable_filter(GramaticaParser.Iterable_filterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSubmap_element(@NotNull GramaticaParser.Submap_elementContext ctx) { }
+	@Override public void exitIterable_filter(GramaticaParser.Iterable_filterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomDot(@NotNull GramaticaParser.AtomDotContext ctx) { }
+	@Override public void enterIterable_name(GramaticaParser.Iterable_nameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomDot(@NotNull GramaticaParser.AtomDotContext ctx) { }
+	@Override public void exitIterable_name(GramaticaParser.Iterable_nameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprMinus(@NotNull GramaticaParser.ExprMinusContext ctx) { }
+	@Override public void enterIterable_tuple(GramaticaParser.Iterable_tupleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprMinus(@NotNull GramaticaParser.ExprMinusContext ctx) { }
+	@Override public void exitIterable_tuple(GramaticaParser.Iterable_tupleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIf_stmt(@NotNull GramaticaParser.If_stmtContext ctx) { }
+	@Override public void enterIterable_list(GramaticaParser.Iterable_listContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIf_stmt(@NotNull GramaticaParser.If_stmtContext ctx) { }
+	@Override public void exitIterable_list(GramaticaParser.Iterable_listContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMatchFun(@NotNull GramaticaParser.MatchFunContext ctx) { }
+	@Override public void enterList_element(GramaticaParser.List_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMatchFun(@NotNull GramaticaParser.MatchFunContext ctx) { }
+	@Override public void exitList_element(GramaticaParser.List_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomTrue(@NotNull GramaticaParser.AtomTrueContext ctx) { }
+	@Override public void enterSublist_element(GramaticaParser.Sublist_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomTrue(@NotNull GramaticaParser.AtomTrueContext ctx) { }
+	@Override public void exitSublist_element(GramaticaParser.Sublist_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomFuncCall(@NotNull GramaticaParser.AtomFuncCallContext ctx) { }
+	@Override public void enterMap_element(GramaticaParser.Map_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomFuncCall(@NotNull GramaticaParser.AtomFuncCallContext ctx) { }
+	@Override public void exitMap_element(GramaticaParser.Map_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElif_stmt(@NotNull GramaticaParser.Elif_stmtContext ctx) { }
+	@Override public void enterSubmap_element(GramaticaParser.Submap_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElif_stmt(@NotNull GramaticaParser.Elif_stmtContext ctx) { }
+	@Override public void exitSubmap_element(GramaticaParser.Submap_elementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomIterableDef(@NotNull GramaticaParser.AtomIterableDefContext ctx) { }
+	@Override public void enterTestTest(GramaticaParser.TestTestContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomIterableDef(@NotNull GramaticaParser.AtomIterableDefContext ctx) { }
+	@Override public void exitTestTest(GramaticaParser.TestTestContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLambda_testset(@NotNull GramaticaParser.Lambda_testsetContext ctx) { }
+	@Override public void enterTestOr(GramaticaParser.TestOrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLambda_testset(@NotNull GramaticaParser.Lambda_testsetContext ctx) { }
+	@Override public void exitTestOr(GramaticaParser.TestOrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSublist_element(@NotNull GramaticaParser.Sublist_elementContext ctx) { }
+	@Override public void enterTestAnd(GramaticaParser.TestAndContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSublist_element(@NotNull GramaticaParser.Sublist_elementContext ctx) { }
+	@Override public void exitTestAnd(GramaticaParser.TestAndContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTestAnd(@NotNull GramaticaParser.TestAndContext ctx) { }
+	@Override public void enterTest_iterable_eq(GramaticaParser.Test_iterable_eqContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTestAnd(@NotNull GramaticaParser.TestAndContext ctx) { }
+	@Override public void exitTest_iterable_eq(GramaticaParser.Test_iterable_eqContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprShiftLeft(@NotNull GramaticaParser.ExprShiftLeftContext ctx) { }
+	@Override public void enterTestNot(GramaticaParser.TestNotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprShiftLeft(@NotNull GramaticaParser.ExprShiftLeftContext ctx) { }
+	@Override public void exitTestNot(GramaticaParser.TestNotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_addition(@NotNull GramaticaParser.Iterable_additionContext ctx) { }
+	@Override public void enterTestExpr(GramaticaParser.TestExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_addition(@NotNull GramaticaParser.Iterable_additionContext ctx) { }
+	@Override public void exitTestExpr(GramaticaParser.TestExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTestNot(@NotNull GramaticaParser.TestNotContext ctx) { }
+	@Override public void enterTest_iterable_in(GramaticaParser.Test_iterable_inContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTestNot(@NotNull GramaticaParser.TestNotContext ctx) { }
+	@Override public void exitTest_iterable_in(GramaticaParser.Test_iterable_inContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprAnd(@NotNull GramaticaParser.ExprAndContext ctx) { }
+	@Override public void enterTestExprComp(GramaticaParser.TestExprCompContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprAnd(@NotNull GramaticaParser.ExprAndContext ctx) { }
+	@Override public void exitTestExprComp(GramaticaParser.TestExprCompContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumberInteger(@NotNull GramaticaParser.NumberIntegerContext ctx) { }
+	@Override public void enterExprAtom(GramaticaParser.ExprAtomContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumberInteger(@NotNull GramaticaParser.NumberIntegerContext ctx) { }
+	@Override public void exitExprAtom(GramaticaParser.ExprAtomContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncBodyNormal(@NotNull GramaticaParser.FuncBodyNormalContext ctx) { }
+	@Override public void enterExprExpr(GramaticaParser.ExprExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncBodyNormal(@NotNull GramaticaParser.FuncBodyNormalContext ctx) { }
+	@Override public void exitExprExpr(GramaticaParser.ExprExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprShiftRight(@NotNull GramaticaParser.ExprShiftRightContext ctx) { }
+	@Override public void enterExprPlus(GramaticaParser.ExprPlusContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprShiftRight(@NotNull GramaticaParser.ExprShiftRightContext ctx) { }
+	@Override public void exitExprPlus(GramaticaParser.ExprPlusContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_filter(@NotNull GramaticaParser.Iterable_filterContext ctx) { }
+	@Override public void enterExprMinus(GramaticaParser.ExprMinusContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_filter(@NotNull GramaticaParser.Iterable_filterContext ctx) { }
+	@Override public void exitExprMinus(GramaticaParser.ExprMinusContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprXor(@NotNull GramaticaParser.ExprXorContext ctx) { }
+	@Override public void enterExprModule(GramaticaParser.ExprModuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprXor(@NotNull GramaticaParser.ExprXorContext ctx) { }
+	@Override public void exitExprModule(GramaticaParser.ExprModuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncdef(@NotNull GramaticaParser.FuncdefContext ctx) { }
+	@Override public void enterExprMultiply(GramaticaParser.ExprMultiplyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncdef(@NotNull GramaticaParser.FuncdefContext ctx) { }
+	@Override public void exitExprMultiply(GramaticaParser.ExprMultiplyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTestTest(@NotNull GramaticaParser.TestTestContext ctx) { }
+	@Override public void enterExprOr(GramaticaParser.ExprOrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTestTest(@NotNull GramaticaParser.TestTestContext ctx) { }
+	@Override public void exitExprOr(GramaticaParser.ExprOrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_map(@NotNull GramaticaParser.Iterable_mapContext ctx) { }
+	@Override public void enterExprShiftLeft(GramaticaParser.ExprShiftLeftContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_map(@NotNull GramaticaParser.Iterable_mapContext ctx) { }
+	@Override public void exitExprShiftLeft(GramaticaParser.ExprShiftLeftContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprPlus(@NotNull GramaticaParser.ExprPlusContext ctx) { }
+	@Override public void enterExprAnd(GramaticaParser.ExprAndContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprPlus(@NotNull GramaticaParser.ExprPlusContext ctx) { }
+	@Override public void exitExprAnd(GramaticaParser.ExprAndContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTest_iterable_eq(@NotNull GramaticaParser.Test_iterable_eqContext ctx) { }
+	@Override public void enterExprShiftRight(GramaticaParser.ExprShiftRightContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTest_iterable_eq(@NotNull GramaticaParser.Test_iterable_eqContext ctx) { }
+	@Override public void exitExprShiftRight(GramaticaParser.ExprShiftRightContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImport_name(@NotNull GramaticaParser.Import_nameContext ctx) { }
+	@Override public void enterExprPower(GramaticaParser.ExprPowerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImport_name(@NotNull GramaticaParser.Import_nameContext ctx) { }
+	@Override public void exitExprPower(GramaticaParser.ExprPowerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterList_element(@NotNull GramaticaParser.List_elementContext ctx) { }
+	@Override public void enterExprXor(GramaticaParser.ExprXorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitList_element(@NotNull GramaticaParser.List_elementContext ctx) { }
+	@Override public void exitExprXor(GramaticaParser.ExprXorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTest_iterable_in(@NotNull GramaticaParser.Test_iterable_inContext ctx) { }
+	@Override public void enterExprDivision(GramaticaParser.ExprDivisionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTest_iterable_in(@NotNull GramaticaParser.Test_iterable_inContext ctx) { }
+	@Override public void exitExprDivision(GramaticaParser.ExprDivisionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_tuple(@NotNull GramaticaParser.Iterable_tupleContext ctx) { }
+	@Override public void enterAtomName(GramaticaParser.AtomNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_tuple(@NotNull GramaticaParser.Iterable_tupleContext ctx) { }
+	@Override public void exitAtomName(GramaticaParser.AtomNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomString(@NotNull GramaticaParser.AtomStringContext ctx) { }
+	@Override public void enterAtomNumber(GramaticaParser.AtomNumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomString(@NotNull GramaticaParser.AtomStringContext ctx) { }
+	@Override public void exitAtomNumber(GramaticaParser.AtomNumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArgs(@NotNull GramaticaParser.ArgsContext ctx) { }
+	@Override public void enterAtomString(GramaticaParser.AtomStringContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArgs(@NotNull GramaticaParser.ArgsContext ctx) { }
+	@Override public void exitAtomString(GramaticaParser.AtomStringContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncBodyMatch(@NotNull GramaticaParser.FuncBodyMatchContext ctx) { }
+	@Override public void enterAtomDot(GramaticaParser.AtomDotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncBodyMatch(@NotNull GramaticaParser.FuncBodyMatchContext ctx) { }
+	@Override public void exitAtomDot(GramaticaParser.AtomDotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSub_parameters(@NotNull GramaticaParser.Sub_parametersContext ctx) { }
+	@Override public void enterAtomNone(GramaticaParser.AtomNoneContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSub_parameters(@NotNull GramaticaParser.Sub_parametersContext ctx) { }
+	@Override public void exitAtomNone(GramaticaParser.AtomNoneContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumberFloat(@NotNull GramaticaParser.NumberFloatContext ctx) { }
+	@Override public void enterAtomTrue(GramaticaParser.AtomTrueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumberFloat(@NotNull GramaticaParser.NumberFloatContext ctx) { }
+	@Override public void exitAtomTrue(GramaticaParser.AtomTrueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterContinue_stmt(@NotNull GramaticaParser.Continue_stmtContext ctx) { }
+	@Override public void enterAtomFalse(GramaticaParser.AtomFalseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitContinue_stmt(@NotNull GramaticaParser.Continue_stmtContext ctx) { }
+	@Override public void exitAtomFalse(GramaticaParser.AtomFalseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLambda_subset(@NotNull GramaticaParser.Lambda_subsetContext ctx) { }
+	@Override public void enterAtomFuncCall(GramaticaParser.AtomFuncCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLambda_subset(@NotNull GramaticaParser.Lambda_subsetContext ctx) { }
+	@Override public void exitAtomFuncCall(GramaticaParser.AtomFuncCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFor_stmt(@NotNull GramaticaParser.For_stmtContext ctx) { }
+	@Override public void enterAtomIterableAccess(GramaticaParser.AtomIterableAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFor_stmt(@NotNull GramaticaParser.For_stmtContext ctx) { }
+	@Override public void exitAtomIterableAccess(GramaticaParser.AtomIterableAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprPower(@NotNull GramaticaParser.ExprPowerContext ctx) { }
+	@Override public void enterAtomIterableDef(GramaticaParser.AtomIterableDefContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprPower(@NotNull GramaticaParser.ExprPowerContext ctx) { }
+	@Override public void exitAtomIterableDef(GramaticaParser.AtomIterableDefContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomIterableAccess(@NotNull GramaticaParser.AtomIterableAccessContext ctx) { }
+	@Override public void enterNumberInteger(GramaticaParser.NumberIntegerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomIterableAccess(@NotNull GramaticaParser.AtomIterableAccessContext ctx) { }
+	@Override public void exitNumberInteger(GramaticaParser.NumberIntegerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDel_stmt(@NotNull GramaticaParser.Del_stmtContext ctx) { }
+	@Override public void enterNumberFloat(GramaticaParser.NumberFloatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDel_stmt(@NotNull GramaticaParser.Del_stmtContext ctx) { }
+	@Override public void exitNumberFloat(GramaticaParser.NumberFloatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStmt(@NotNull GramaticaParser.StmtContext ctx) { }
+	@Override public void enterNumberComplex(GramaticaParser.NumberComplexContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStmt(@NotNull GramaticaParser.StmtContext ctx) { }
+	@Override public void exitNumberComplex(GramaticaParser.NumberComplexContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSub_args(@NotNull GramaticaParser.Sub_argsContext ctx) { }
+	@Override public void enterComp_op(GramaticaParser.Comp_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSub_args(@NotNull GramaticaParser.Sub_argsContext ctx) { }
+	@Override public void exitComp_op(GramaticaParser.Comp_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIterable_list(@NotNull GramaticaParser.Iterable_listContext ctx) { }
+	@Override public void enterInteger(GramaticaParser.IntegerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIterable_list(@NotNull GramaticaParser.Iterable_listContext ctx) { }
+	@Override public void exitInteger(GramaticaParser.IntegerContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void enterEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void exitEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitTerminal(@NotNull TerminalNode node) { }
+	@Override public void visitTerminal(TerminalNode node) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitErrorNode(@NotNull ErrorNode node) { }
+	@Override public void visitErrorNode(ErrorNode node) { }
 }

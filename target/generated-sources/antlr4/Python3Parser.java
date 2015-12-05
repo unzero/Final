@@ -1,4 +1,4 @@
-// Generated from Python3.g4 by ANTLR 4.4
+// Generated from Python3.g4 by ANTLR 4.5.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class Python3Parser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -31,21 +31,6 @@ public class Python3Parser extends Parser {
 		DIV_ASSIGN=82, MOD_ASSIGN=83, AND_ASSIGN=84, OR_ASSIGN=85, XOR_ASSIGN=86, 
 		LEFT_SHIFT_ASSIGN=87, RIGHT_SHIFT_ASSIGN=88, POWER_ASSIGN=89, IDIV_ASSIGN=90, 
 		SKIP=91, UNKNOWN_CHAR=92, INDENT=93, DEDENT=94;
-	public static final String[] tokenNames = {
-		"<INVALID>", "'def'", "'return'", "'raise'", "'from'", "'import'", "'as'", 
-		"'global'", "'nonlocal'", "'assert'", "'if'", "'elif'", "'else'", "'while'", 
-		"'for'", "'in'", "'try'", "'finally'", "'with'", "'except'", "'lambda'", 
-		"'or'", "'and'", "'not'", "'is'", "'None'", "'True'", "'False'", "'class'", 
-		"'yield'", "'del'", "'pass'", "'continue'", "'break'", "NEWLINE", "NAME", 
-		"STRING_LITERAL", "BYTES_LITERAL", "DECIMAL_INTEGER", "OCT_INTEGER", "HEX_INTEGER", 
-		"BIN_INTEGER", "FLOAT_NUMBER", "IMAG_NUMBER", "'.'", "'...'", "'*'", "'('", 
-		"')'", "','", "':'", "';'", "'**'", "'='", "'['", "']'", "'|'", "'^'", 
-		"'&'", "'<<'", "'>>'", "'+'", "'-'", "'/'", "'%'", "'//'", "'~'", "'{'", 
-		"'}'", "'<'", "'>'", "'=='", "'>='", "'<='", "'<>'", "'!='", "'@'", "'->'", 
-		"'+='", "'-='", "'*='", "'@='", "'/='", "'%='", "'&='", "'|='", "'^='", 
-		"'<<='", "'>>='", "'**='", "'//='", "SKIP", "UNKNOWN_CHAR", "INDENT", 
-		"DEDENT"
-	};
 	public static final int
 		RULE_single_input = 0, RULE_file_input = 1, RULE_eval_input = 2, RULE_decorator = 3, 
 		RULE_decorators = 4, RULE_decorated = 5, RULE_funcdef = 6, RULE_parameters = 7, 
@@ -87,11 +72,70 @@ public class Python3Parser extends Parser {
 		"yield_arg", "string", "number", "integer"
 	};
 
-	@Override
-	public String getGrammarFileName() { return "Python3.g4"; }
+	private static final String[] _LITERAL_NAMES = {
+		null, "'def'", "'return'", "'raise'", "'from'", "'import'", "'as'", "'global'", 
+		"'nonlocal'", "'assert'", "'if'", "'elif'", "'else'", "'while'", "'for'", 
+		"'in'", "'try'", "'finally'", "'with'", "'except'", "'lambda'", "'or'", 
+		"'and'", "'not'", "'is'", "'None'", "'True'", "'False'", "'class'", "'yield'", 
+		"'del'", "'pass'", "'continue'", "'break'", null, null, null, null, null, 
+		null, null, null, null, null, "'.'", "'...'", "'*'", "'('", "')'", "','", 
+		"':'", "';'", "'**'", "'='", "'['", "']'", "'|'", "'^'", "'&'", "'<<'", 
+		"'>>'", "'+'", "'-'", "'/'", "'%'", "'//'", "'~'", "'{'", "'}'", "'<'", 
+		"'>'", "'=='", "'>='", "'<='", "'<>'", "'!='", "'@'", "'->'", "'+='", 
+		"'-='", "'*='", "'@='", "'/='", "'%='", "'&='", "'|='", "'^='", "'<<='", 
+		"'>>='", "'**='", "'//='"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, "DEF", "RETURN", "RAISE", "FROM", "IMPORT", "AS", "GLOBAL", "NONLOCAL", 
+		"ASSERT", "IF", "ELIF", "ELSE", "WHILE", "FOR", "IN", "TRY", "FINALLY", 
+		"WITH", "EXCEPT", "LAMBDA", "OR", "AND", "NOT", "IS", "NONE", "TRUE", 
+		"FALSE", "CLASS", "YIELD", "DEL", "PASS", "CONTINUE", "BREAK", "NEWLINE", 
+		"NAME", "STRING_LITERAL", "BYTES_LITERAL", "DECIMAL_INTEGER", "OCT_INTEGER", 
+		"HEX_INTEGER", "BIN_INTEGER", "FLOAT_NUMBER", "IMAG_NUMBER", "DOT", "ELLIPSIS", 
+		"STAR", "OPEN_PAREN", "CLOSE_PAREN", "COMMA", "COLON", "SEMI_COLON", "POWER", 
+		"ASSIGN", "OPEN_BRACK", "CLOSE_BRACK", "OR_OP", "XOR", "AND_OP", "LEFT_SHIFT", 
+		"RIGHT_SHIFT", "ADD", "MINUS", "DIV", "MOD", "IDIV", "NOT_OP", "OPEN_BRACE", 
+		"CLOSE_BRACE", "LESS_THAN", "GREATER_THAN", "EQUALS", "GT_EQ", "LT_EQ", 
+		"NOT_EQ_1", "NOT_EQ_2", "AT", "ARROW", "ADD_ASSIGN", "SUB_ASSIGN", "MULT_ASSIGN", 
+		"AT_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN", "AND_ASSIGN", "OR_ASSIGN", "XOR_ASSIGN", 
+		"LEFT_SHIFT_ASSIGN", "RIGHT_SHIFT_ASSIGN", "POWER_ASSIGN", "IDIV_ASSIGN", 
+		"SKIP", "UNKNOWN_CHAR", "INDENT", "DEDENT"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
 
 	@Override
-	public String[] getTokenNames() { return tokenNames; }
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "Python3.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -142,7 +186,8 @@ public class Python3Parser extends Parser {
 			case NEWLINE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(168); match(NEWLINE);
+				setState(168);
+				match(NEWLINE);
 				}
 				break;
 			case RETURN:
@@ -181,7 +226,8 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(169); simple_stmt();
+				setState(169);
+				simple_stmt();
 				}
 				break;
 			case DEF:
@@ -194,8 +240,10 @@ public class Python3Parser extends Parser {
 			case AT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(170); compound_stmt();
-				setState(171); match(NEWLINE);
+				setState(170);
+				compound_stmt();
+				setState(171);
+				match(NEWLINE);
 				}
 				break;
 			default:
@@ -219,11 +267,11 @@ public class Python3Parser extends Parser {
 		public TerminalNode NEWLINE(int i) {
 			return getToken(Python3Parser.NEWLINE, i);
 		}
-		public StmtContext stmt(int i) {
-			return getRuleContext(StmtContext.class,i);
-		}
 		public List<StmtContext> stmt() {
 			return getRuleContexts(StmtContext.class);
+		}
+		public StmtContext stmt(int i) {
+			return getRuleContext(StmtContext.class,i);
 		}
 		public File_inputContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -260,7 +308,8 @@ public class Python3Parser extends Parser {
 				switch (_input.LA(1)) {
 				case NEWLINE:
 					{
-					setState(175); match(NEWLINE);
+					setState(175);
+					match(NEWLINE);
 					}
 					break;
 				case DEF:
@@ -306,7 +355,8 @@ public class Python3Parser extends Parser {
 				case OPEN_BRACE:
 				case AT:
 					{
-					setState(176); stmt();
+					setState(176);
+					stmt();
 					}
 					break;
 				default:
@@ -317,7 +367,8 @@ public class Python3Parser extends Parser {
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(182); match(EOF);
+			setState(182);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -332,13 +383,13 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Eval_inputContext extends ParserRuleContext {
+		public TestlistContext testlist() {
+			return getRuleContext(TestlistContext.class,0);
+		}
 		public TerminalNode EOF() { return getToken(Python3Parser.EOF, 0); }
 		public List<TerminalNode> NEWLINE() { return getTokens(Python3Parser.NEWLINE); }
 		public TerminalNode NEWLINE(int i) {
 			return getToken(Python3Parser.NEWLINE, i);
-		}
-		public TestlistContext testlist() {
-			return getRuleContext(TestlistContext.class,0);
 		}
 		public Eval_inputContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -366,21 +417,24 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(184); testlist();
+			setState(184);
+			testlist();
 			setState(188);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==NEWLINE) {
 				{
 				{
-				setState(185); match(NEWLINE);
+				setState(185);
+				match(NEWLINE);
 				}
 				}
 				setState(190);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(191); match(EOF);
+			setState(191);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -428,26 +482,32 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(193); match(AT);
-			setState(194); dotted_name();
+			setState(193);
+			match(AT);
+			setState(194);
+			dotted_name();
 			setState(200);
 			_la = _input.LA(1);
 			if (_la==OPEN_PAREN) {
 				{
-				setState(195); match(OPEN_PAREN);
+				setState(195);
+				match(OPEN_PAREN);
 				setState(197);
 				_la = _input.LA(1);
 				if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (POWER - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 					{
-					setState(196); arglist();
+					setState(196);
+					arglist();
 					}
 				}
 
-				setState(199); match(CLOSE_PAREN);
+				setState(199);
+				match(CLOSE_PAREN);
 				}
 			}
 
-			setState(202); match(NEWLINE);
+			setState(202);
+			match(NEWLINE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -462,11 +522,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class DecoratorsContext extends ParserRuleContext {
-		public DecoratorContext decorator(int i) {
-			return getRuleContext(DecoratorContext.class,i);
-		}
 		public List<DecoratorContext> decorator() {
 			return getRuleContexts(DecoratorContext.class);
+		}
+		public DecoratorContext decorator(int i) {
+			return getRuleContext(DecoratorContext.class,i);
 		}
 		public DecoratorsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -500,7 +560,8 @@ public class Python3Parser extends Parser {
 			do {
 				{
 				{
-				setState(204); decorator();
+				setState(204);
+				decorator();
 				}
 				}
 				setState(207); 
@@ -555,17 +616,20 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(209); decorators();
+			setState(209);
+			decorators();
 			setState(212);
 			switch (_input.LA(1)) {
 			case CLASS:
 				{
-				setState(210); classdef();
+				setState(210);
+				classdef();
 				}
 				break;
 			case DEF:
 				{
-				setState(211); funcdef();
+				setState(211);
+				funcdef();
 				}
 				break;
 			default:
@@ -585,16 +649,16 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class FuncdefContext extends ParserRuleContext {
+		public TerminalNode DEF() { return getToken(Python3Parser.DEF, 0); }
 		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
 		public ParametersContext parameters() {
 			return getRuleContext(ParametersContext.class,0);
 		}
-		public TerminalNode DEF() { return getToken(Python3Parser.DEF, 0); }
-		public TestContext test() {
-			return getRuleContext(TestContext.class,0);
-		}
 		public SuiteContext suite() {
 			return getRuleContext(SuiteContext.class,0);
+		}
+		public TestContext test() {
+			return getRuleContext(TestContext.class,0);
 		}
 		public FuncdefContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -622,20 +686,27 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(214); match(DEF);
-			setState(215); match(NAME);
-			setState(216); parameters();
+			setState(214);
+			match(DEF);
+			setState(215);
+			match(NAME);
+			setState(216);
+			parameters();
 			setState(219);
 			_la = _input.LA(1);
 			if (_la==ARROW) {
 				{
-				setState(217); match(ARROW);
-				setState(218); test();
+				setState(217);
+				match(ARROW);
+				setState(218);
+				test();
 				}
 			}
 
-			setState(221); match(COLON);
-			setState(222); suite();
+			setState(221);
+			match(COLON);
+			setState(222);
+			suite();
 			}
 		}
 		catch (RecognitionException re) {
@@ -679,16 +750,19 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(224); match(OPEN_PAREN);
+			setState(224);
+			match(OPEN_PAREN);
 			setState(226);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << NAME) | (1L << STAR) | (1L << POWER))) != 0)) {
 				{
-				setState(225); typedargslist();
+				setState(225);
+				typedargslist();
 				}
 			}
 
-			setState(228); match(CLOSE_PAREN);
+			setState(228);
+			match(CLOSE_PAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -703,14 +777,14 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class TypedargslistContext extends ParserRuleContext {
+		public List<TfpdefContext> tfpdef() {
+			return getRuleContexts(TfpdefContext.class);
+		}
 		public TfpdefContext tfpdef(int i) {
 			return getRuleContext(TfpdefContext.class,i);
 		}
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
-		}
-		public List<TfpdefContext> tfpdef() {
-			return getRuleContexts(TfpdefContext.class);
 		}
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
@@ -745,13 +819,16 @@ public class Python3Parser extends Parser {
 			case NAME:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(230); tfpdef();
+				setState(230);
+				tfpdef();
 				setState(233);
 				_la = _input.LA(1);
 				if (_la==ASSIGN) {
 					{
-					setState(231); match(ASSIGN);
-					setState(232); test();
+					setState(231);
+					match(ASSIGN);
+					setState(232);
+					test();
 					}
 				}
 
@@ -762,14 +839,18 @@ public class Python3Parser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(235); match(COMMA);
-						setState(236); tfpdef();
+						setState(235);
+						match(COMMA);
+						setState(236);
+						tfpdef();
 						setState(239);
 						_la = _input.LA(1);
 						if (_la==ASSIGN) {
 							{
-							setState(237); match(ASSIGN);
-							setState(238); test();
+							setState(237);
+							match(ASSIGN);
+							setState(238);
+							test();
 							}
 						}
 
@@ -784,17 +865,20 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(246); match(COMMA);
+					setState(246);
+					match(COMMA);
 					setState(269);
 					switch (_input.LA(1)) {
 					case STAR:
 						{
-						setState(247); match(STAR);
+						setState(247);
+						match(STAR);
 						setState(249);
 						_la = _input.LA(1);
 						if (_la==NAME) {
 							{
-							setState(248); tfpdef();
+							setState(248);
+							tfpdef();
 							}
 						}
 
@@ -805,14 +889,18 @@ public class Python3Parser extends Parser {
 							if ( _alt==1 ) {
 								{
 								{
-								setState(251); match(COMMA);
-								setState(252); tfpdef();
+								setState(251);
+								match(COMMA);
+								setState(252);
+								tfpdef();
 								setState(255);
 								_la = _input.LA(1);
 								if (_la==ASSIGN) {
 									{
-									setState(253); match(ASSIGN);
-									setState(254); test();
+									setState(253);
+									match(ASSIGN);
+									setState(254);
+									test();
 									}
 								}
 
@@ -827,9 +915,12 @@ public class Python3Parser extends Parser {
 						_la = _input.LA(1);
 						if (_la==COMMA) {
 							{
-							setState(262); match(COMMA);
-							setState(263); match(POWER);
-							setState(264); tfpdef();
+							setState(262);
+							match(COMMA);
+							setState(263);
+							match(POWER);
+							setState(264);
+							tfpdef();
 							}
 						}
 
@@ -837,8 +928,10 @@ public class Python3Parser extends Parser {
 						break;
 					case POWER:
 						{
-						setState(267); match(POWER);
-						setState(268); tfpdef();
+						setState(267);
+						match(POWER);
+						setState(268);
+						tfpdef();
 						}
 						break;
 					case CLOSE_PAREN:
@@ -854,12 +947,14 @@ public class Python3Parser extends Parser {
 			case STAR:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(273); match(STAR);
+				setState(273);
+				match(STAR);
 				setState(275);
 				_la = _input.LA(1);
 				if (_la==NAME) {
 					{
-					setState(274); tfpdef();
+					setState(274);
+					tfpdef();
 					}
 				}
 
@@ -870,14 +965,18 @@ public class Python3Parser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(277); match(COMMA);
-						setState(278); tfpdef();
+						setState(277);
+						match(COMMA);
+						setState(278);
+						tfpdef();
 						setState(281);
 						_la = _input.LA(1);
 						if (_la==ASSIGN) {
 							{
-							setState(279); match(ASSIGN);
-							setState(280); test();
+							setState(279);
+							match(ASSIGN);
+							setState(280);
+							test();
 							}
 						}
 
@@ -892,9 +991,12 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(288); match(COMMA);
-					setState(289); match(POWER);
-					setState(290); tfpdef();
+					setState(288);
+					match(COMMA);
+					setState(289);
+					match(POWER);
+					setState(290);
+					tfpdef();
 					}
 				}
 
@@ -903,8 +1005,10 @@ public class Python3Parser extends Parser {
 			case POWER:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(293); match(POWER);
-				setState(294); tfpdef();
+				setState(293);
+				match(POWER);
+				setState(294);
+				tfpdef();
 				}
 				break;
 			default:
@@ -953,13 +1057,16 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(297); match(NAME);
+			setState(297);
+			match(NAME);
 			setState(300);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(298); match(COLON);
-				setState(299); test();
+				setState(298);
+				match(COLON);
+				setState(299);
+				test();
 				}
 			}
 
@@ -977,11 +1084,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class VarargslistContext extends ParserRuleContext {
-		public VfpdefContext vfpdef(int i) {
-			return getRuleContext(VfpdefContext.class,i);
-		}
 		public List<VfpdefContext> vfpdef() {
 			return getRuleContexts(VfpdefContext.class);
+		}
+		public VfpdefContext vfpdef(int i) {
+			return getRuleContext(VfpdefContext.class,i);
 		}
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
@@ -1019,13 +1126,16 @@ public class Python3Parser extends Parser {
 			case NAME:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(302); vfpdef();
+				setState(302);
+				vfpdef();
 				setState(305);
 				_la = _input.LA(1);
 				if (_la==ASSIGN) {
 					{
-					setState(303); match(ASSIGN);
-					setState(304); test();
+					setState(303);
+					match(ASSIGN);
+					setState(304);
+					test();
 					}
 				}
 
@@ -1036,14 +1146,18 @@ public class Python3Parser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(307); match(COMMA);
-						setState(308); vfpdef();
+						setState(307);
+						match(COMMA);
+						setState(308);
+						vfpdef();
 						setState(311);
 						_la = _input.LA(1);
 						if (_la==ASSIGN) {
 							{
-							setState(309); match(ASSIGN);
-							setState(310); test();
+							setState(309);
+							match(ASSIGN);
+							setState(310);
+							test();
 							}
 						}
 
@@ -1058,17 +1172,20 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(318); match(COMMA);
+					setState(318);
+					match(COMMA);
 					setState(341);
 					switch (_input.LA(1)) {
 					case STAR:
 						{
-						setState(319); match(STAR);
+						setState(319);
+						match(STAR);
 						setState(321);
 						_la = _input.LA(1);
 						if (_la==NAME) {
 							{
-							setState(320); vfpdef();
+							setState(320);
+							vfpdef();
 							}
 						}
 
@@ -1079,14 +1196,18 @@ public class Python3Parser extends Parser {
 							if ( _alt==1 ) {
 								{
 								{
-								setState(323); match(COMMA);
-								setState(324); vfpdef();
+								setState(323);
+								match(COMMA);
+								setState(324);
+								vfpdef();
 								setState(327);
 								_la = _input.LA(1);
 								if (_la==ASSIGN) {
 									{
-									setState(325); match(ASSIGN);
-									setState(326); test();
+									setState(325);
+									match(ASSIGN);
+									setState(326);
+									test();
 									}
 								}
 
@@ -1101,9 +1222,12 @@ public class Python3Parser extends Parser {
 						_la = _input.LA(1);
 						if (_la==COMMA) {
 							{
-							setState(334); match(COMMA);
-							setState(335); match(POWER);
-							setState(336); vfpdef();
+							setState(334);
+							match(COMMA);
+							setState(335);
+							match(POWER);
+							setState(336);
+							vfpdef();
 							}
 						}
 
@@ -1111,8 +1235,10 @@ public class Python3Parser extends Parser {
 						break;
 					case POWER:
 						{
-						setState(339); match(POWER);
-						setState(340); vfpdef();
+						setState(339);
+						match(POWER);
+						setState(340);
+						vfpdef();
 						}
 						break;
 					case COLON:
@@ -1128,12 +1254,14 @@ public class Python3Parser extends Parser {
 			case STAR:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(345); match(STAR);
+				setState(345);
+				match(STAR);
 				setState(347);
 				_la = _input.LA(1);
 				if (_la==NAME) {
 					{
-					setState(346); vfpdef();
+					setState(346);
+					vfpdef();
 					}
 				}
 
@@ -1144,14 +1272,18 @@ public class Python3Parser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(349); match(COMMA);
-						setState(350); vfpdef();
+						setState(349);
+						match(COMMA);
+						setState(350);
+						vfpdef();
 						setState(353);
 						_la = _input.LA(1);
 						if (_la==ASSIGN) {
 							{
-							setState(351); match(ASSIGN);
-							setState(352); test();
+							setState(351);
+							match(ASSIGN);
+							setState(352);
+							test();
 							}
 						}
 
@@ -1166,9 +1298,12 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(360); match(COMMA);
-					setState(361); match(POWER);
-					setState(362); vfpdef();
+					setState(360);
+					match(COMMA);
+					setState(361);
+					match(POWER);
+					setState(362);
+					vfpdef();
 					}
 				}
 
@@ -1177,8 +1312,10 @@ public class Python3Parser extends Parser {
 			case POWER:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(365); match(POWER);
-				setState(366); vfpdef();
+				setState(365);
+				match(POWER);
+				setState(366);
+				vfpdef();
 				}
 				break;
 			default:
@@ -1223,7 +1360,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(369); match(NAME);
+			setState(369);
+			match(NAME);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1305,7 +1443,8 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(371); simple_stmt();
+				setState(371);
+				simple_stmt();
 				}
 				break;
 			case DEF:
@@ -1318,7 +1457,8 @@ public class Python3Parser extends Parser {
 			case AT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(372); compound_stmt();
+				setState(372);
+				compound_stmt();
 				}
 				break;
 			default:
@@ -1371,7 +1511,8 @@ public class Python3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(375); small_stmt();
+			setState(375);
+			small_stmt();
 			setState(380);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,40,_ctx);
@@ -1379,8 +1520,10 @@ public class Python3Parser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(376); match(SEMI_COLON);
-					setState(377); small_stmt();
+					setState(376);
+					match(SEMI_COLON);
+					setState(377);
+					small_stmt();
 					}
 					} 
 				}
@@ -1392,11 +1535,13 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==SEMI_COLON) {
 				{
-				setState(383); match(SEMI_COLON);
+				setState(383);
+				match(SEMI_COLON);
 				}
 			}
 
-			setState(386); match(NEWLINE);
+			setState(386);
+			match(NEWLINE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1411,29 +1556,29 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Small_stmtContext extends ParserRuleContext {
+		public Expr_stmtContext expr_stmt() {
+			return getRuleContext(Expr_stmtContext.class,0);
+		}
+		public Del_stmtContext del_stmt() {
+			return getRuleContext(Del_stmtContext.class,0);
+		}
+		public Pass_stmtContext pass_stmt() {
+			return getRuleContext(Pass_stmtContext.class,0);
+		}
+		public Flow_stmtContext flow_stmt() {
+			return getRuleContext(Flow_stmtContext.class,0);
+		}
 		public Import_stmtContext import_stmt() {
 			return getRuleContext(Import_stmtContext.class,0);
+		}
+		public Global_stmtContext global_stmt() {
+			return getRuleContext(Global_stmtContext.class,0);
 		}
 		public Nonlocal_stmtContext nonlocal_stmt() {
 			return getRuleContext(Nonlocal_stmtContext.class,0);
 		}
 		public Assert_stmtContext assert_stmt() {
 			return getRuleContext(Assert_stmtContext.class,0);
-		}
-		public Flow_stmtContext flow_stmt() {
-			return getRuleContext(Flow_stmtContext.class,0);
-		}
-		public Pass_stmtContext pass_stmt() {
-			return getRuleContext(Pass_stmtContext.class,0);
-		}
-		public Del_stmtContext del_stmt() {
-			return getRuleContext(Del_stmtContext.class,0);
-		}
-		public Global_stmtContext global_stmt() {
-			return getRuleContext(Global_stmtContext.class,0);
-		}
-		public Expr_stmtContext expr_stmt() {
-			return getRuleContext(Expr_stmtContext.class,0);
 		}
 		public Small_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1484,19 +1629,22 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(388); expr_stmt();
+				setState(388);
+				expr_stmt();
 				}
 				break;
 			case DEL:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(389); del_stmt();
+				setState(389);
+				del_stmt();
 				}
 				break;
 			case PASS:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(390); pass_stmt();
+				setState(390);
+				pass_stmt();
 				}
 				break;
 			case RETURN:
@@ -1506,32 +1654,37 @@ public class Python3Parser extends Parser {
 			case BREAK:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(391); flow_stmt();
+				setState(391);
+				flow_stmt();
 				}
 				break;
 			case FROM:
 			case IMPORT:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(392); import_stmt();
+				setState(392);
+				import_stmt();
 				}
 				break;
 			case GLOBAL:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(393); global_stmt();
+				setState(393);
+				global_stmt();
 				}
 				break;
 			case NONLOCAL:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(394); nonlocal_stmt();
+				setState(394);
+				nonlocal_stmt();
 				}
 				break;
 			case ASSERT:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(395); assert_stmt();
+				setState(395);
+				assert_stmt();
 				}
 				break;
 			default:
@@ -1553,17 +1706,17 @@ public class Python3Parser extends Parser {
 		public List<Testlist_star_exprContext> testlist_star_expr() {
 			return getRuleContexts(Testlist_star_exprContext.class);
 		}
+		public Testlist_star_exprContext testlist_star_expr(int i) {
+			return getRuleContext(Testlist_star_exprContext.class,i);
+		}
+		public AugassignContext augassign() {
+			return getRuleContext(AugassignContext.class,0);
+		}
 		public List<Yield_exprContext> yield_expr() {
 			return getRuleContexts(Yield_exprContext.class);
 		}
 		public Yield_exprContext yield_expr(int i) {
 			return getRuleContext(Yield_exprContext.class,i);
-		}
-		public AugassignContext augassign() {
-			return getRuleContext(AugassignContext.class,0);
-		}
-		public Testlist_star_exprContext testlist_star_expr(int i) {
-			return getRuleContext(Testlist_star_exprContext.class,i);
 		}
 		public TestlistContext testlist() {
 			return getRuleContext(TestlistContext.class,0);
@@ -1594,7 +1747,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(398); testlist_star_expr();
+			setState(398);
+			testlist_star_expr();
 			setState(414);
 			switch (_input.LA(1)) {
 			case ADD_ASSIGN:
@@ -1611,12 +1765,14 @@ public class Python3Parser extends Parser {
 			case POWER_ASSIGN:
 			case IDIV_ASSIGN:
 				{
-				setState(399); augassign();
+				setState(399);
+				augassign();
 				setState(402);
 				switch (_input.LA(1)) {
 				case YIELD:
 					{
-					setState(400); yield_expr();
+					setState(400);
+					yield_expr();
 					}
 					break;
 				case LAMBDA:
@@ -1642,7 +1798,8 @@ public class Python3Parser extends Parser {
 				case NOT_OP:
 				case OPEN_BRACE:
 					{
-					setState(401); testlist();
+					setState(401);
+					testlist();
 					}
 					break;
 				default:
@@ -1660,12 +1817,14 @@ public class Python3Parser extends Parser {
 				while (_la==ASSIGN) {
 					{
 					{
-					setState(404); match(ASSIGN);
+					setState(404);
+					match(ASSIGN);
 					setState(407);
 					switch (_input.LA(1)) {
 					case YIELD:
 						{
-						setState(405); yield_expr();
+						setState(405);
+						yield_expr();
 						}
 						break;
 					case LAMBDA:
@@ -1691,7 +1850,8 @@ public class Python3Parser extends Parser {
 					case NOT_OP:
 					case OPEN_BRACE:
 						{
-						setState(406); testlist_star_expr();
+						setState(406);
+						testlist_star_expr();
 						}
 						break;
 					default:
@@ -1722,17 +1882,17 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Testlist_star_exprContext extends ParserRuleContext {
-		public List<Star_exprContext> star_expr() {
-			return getRuleContexts(Star_exprContext.class);
-		}
-		public Star_exprContext star_expr(int i) {
-			return getRuleContext(Star_exprContext.class,i);
-		}
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
 		}
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
+		}
+		public List<Star_exprContext> star_expr() {
+			return getRuleContexts(Star_exprContext.class);
+		}
+		public Star_exprContext star_expr(int i) {
+			return getRuleContext(Star_exprContext.class,i);
 		}
 		public Testlist_star_exprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1765,12 +1925,14 @@ public class Python3Parser extends Parser {
 			switch ( getInterpreter().adaptivePredict(_input,47,_ctx) ) {
 			case 1:
 				{
-				setState(416); test();
+				setState(416);
+				test();
 				}
 				break;
 			case 2:
 				{
-				setState(417); star_expr();
+				setState(417);
+				star_expr();
 				}
 				break;
 			}
@@ -1781,17 +1943,20 @@ public class Python3Parser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(420); match(COMMA);
+					setState(420);
+					match(COMMA);
 					setState(423);
 					switch ( getInterpreter().adaptivePredict(_input,48,_ctx) ) {
 					case 1:
 						{
-						setState(421); test();
+						setState(421);
+						test();
 						}
 						break;
 					case 2:
 						{
-						setState(422); star_expr();
+						setState(422);
+						star_expr();
 						}
 						break;
 					}
@@ -1806,7 +1971,8 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(430); match(COMMA);
+				setState(430);
+				match(COMMA);
 				}
 			}
 
@@ -1854,8 +2020,9 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if ( !(((((_la - 78)) & ~0x3f) == 0 && ((1L << (_la - 78)) & ((1L << (ADD_ASSIGN - 78)) | (1L << (SUB_ASSIGN - 78)) | (1L << (MULT_ASSIGN - 78)) | (1L << (AT_ASSIGN - 78)) | (1L << (DIV_ASSIGN - 78)) | (1L << (MOD_ASSIGN - 78)) | (1L << (AND_ASSIGN - 78)) | (1L << (OR_ASSIGN - 78)) | (1L << (XOR_ASSIGN - 78)) | (1L << (LEFT_SHIFT_ASSIGN - 78)) | (1L << (RIGHT_SHIFT_ASSIGN - 78)) | (1L << (POWER_ASSIGN - 78)) | (1L << (IDIV_ASSIGN - 78)))) != 0)) ) {
 			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1899,8 +2066,10 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(435); match(DEL);
-			setState(436); exprlist();
+			setState(435);
+			match(DEL);
+			setState(436);
+			exprlist();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1941,7 +2110,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(438); match(PASS);
+			setState(438);
+			match(PASS);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1956,11 +2126,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Flow_stmtContext extends ParserRuleContext {
+		public Break_stmtContext break_stmt() {
+			return getRuleContext(Break_stmtContext.class,0);
+		}
 		public Continue_stmtContext continue_stmt() {
 			return getRuleContext(Continue_stmtContext.class,0);
-		}
-		public Yield_stmtContext yield_stmt() {
-			return getRuleContext(Yield_stmtContext.class,0);
 		}
 		public Return_stmtContext return_stmt() {
 			return getRuleContext(Return_stmtContext.class,0);
@@ -1968,8 +2138,8 @@ public class Python3Parser extends Parser {
 		public Raise_stmtContext raise_stmt() {
 			return getRuleContext(Raise_stmtContext.class,0);
 		}
-		public Break_stmtContext break_stmt() {
-			return getRuleContext(Break_stmtContext.class,0);
+		public Yield_stmtContext yield_stmt() {
+			return getRuleContext(Yield_stmtContext.class,0);
 		}
 		public Flow_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1999,31 +2169,36 @@ public class Python3Parser extends Parser {
 			case BREAK:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(440); break_stmt();
+				setState(440);
+				break_stmt();
 				}
 				break;
 			case CONTINUE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(441); continue_stmt();
+				setState(441);
+				continue_stmt();
 				}
 				break;
 			case RETURN:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(442); return_stmt();
+				setState(442);
+				return_stmt();
 				}
 				break;
 			case RAISE:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(443); raise_stmt();
+				setState(443);
+				raise_stmt();
 				}
 				break;
 			case YIELD:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(444); yield_stmt();
+				setState(444);
+				yield_stmt();
 				}
 				break;
 			default:
@@ -2068,7 +2243,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(447); match(BREAK);
+			setState(447);
+			match(BREAK);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2109,7 +2285,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(449); match(CONTINUE);
+			setState(449);
+			match(CONTINUE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2154,12 +2331,14 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(451); match(RETURN);
+			setState(451);
+			match(RETURN);
 			setState(453);
 			_la = _input.LA(1);
 			if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 				{
-				setState(452); testlist();
+				setState(452);
+				testlist();
 				}
 			}
 
@@ -2205,7 +2384,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(455); yield_expr();
+			setState(455);
+			yield_expr();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2220,14 +2400,14 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Raise_stmtContext extends ParserRuleContext {
+		public TerminalNode RAISE() { return getToken(Python3Parser.RAISE, 0); }
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
 		}
-		public TerminalNode RAISE() { return getToken(Python3Parser.RAISE, 0); }
-		public TerminalNode FROM() { return getToken(Python3Parser.FROM, 0); }
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
 		}
+		public TerminalNode FROM() { return getToken(Python3Parser.FROM, 0); }
 		public Raise_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2254,18 +2434,22 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(457); match(RAISE);
+			setState(457);
+			match(RAISE);
 			setState(463);
 			_la = _input.LA(1);
 			if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 				{
-				setState(458); test();
+				setState(458);
+				test();
 				setState(461);
 				_la = _input.LA(1);
 				if (_la==FROM) {
 					{
-					setState(459); match(FROM);
-					setState(460); test();
+					setState(459);
+					match(FROM);
+					setState(460);
+					test();
 					}
 				}
 
@@ -2286,11 +2470,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Import_stmtContext extends ParserRuleContext {
-		public Import_fromContext import_from() {
-			return getRuleContext(Import_fromContext.class,0);
-		}
 		public Import_nameContext import_name() {
 			return getRuleContext(Import_nameContext.class,0);
+		}
+		public Import_fromContext import_from() {
+			return getRuleContext(Import_fromContext.class,0);
 		}
 		public Import_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2320,13 +2504,15 @@ public class Python3Parser extends Parser {
 			case IMPORT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(465); import_name();
+				setState(465);
+				import_name();
 				}
 				break;
 			case FROM:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(466); import_from();
+				setState(466);
+				import_from();
 				}
 				break;
 			default:
@@ -2345,10 +2531,10 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Import_nameContext extends ParserRuleContext {
+		public TerminalNode IMPORT() { return getToken(Python3Parser.IMPORT, 0); }
 		public Dotted_as_namesContext dotted_as_names() {
 			return getRuleContext(Dotted_as_namesContext.class,0);
 		}
-		public TerminalNode IMPORT() { return getToken(Python3Parser.IMPORT, 0); }
 		public Import_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2374,8 +2560,10 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(469); match(IMPORT);
-			setState(470); dotted_as_names();
+			setState(469);
+			match(IMPORT);
+			setState(470);
+			dotted_as_names();
 			}
 		}
 		catch (RecognitionException re) {
@@ -2390,14 +2578,14 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Import_fromContext extends ParserRuleContext {
+		public TerminalNode FROM() { return getToken(Python3Parser.FROM, 0); }
+		public TerminalNode IMPORT() { return getToken(Python3Parser.IMPORT, 0); }
 		public Dotted_nameContext dotted_name() {
 			return getRuleContext(Dotted_nameContext.class,0);
 		}
 		public Import_as_namesContext import_as_names() {
 			return getRuleContext(Import_as_namesContext.class,0);
 		}
-		public TerminalNode IMPORT() { return getToken(Python3Parser.IMPORT, 0); }
-		public TerminalNode FROM() { return getToken(Python3Parser.FROM, 0); }
 		public Import_fromContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2424,7 +2612,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(472); match(FROM);
+			setState(472);
+			match(FROM);
 			setState(485);
 			switch ( getInterpreter().adaptivePredict(_input,58,_ctx) ) {
 			case 1:
@@ -2439,15 +2628,17 @@ public class Python3Parser extends Parser {
 					_la = _input.LA(1);
 					if ( !(_la==DOT || _la==ELLIPSIS) ) {
 					_errHandler.recoverInline(this);
+					} else {
+						consume();
 					}
-					consume();
 					}
 					}
 					setState(478);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(479); dotted_name();
+				setState(479);
+				dotted_name();
 				}
 				break;
 			case 2:
@@ -2462,8 +2653,9 @@ public class Python3Parser extends Parser {
 					_la = _input.LA(1);
 					if ( !(_la==DOT || _la==ELLIPSIS) ) {
 					_errHandler.recoverInline(this);
+					} else {
+						consume();
 					}
-					consume();
 					}
 					}
 					setState(483); 
@@ -2473,24 +2665,30 @@ public class Python3Parser extends Parser {
 				}
 				break;
 			}
-			setState(487); match(IMPORT);
+			setState(487);
+			match(IMPORT);
 			setState(494);
 			switch (_input.LA(1)) {
 			case STAR:
 				{
-				setState(488); match(STAR);
+				setState(488);
+				match(STAR);
 				}
 				break;
 			case OPEN_PAREN:
 				{
-				setState(489); match(OPEN_PAREN);
-				setState(490); import_as_names();
-				setState(491); match(CLOSE_PAREN);
+				setState(489);
+				match(OPEN_PAREN);
+				setState(490);
+				import_as_names();
+				setState(491);
+				match(CLOSE_PAREN);
 				}
 				break;
 			case NAME:
 				{
-				setState(493); import_as_names();
+				setState(493);
+				import_as_names();
 				}
 				break;
 			default:
@@ -2510,10 +2708,10 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Import_as_nameContext extends ParserRuleContext {
+		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
 		public TerminalNode NAME(int i) {
 			return getToken(Python3Parser.NAME, i);
 		}
-		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
 		public TerminalNode AS() { return getToken(Python3Parser.AS, 0); }
 		public Import_as_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2541,13 +2739,16 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(496); match(NAME);
+			setState(496);
+			match(NAME);
 			setState(499);
 			_la = _input.LA(1);
 			if (_la==AS) {
 				{
-				setState(497); match(AS);
-				setState(498); match(NAME);
+				setState(497);
+				match(AS);
+				setState(498);
+				match(NAME);
 				}
 			}
 
@@ -2568,8 +2769,8 @@ public class Python3Parser extends Parser {
 		public Dotted_nameContext dotted_name() {
 			return getRuleContext(Dotted_nameContext.class,0);
 		}
-		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
 		public TerminalNode AS() { return getToken(Python3Parser.AS, 0); }
+		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
 		public Dotted_as_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2596,13 +2797,16 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(501); dotted_name();
+			setState(501);
+			dotted_name();
 			setState(504);
 			_la = _input.LA(1);
 			if (_la==AS) {
 				{
-				setState(502); match(AS);
-				setState(503); match(NAME);
+				setState(502);
+				match(AS);
+				setState(503);
+				match(NAME);
 				}
 			}
 
@@ -2653,7 +2857,8 @@ public class Python3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(506); import_as_name();
+			setState(506);
+			import_as_name();
 			setState(511);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,62,_ctx);
@@ -2661,8 +2866,10 @@ public class Python3Parser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(507); match(COMMA);
-					setState(508); import_as_name();
+					setState(507);
+					match(COMMA);
+					setState(508);
+					import_as_name();
 					}
 					} 
 				}
@@ -2674,7 +2881,8 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(514); match(COMMA);
+				setState(514);
+				match(COMMA);
 				}
 			}
 
@@ -2724,15 +2932,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(517); dotted_as_name();
+			setState(517);
+			dotted_as_name();
 			setState(522);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(518); match(COMMA);
-				setState(519); dotted_as_name();
+				setState(518);
+				match(COMMA);
+				setState(519);
+				dotted_as_name();
 				}
 				}
 				setState(524);
@@ -2753,10 +2964,10 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Dotted_nameContext extends ParserRuleContext {
+		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
 		public TerminalNode NAME(int i) {
 			return getToken(Python3Parser.NAME, i);
 		}
-		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
 		public Dotted_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2783,15 +2994,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(525); match(NAME);
+			setState(525);
+			match(NAME);
 			setState(530);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==DOT) {
 				{
 				{
-				setState(526); match(DOT);
-				setState(527); match(NAME);
+				setState(526);
+				match(DOT);
+				setState(527);
+				match(NAME);
 				}
 				}
 				setState(532);
@@ -2812,11 +3026,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Global_stmtContext extends ParserRuleContext {
+		public TerminalNode GLOBAL() { return getToken(Python3Parser.GLOBAL, 0); }
+		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
 		public TerminalNode NAME(int i) {
 			return getToken(Python3Parser.NAME, i);
 		}
-		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
-		public TerminalNode GLOBAL() { return getToken(Python3Parser.GLOBAL, 0); }
 		public Global_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2843,16 +3057,20 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(533); match(GLOBAL);
-			setState(534); match(NAME);
+			setState(533);
+			match(GLOBAL);
+			setState(534);
+			match(NAME);
 			setState(539);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(535); match(COMMA);
-				setState(536); match(NAME);
+				setState(535);
+				match(COMMA);
+				setState(536);
+				match(NAME);
 				}
 				}
 				setState(541);
@@ -2873,11 +3091,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Nonlocal_stmtContext extends ParserRuleContext {
+		public TerminalNode NONLOCAL() { return getToken(Python3Parser.NONLOCAL, 0); }
+		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
 		public TerminalNode NAME(int i) {
 			return getToken(Python3Parser.NAME, i);
 		}
-		public List<TerminalNode> NAME() { return getTokens(Python3Parser.NAME); }
-		public TerminalNode NONLOCAL() { return getToken(Python3Parser.NONLOCAL, 0); }
 		public Nonlocal_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2904,16 +3122,20 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(542); match(NONLOCAL);
-			setState(543); match(NAME);
+			setState(542);
+			match(NONLOCAL);
+			setState(543);
+			match(NAME);
 			setState(548);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(544); match(COMMA);
-				setState(545); match(NAME);
+				setState(544);
+				match(COMMA);
+				setState(545);
+				match(NAME);
 				}
 				}
 				setState(550);
@@ -2967,14 +3189,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(551); match(ASSERT);
-			setState(552); test();
+			setState(551);
+			match(ASSERT);
+			setState(552);
+			test();
 			setState(555);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(553); match(COMMA);
-				setState(554); test();
+				setState(553);
+				match(COMMA);
+				setState(554);
+				test();
 				}
 			}
 
@@ -2992,14 +3218,20 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Compound_stmtContext extends ParserRuleContext {
+		public If_stmtContext if_stmt() {
+			return getRuleContext(If_stmtContext.class,0);
+		}
 		public While_stmtContext while_stmt() {
 			return getRuleContext(While_stmtContext.class,0);
+		}
+		public For_stmtContext for_stmt() {
+			return getRuleContext(For_stmtContext.class,0);
 		}
 		public Try_stmtContext try_stmt() {
 			return getRuleContext(Try_stmtContext.class,0);
 		}
-		public For_stmtContext for_stmt() {
-			return getRuleContext(For_stmtContext.class,0);
+		public With_stmtContext with_stmt() {
+			return getRuleContext(With_stmtContext.class,0);
 		}
 		public FuncdefContext funcdef() {
 			return getRuleContext(FuncdefContext.class,0);
@@ -3009,12 +3241,6 @@ public class Python3Parser extends Parser {
 		}
 		public DecoratedContext decorated() {
 			return getRuleContext(DecoratedContext.class,0);
-		}
-		public If_stmtContext if_stmt() {
-			return getRuleContext(If_stmtContext.class,0);
-		}
-		public With_stmtContext with_stmt() {
-			return getRuleContext(With_stmtContext.class,0);
 		}
 		public Compound_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3044,49 +3270,57 @@ public class Python3Parser extends Parser {
 			case IF:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(557); if_stmt();
+				setState(557);
+				if_stmt();
 				}
 				break;
 			case WHILE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(558); while_stmt();
+				setState(558);
+				while_stmt();
 				}
 				break;
 			case FOR:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(559); for_stmt();
+				setState(559);
+				for_stmt();
 				}
 				break;
 			case TRY:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(560); try_stmt();
+				setState(560);
+				try_stmt();
 				}
 				break;
 			case WITH:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(561); with_stmt();
+				setState(561);
+				with_stmt();
 				}
 				break;
 			case DEF:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(562); funcdef();
+				setState(562);
+				funcdef();
 				}
 				break;
 			case CLASS:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(563); classdef();
+				setState(563);
+				classdef();
 				}
 				break;
 			case AT:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(564); decorated();
+				setState(564);
+				decorated();
 				}
 				break;
 			default:
@@ -3105,15 +3339,7 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class If_stmtContext extends ParserRuleContext {
-		public List<TerminalNode> ELIF() { return getTokens(Python3Parser.ELIF); }
-		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
 		public TerminalNode IF() { return getToken(Python3Parser.IF, 0); }
-		public TerminalNode ELIF(int i) {
-			return getToken(Python3Parser.ELIF, i);
-		}
-		public SuiteContext suite(int i) {
-			return getRuleContext(SuiteContext.class,i);
-		}
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
 		}
@@ -3123,6 +3349,14 @@ public class Python3Parser extends Parser {
 		public List<SuiteContext> suite() {
 			return getRuleContexts(SuiteContext.class);
 		}
+		public SuiteContext suite(int i) {
+			return getRuleContext(SuiteContext.class,i);
+		}
+		public List<TerminalNode> ELIF() { return getTokens(Python3Parser.ELIF); }
+		public TerminalNode ELIF(int i) {
+			return getToken(Python3Parser.ELIF, i);
+		}
+		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
 		public If_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3149,20 +3383,28 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(567); match(IF);
-			setState(568); test();
-			setState(569); match(COLON);
-			setState(570); suite();
+			setState(567);
+			match(IF);
+			setState(568);
+			test();
+			setState(569);
+			match(COLON);
+			setState(570);
+			suite();
 			setState(578);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==ELIF) {
 				{
 				{
-				setState(571); match(ELIF);
-				setState(572); test();
-				setState(573); match(COLON);
-				setState(574); suite();
+				setState(571);
+				match(ELIF);
+				setState(572);
+				test();
+				setState(573);
+				match(COLON);
+				setState(574);
+				suite();
 				}
 				}
 				setState(580);
@@ -3173,9 +3415,12 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==ELSE) {
 				{
-				setState(581); match(ELSE);
-				setState(582); match(COLON);
-				setState(583); suite();
+				setState(581);
+				match(ELSE);
+				setState(582);
+				match(COLON);
+				setState(583);
+				suite();
 				}
 			}
 
@@ -3193,17 +3438,17 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class While_stmtContext extends ParserRuleContext {
-		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
-		public SuiteContext suite(int i) {
-			return getRuleContext(SuiteContext.class,i);
-		}
+		public TerminalNode WHILE() { return getToken(Python3Parser.WHILE, 0); }
 		public TestContext test() {
 			return getRuleContext(TestContext.class,0);
 		}
-		public TerminalNode WHILE() { return getToken(Python3Parser.WHILE, 0); }
 		public List<SuiteContext> suite() {
 			return getRuleContexts(SuiteContext.class);
 		}
+		public SuiteContext suite(int i) {
+			return getRuleContext(SuiteContext.class,i);
+		}
+		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
 		public While_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3230,17 +3475,24 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(586); match(WHILE);
-			setState(587); test();
-			setState(588); match(COLON);
-			setState(589); suite();
+			setState(586);
+			match(WHILE);
+			setState(587);
+			test();
+			setState(588);
+			match(COLON);
+			setState(589);
+			suite();
 			setState(593);
 			_la = _input.LA(1);
 			if (_la==ELSE) {
 				{
-				setState(590); match(ELSE);
-				setState(591); match(COLON);
-				setState(592); suite();
+				setState(590);
+				match(ELSE);
+				setState(591);
+				match(COLON);
+				setState(592);
+				suite();
 				}
 			}
 
@@ -3258,10 +3510,6 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class For_stmtContext extends ParserRuleContext {
-		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
-		public SuiteContext suite(int i) {
-			return getRuleContext(SuiteContext.class,i);
-		}
 		public TerminalNode FOR() { return getToken(Python3Parser.FOR, 0); }
 		public ExprlistContext exprlist() {
 			return getRuleContext(ExprlistContext.class,0);
@@ -3273,6 +3521,10 @@ public class Python3Parser extends Parser {
 		public List<SuiteContext> suite() {
 			return getRuleContexts(SuiteContext.class);
 		}
+		public SuiteContext suite(int i) {
+			return getRuleContext(SuiteContext.class,i);
+		}
+		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
 		public For_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3299,19 +3551,28 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(595); match(FOR);
-			setState(596); exprlist();
-			setState(597); match(IN);
-			setState(598); testlist();
-			setState(599); match(COLON);
-			setState(600); suite();
+			setState(595);
+			match(FOR);
+			setState(596);
+			exprlist();
+			setState(597);
+			match(IN);
+			setState(598);
+			testlist();
+			setState(599);
+			match(COLON);
+			setState(600);
+			suite();
 			setState(604);
 			_la = _input.LA(1);
 			if (_la==ELSE) {
 				{
-				setState(601); match(ELSE);
-				setState(602); match(COLON);
-				setState(603); suite();
+				setState(601);
+				match(ELSE);
+				setState(602);
+				match(COLON);
+				setState(603);
+				suite();
 				}
 			}
 
@@ -3330,20 +3591,20 @@ public class Python3Parser extends Parser {
 
 	public static class Try_stmtContext extends ParserRuleContext {
 		public TerminalNode TRY() { return getToken(Python3Parser.TRY, 0); }
-		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
+		public List<SuiteContext> suite() {
+			return getRuleContexts(SuiteContext.class);
+		}
 		public SuiteContext suite(int i) {
 			return getRuleContext(SuiteContext.class,i);
-		}
-		public Except_clauseContext except_clause(int i) {
-			return getRuleContext(Except_clauseContext.class,i);
 		}
 		public TerminalNode FINALLY() { return getToken(Python3Parser.FINALLY, 0); }
 		public List<Except_clauseContext> except_clause() {
 			return getRuleContexts(Except_clauseContext.class);
 		}
-		public List<SuiteContext> suite() {
-			return getRuleContexts(SuiteContext.class);
+		public Except_clauseContext except_clause(int i) {
+			return getRuleContext(Except_clauseContext.class,i);
 		}
+		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
 		public Try_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3370,9 +3631,12 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(606); match(TRY);
-			setState(607); match(COLON);
-			setState(608); suite();
+			setState(606);
+			match(TRY);
+			setState(607);
+			match(COLON);
+			setState(608);
+			suite();
 			setState(630);
 			switch (_input.LA(1)) {
 			case EXCEPT:
@@ -3383,9 +3647,12 @@ public class Python3Parser extends Parser {
 				do {
 					{
 					{
-					setState(609); except_clause();
-					setState(610); match(COLON);
-					setState(611); suite();
+					setState(609);
+					except_clause();
+					setState(610);
+					match(COLON);
+					setState(611);
+					suite();
 					}
 					}
 					setState(615); 
@@ -3396,9 +3663,12 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==ELSE) {
 					{
-					setState(617); match(ELSE);
-					setState(618); match(COLON);
-					setState(619); suite();
+					setState(617);
+					match(ELSE);
+					setState(618);
+					match(COLON);
+					setState(619);
+					suite();
 					}
 				}
 
@@ -3406,9 +3676,12 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==FINALLY) {
 					{
-					setState(622); match(FINALLY);
-					setState(623); match(COLON);
-					setState(624); suite();
+					setState(622);
+					match(FINALLY);
+					setState(623);
+					match(COLON);
+					setState(624);
+					suite();
 					}
 				}
 
@@ -3416,9 +3689,12 @@ public class Python3Parser extends Parser {
 				break;
 			case FINALLY:
 				{
-				setState(627); match(FINALLY);
-				setState(628); match(COLON);
-				setState(629); suite();
+				setState(627);
+				match(FINALLY);
+				setState(628);
+				match(COLON);
+				setState(629);
+				suite();
 				}
 				break;
 			default:
@@ -3438,10 +3714,10 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class With_stmtContext extends ParserRuleContext {
+		public TerminalNode WITH() { return getToken(Python3Parser.WITH, 0); }
 		public List<With_itemContext> with_item() {
 			return getRuleContexts(With_itemContext.class);
 		}
-		public TerminalNode WITH() { return getToken(Python3Parser.WITH, 0); }
 		public With_itemContext with_item(int i) {
 			return getRuleContext(With_itemContext.class,i);
 		}
@@ -3474,24 +3750,30 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(632); match(WITH);
-			setState(633); with_item();
+			setState(632);
+			match(WITH);
+			setState(633);
+			with_item();
 			setState(638);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(634); match(COMMA);
-				setState(635); with_item();
+				setState(634);
+				match(COMMA);
+				setState(635);
+				with_item();
 				}
 				}
 				setState(640);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(641); match(COLON);
-			setState(642); suite();
+			setState(641);
+			match(COLON);
+			setState(642);
+			suite();
 			}
 		}
 		catch (RecognitionException re) {
@@ -3506,13 +3788,13 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class With_itemContext extends ParserRuleContext {
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
 		public TestContext test() {
 			return getRuleContext(TestContext.class,0);
 		}
 		public TerminalNode AS() { return getToken(Python3Parser.AS, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
 		public With_itemContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3539,13 +3821,16 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(644); test();
+			setState(644);
+			test();
 			setState(647);
 			_la = _input.LA(1);
 			if (_la==AS) {
 				{
-				setState(645); match(AS);
-				setState(646); expr();
+				setState(645);
+				match(AS);
+				setState(646);
+				expr();
 				}
 			}
 
@@ -3563,12 +3848,12 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Except_clauseContext extends ParserRuleContext {
-		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
+		public TerminalNode EXCEPT() { return getToken(Python3Parser.EXCEPT, 0); }
 		public TestContext test() {
 			return getRuleContext(TestContext.class,0);
 		}
-		public TerminalNode EXCEPT() { return getToken(Python3Parser.EXCEPT, 0); }
 		public TerminalNode AS() { return getToken(Python3Parser.AS, 0); }
+		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
 		public Except_clauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3595,18 +3880,22 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(649); match(EXCEPT);
+			setState(649);
+			match(EXCEPT);
 			setState(655);
 			_la = _input.LA(1);
 			if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 				{
-				setState(650); test();
+				setState(650);
+				test();
 				setState(653);
 				_la = _input.LA(1);
 				if (_la==AS) {
 					{
-					setState(651); match(AS);
-					setState(652); match(NAME);
+					setState(651);
+					match(AS);
+					setState(652);
+					match(NAME);
 					}
 				}
 
@@ -3627,17 +3916,17 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class SuiteContext extends ParserRuleContext {
-		public TerminalNode DEDENT() { return getToken(Python3Parser.DEDENT, 0); }
-		public TerminalNode NEWLINE() { return getToken(Python3Parser.NEWLINE, 0); }
-		public TerminalNode INDENT() { return getToken(Python3Parser.INDENT, 0); }
-		public StmtContext stmt(int i) {
-			return getRuleContext(StmtContext.class,i);
-		}
 		public Simple_stmtContext simple_stmt() {
 			return getRuleContext(Simple_stmtContext.class,0);
 		}
+		public TerminalNode NEWLINE() { return getToken(Python3Parser.NEWLINE, 0); }
+		public TerminalNode INDENT() { return getToken(Python3Parser.INDENT, 0); }
+		public TerminalNode DEDENT() { return getToken(Python3Parser.DEDENT, 0); }
 		public List<StmtContext> stmt() {
 			return getRuleContexts(StmtContext.class);
+		}
+		public StmtContext stmt(int i) {
+			return getRuleContext(StmtContext.class,i);
 		}
 		public SuiteContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3701,28 +3990,33 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(657); simple_stmt();
+				setState(657);
+				simple_stmt();
 				}
 				break;
 			case NEWLINE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(658); match(NEWLINE);
-				setState(659); match(INDENT);
+				setState(658);
+				match(NEWLINE);
+				setState(659);
+				match(INDENT);
 				setState(661); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
 					{
 					{
-					setState(660); stmt();
+					setState(660);
+					stmt();
 					}
 					}
 					setState(663); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << DEF) | (1L << RETURN) | (1L << RAISE) | (1L << FROM) | (1L << IMPORT) | (1L << GLOBAL) | (1L << NONLOCAL) | (1L << ASSERT) | (1L << IF) | (1L << WHILE) | (1L << FOR) | (1L << TRY) | (1L << WITH) | (1L << LAMBDA) | (1L << NOT) | (1L << NONE) | (1L << TRUE) | (1L << FALSE) | (1L << CLASS) | (1L << YIELD) | (1L << DEL) | (1L << PASS) | (1L << CONTINUE) | (1L << BREAK) | (1L << NAME) | (1L << STRING_LITERAL) | (1L << BYTES_LITERAL) | (1L << DECIMAL_INTEGER) | (1L << OCT_INTEGER) | (1L << HEX_INTEGER) | (1L << BIN_INTEGER) | (1L << FLOAT_NUMBER) | (1L << IMAG_NUMBER) | (1L << ELLIPSIS) | (1L << STAR) | (1L << OPEN_PAREN) | (1L << OPEN_BRACK) | (1L << ADD) | (1L << MINUS))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (NOT_OP - 66)) | (1L << (OPEN_BRACE - 66)) | (1L << (AT - 66)))) != 0) );
-				setState(665); match(DEDENT);
+				setState(665);
+				match(DEDENT);
 				}
 				break;
 			default:
@@ -3741,19 +4035,19 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class TestContext extends ParserRuleContext {
-		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
+		public List<Or_testContext> or_test() {
+			return getRuleContexts(Or_testContext.class);
+		}
 		public Or_testContext or_test(int i) {
 			return getRuleContext(Or_testContext.class,i);
 		}
 		public TerminalNode IF() { return getToken(Python3Parser.IF, 0); }
-		public List<Or_testContext> or_test() {
-			return getRuleContexts(Or_testContext.class);
+		public TerminalNode ELSE() { return getToken(Python3Parser.ELSE, 0); }
+		public TestContext test() {
+			return getRuleContext(TestContext.class,0);
 		}
 		public LambdefContext lambdef() {
 			return getRuleContext(LambdefContext.class,0);
-		}
-		public TestContext test() {
-			return getRuleContext(TestContext.class,0);
 		}
 		public TestContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3804,15 +4098,20 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(669); or_test();
+				setState(669);
+				or_test();
 				setState(675);
 				_la = _input.LA(1);
 				if (_la==IF) {
 					{
-					setState(670); match(IF);
-					setState(671); or_test();
-					setState(672); match(ELSE);
-					setState(673); test();
+					setState(670);
+					match(IF);
+					setState(671);
+					or_test();
+					setState(672);
+					match(ELSE);
+					setState(673);
+					test();
 					}
 				}
 
@@ -3821,7 +4120,8 @@ public class Python3Parser extends Parser {
 			case LAMBDA:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(677); lambdef();
+				setState(677);
+				lambdef();
 				}
 				break;
 			default:
@@ -3840,11 +4140,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Test_nocondContext extends ParserRuleContext {
-		public Lambdef_nocondContext lambdef_nocond() {
-			return getRuleContext(Lambdef_nocondContext.class,0);
-		}
 		public Or_testContext or_test() {
 			return getRuleContext(Or_testContext.class,0);
+		}
+		public Lambdef_nocondContext lambdef_nocond() {
+			return getRuleContext(Lambdef_nocondContext.class,0);
 		}
 		public Test_nocondContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3894,13 +4194,15 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(680); or_test();
+				setState(680);
+				or_test();
 				}
 				break;
 			case LAMBDA:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(681); lambdef_nocond();
+				setState(681);
+				lambdef_nocond();
 				}
 				break;
 			default:
@@ -3952,17 +4254,21 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(684); match(LAMBDA);
+			setState(684);
+			match(LAMBDA);
 			setState(686);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << NAME) | (1L << STAR) | (1L << POWER))) != 0)) {
 				{
-				setState(685); varargslist();
+				setState(685);
+				varargslist();
 				}
 			}
 
-			setState(688); match(COLON);
-			setState(689); test();
+			setState(688);
+			match(COLON);
+			setState(689);
+			test();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4010,17 +4316,21 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(691); match(LAMBDA);
+			setState(691);
+			match(LAMBDA);
 			setState(693);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << NAME) | (1L << STAR) | (1L << POWER))) != 0)) {
 				{
-				setState(692); varargslist();
+				setState(692);
+				varargslist();
 				}
 			}
 
-			setState(695); match(COLON);
-			setState(696); test_nocond();
+			setState(695);
+			match(COLON);
+			setState(696);
+			test_nocond();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4071,15 +4381,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(698); and_test();
+			setState(698);
+			and_test();
 			setState(703);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==OR) {
 				{
 				{
-				setState(699); match(OR);
-				setState(700); and_test();
+				setState(699);
+				match(OR);
+				setState(700);
+				and_test();
 				}
 				}
 				setState(705);
@@ -4106,10 +4419,10 @@ public class Python3Parser extends Parser {
 		public Not_testContext not_test(int i) {
 			return getRuleContext(Not_testContext.class,i);
 		}
+		public List<TerminalNode> AND() { return getTokens(Python3Parser.AND); }
 		public TerminalNode AND(int i) {
 			return getToken(Python3Parser.AND, i);
 		}
-		public List<TerminalNode> AND() { return getTokens(Python3Parser.AND); }
 		public And_testContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -4136,15 +4449,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(706); not_test();
+			setState(706);
+			not_test();
 			setState(711);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==AND) {
 				{
 				{
-				setState(707); match(AND);
-				setState(708); not_test();
+				setState(707);
+				match(AND);
+				setState(708);
+				not_test();
 				}
 				}
 				setState(713);
@@ -4200,8 +4516,10 @@ public class Python3Parser extends Parser {
 			case NOT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(714); match(NOT);
-				setState(715); not_test();
+				setState(714);
+				match(NOT);
+				setState(715);
+				not_test();
 				}
 				break;
 			case NONE:
@@ -4226,7 +4544,8 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(716); comparison();
+				setState(716);
+				comparison();
 				}
 				break;
 			default:
@@ -4248,14 +4567,14 @@ public class Python3Parser extends Parser {
 		public List<Star_exprContext> star_expr() {
 			return getRuleContexts(Star_exprContext.class);
 		}
+		public Star_exprContext star_expr(int i) {
+			return getRuleContext(Star_exprContext.class,i);
+		}
 		public List<Comp_opContext> comp_op() {
 			return getRuleContexts(Comp_opContext.class);
 		}
 		public Comp_opContext comp_op(int i) {
 			return getRuleContext(Comp_opContext.class,i);
-		}
-		public Star_exprContext star_expr(int i) {
-			return getRuleContext(Star_exprContext.class,i);
 		}
 		public ComparisonContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4283,15 +4602,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(719); star_expr();
+			setState(719);
+			star_expr();
 			setState(725);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (((((_la - 15)) & ~0x3f) == 0 && ((1L << (_la - 15)) & ((1L << (IN - 15)) | (1L << (NOT - 15)) | (1L << (IS - 15)) | (1L << (LESS_THAN - 15)) | (1L << (GREATER_THAN - 15)) | (1L << (EQUALS - 15)) | (1L << (GT_EQ - 15)) | (1L << (LT_EQ - 15)) | (1L << (NOT_EQ_1 - 15)) | (1L << (NOT_EQ_2 - 15)))) != 0)) {
 				{
 				{
-				setState(720); comp_op();
-				setState(721); star_expr();
+				setState(720);
+				comp_op();
+				setState(721);
+				star_expr();
 				}
 				}
 				setState(727);
@@ -4312,9 +4634,9 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Comp_opContext extends ParserRuleContext {
+		public TerminalNode IN() { return getToken(Python3Parser.IN, 0); }
 		public TerminalNode NOT() { return getToken(Python3Parser.NOT, 0); }
 		public TerminalNode IS() { return getToken(Python3Parser.IS, 0); }
-		public TerminalNode IN() { return getToken(Python3Parser.IN, 0); }
 		public Comp_opContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -4343,69 +4665,82 @@ public class Python3Parser extends Parser {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(728); match(LESS_THAN);
+				setState(728);
+				match(LESS_THAN);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(729); match(GREATER_THAN);
+				setState(729);
+				match(GREATER_THAN);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(730); match(EQUALS);
+				setState(730);
+				match(EQUALS);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(731); match(GT_EQ);
+				setState(731);
+				match(GT_EQ);
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(732); match(LT_EQ);
+				setState(732);
+				match(LT_EQ);
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(733); match(NOT_EQ_1);
+				setState(733);
+				match(NOT_EQ_1);
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(734); match(NOT_EQ_2);
+				setState(734);
+				match(NOT_EQ_2);
 				}
 				break;
 			case 8:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(735); match(IN);
+				setState(735);
+				match(IN);
 				}
 				break;
 			case 9:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(736); match(NOT);
-				setState(737); match(IN);
+				setState(736);
+				match(NOT);
+				setState(737);
+				match(IN);
 				}
 				break;
 			case 10:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(738); match(IS);
+				setState(738);
+				match(IS);
 				}
 				break;
 			case 11:
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(739); match(IS);
-				setState(740); match(NOT);
+				setState(739);
+				match(IS);
+				setState(740);
+				match(NOT);
 				}
 				break;
 			}
@@ -4455,11 +4790,13 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==STAR) {
 				{
-				setState(743); match(STAR);
+				setState(743);
+				match(STAR);
 				}
 			}
 
-			setState(746); expr();
+			setState(746);
+			expr();
 			}
 		}
 		catch (RecognitionException re) {
@@ -4506,15 +4843,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(748); xor_expr();
+			setState(748);
+			xor_expr();
 			setState(753);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==OR_OP) {
 				{
 				{
-				setState(749); match(OR_OP);
-				setState(750); xor_expr();
+				setState(749);
+				match(OR_OP);
+				setState(750);
+				xor_expr();
 				}
 				}
 				setState(755);
@@ -4567,15 +4907,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(756); and_expr();
+			setState(756);
+			and_expr();
 			setState(761);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==XOR) {
 				{
 				{
-				setState(757); match(XOR);
-				setState(758); and_expr();
+				setState(757);
+				match(XOR);
+				setState(758);
+				and_expr();
 				}
 				}
 				setState(763);
@@ -4596,11 +4939,11 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class And_exprContext extends ParserRuleContext {
-		public Shift_exprContext shift_expr(int i) {
-			return getRuleContext(Shift_exprContext.class,i);
-		}
 		public List<Shift_exprContext> shift_expr() {
 			return getRuleContexts(Shift_exprContext.class);
+		}
+		public Shift_exprContext shift_expr(int i) {
+			return getRuleContext(Shift_exprContext.class,i);
 		}
 		public And_exprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4628,15 +4971,18 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(764); shift_expr();
+			setState(764);
+			shift_expr();
 			setState(769);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==AND_OP) {
 				{
 				{
-				setState(765); match(AND_OP);
-				setState(766); shift_expr();
+				setState(765);
+				match(AND_OP);
+				setState(766);
+				shift_expr();
 				}
 				}
 				setState(771);
@@ -4689,7 +5035,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(772); arith_expr();
+			setState(772);
+			arith_expr();
 			setState(779);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -4699,14 +5046,18 @@ public class Python3Parser extends Parser {
 				switch (_input.LA(1)) {
 				case LEFT_SHIFT:
 					{
-					setState(773); match(LEFT_SHIFT);
-					setState(774); arith_expr();
+					setState(773);
+					match(LEFT_SHIFT);
+					setState(774);
+					arith_expr();
 					}
 					break;
 				case RIGHT_SHIFT:
 					{
-					setState(775); match(RIGHT_SHIFT);
-					setState(776); arith_expr();
+					setState(775);
+					match(RIGHT_SHIFT);
+					setState(776);
+					arith_expr();
 					}
 					break;
 				default:
@@ -4763,7 +5114,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(782); term();
+			setState(782);
+			term();
 			setState(789);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -4773,14 +5125,18 @@ public class Python3Parser extends Parser {
 				switch (_input.LA(1)) {
 				case ADD:
 					{
-					setState(783); match(ADD);
-					setState(784); term();
+					setState(783);
+					match(ADD);
+					setState(784);
+					term();
 					}
 					break;
 				case MINUS:
 					{
-					setState(785); match(MINUS);
-					setState(786); term();
+					setState(785);
+					match(MINUS);
+					setState(786);
+					term();
 					}
 					break;
 				default:
@@ -4837,7 +5193,8 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(792); factor();
+			setState(792);
+			factor();
 			setState(805);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -4847,32 +5204,42 @@ public class Python3Parser extends Parser {
 				switch (_input.LA(1)) {
 				case STAR:
 					{
-					setState(793); match(STAR);
-					setState(794); factor();
+					setState(793);
+					match(STAR);
+					setState(794);
+					factor();
 					}
 					break;
 				case DIV:
 					{
-					setState(795); match(DIV);
-					setState(796); factor();
+					setState(795);
+					match(DIV);
+					setState(796);
+					factor();
 					}
 					break;
 				case MOD:
 					{
-					setState(797); match(MOD);
-					setState(798); factor();
+					setState(797);
+					match(MOD);
+					setState(798);
+					factor();
 					}
 					break;
 				case IDIV:
 					{
-					setState(799); match(IDIV);
-					setState(800); factor();
+					setState(799);
+					match(IDIV);
+					setState(800);
+					factor();
 					}
 					break;
 				case AT:
 					{
-					setState(801); match(AT);
-					setState(802); factor();
+					setState(801);
+					match(AT);
+					setState(802);
+					factor();
 					}
 					break;
 				default:
@@ -4931,22 +5298,28 @@ public class Python3Parser extends Parser {
 			case ADD:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(808); match(ADD);
-				setState(809); factor();
+				setState(808);
+				match(ADD);
+				setState(809);
+				factor();
 				}
 				break;
 			case MINUS:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(810); match(MINUS);
-				setState(811); factor();
+				setState(810);
+				match(MINUS);
+				setState(811);
+				factor();
 				}
 				break;
 			case NOT_OP:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(812); match(NOT_OP);
-				setState(813); factor();
+				setState(812);
+				match(NOT_OP);
+				setState(813);
+				factor();
 				}
 				break;
 			case NONE:
@@ -4967,7 +5340,8 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(814); power();
+				setState(814);
+				power();
 				}
 				break;
 			default:
@@ -4986,17 +5360,17 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class PowerContext extends ParserRuleContext {
-		public FactorContext factor() {
-			return getRuleContext(FactorContext.class,0);
-		}
-		public TrailerContext trailer(int i) {
-			return getRuleContext(TrailerContext.class,i);
+		public AtomContext atom() {
+			return getRuleContext(AtomContext.class,0);
 		}
 		public List<TrailerContext> trailer() {
 			return getRuleContexts(TrailerContext.class);
 		}
-		public AtomContext atom() {
-			return getRuleContext(AtomContext.class,0);
+		public TrailerContext trailer(int i) {
+			return getRuleContext(TrailerContext.class,i);
+		}
+		public FactorContext factor() {
+			return getRuleContext(FactorContext.class,0);
 		}
 		public PowerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5024,14 +5398,16 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(817); atom();
+			setState(817);
+			atom();
 			setState(821);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << DOT) | (1L << OPEN_PAREN) | (1L << OPEN_BRACK))) != 0)) {
 				{
 				{
-				setState(818); trailer();
+				setState(818);
+				trailer();
 				}
 				}
 				setState(823);
@@ -5042,8 +5418,10 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==POWER) {
 				{
-				setState(824); match(POWER);
-				setState(825); factor();
+				setState(824);
+				match(POWER);
+				setState(825);
+				factor();
 				}
 			}
 
@@ -5061,28 +5439,28 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class AtomContext extends ParserRuleContext {
-		public NumberContext number() {
-			return getRuleContext(NumberContext.class,0);
-		}
 		public Yield_exprContext yield_expr() {
 			return getRuleContext(Yield_exprContext.class,0);
 		}
-		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
-		public StringContext string(int i) {
-			return getRuleContext(StringContext.class,i);
-		}
-		public TerminalNode FALSE() { return getToken(Python3Parser.FALSE, 0); }
-		public List<StringContext> string() {
-			return getRuleContexts(StringContext.class);
-		}
-		public TerminalNode TRUE() { return getToken(Python3Parser.TRUE, 0); }
 		public Testlist_compContext testlist_comp() {
 			return getRuleContext(Testlist_compContext.class,0);
 		}
-		public TerminalNode NONE() { return getToken(Python3Parser.NONE, 0); }
 		public DictorsetmakerContext dictorsetmaker() {
 			return getRuleContext(DictorsetmakerContext.class,0);
 		}
+		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
+		public NumberContext number() {
+			return getRuleContext(NumberContext.class,0);
+		}
+		public List<StringContext> string() {
+			return getRuleContexts(StringContext.class);
+		}
+		public StringContext string(int i) {
+			return getRuleContext(StringContext.class,i);
+		}
+		public TerminalNode NONE() { return getToken(Python3Parser.NONE, 0); }
+		public TerminalNode TRUE() { return getToken(Python3Parser.TRUE, 0); }
+		public TerminalNode FALSE() { return getToken(Python3Parser.FALSE, 0); }
 		public AtomContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -5112,12 +5490,14 @@ public class Python3Parser extends Parser {
 			case OPEN_PAREN:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(828); match(OPEN_PAREN);
+				setState(828);
+				match(OPEN_PAREN);
 				setState(831);
 				switch (_input.LA(1)) {
 				case YIELD:
 					{
-					setState(829); yield_expr();
+					setState(829);
+					yield_expr();
 					}
 					break;
 				case LAMBDA:
@@ -5143,7 +5523,8 @@ public class Python3Parser extends Parser {
 				case NOT_OP:
 				case OPEN_BRACE:
 					{
-					setState(830); testlist_comp();
+					setState(830);
+					testlist_comp();
 					}
 					break;
 				case CLOSE_PAREN:
@@ -5151,43 +5532,51 @@ public class Python3Parser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(833); match(CLOSE_PAREN);
+				setState(833);
+				match(CLOSE_PAREN);
 				}
 				break;
 			case OPEN_BRACK:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(834); match(OPEN_BRACK);
+				setState(834);
+				match(OPEN_BRACK);
 				setState(836);
 				_la = _input.LA(1);
 				if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 					{
-					setState(835); testlist_comp();
+					setState(835);
+					testlist_comp();
 					}
 				}
 
-				setState(838); match(CLOSE_BRACK);
+				setState(838);
+				match(CLOSE_BRACK);
 				}
 				break;
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(839); match(OPEN_BRACE);
+				setState(839);
+				match(OPEN_BRACE);
 				setState(841);
 				_la = _input.LA(1);
 				if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 					{
-					setState(840); dictorsetmaker();
+					setState(840);
+					dictorsetmaker();
 					}
 				}
 
-				setState(843); match(CLOSE_BRACE);
+				setState(843);
+				match(CLOSE_BRACE);
 				}
 				break;
 			case NAME:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(844); match(NAME);
+				setState(844);
+				match(NAME);
 				}
 				break;
 			case DECIMAL_INTEGER:
@@ -5198,7 +5587,8 @@ public class Python3Parser extends Parser {
 			case IMAG_NUMBER:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(845); number();
+				setState(845);
+				number();
 				}
 				break;
 			case STRING_LITERAL:
@@ -5211,7 +5601,8 @@ public class Python3Parser extends Parser {
 				do {
 					{
 					{
-					setState(846); string();
+					setState(846);
+					string();
 					}
 					}
 					setState(849); 
@@ -5223,25 +5614,29 @@ public class Python3Parser extends Parser {
 			case ELLIPSIS:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(851); match(ELLIPSIS);
+				setState(851);
+				match(ELLIPSIS);
 				}
 				break;
 			case NONE:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(852); match(NONE);
+				setState(852);
+				match(NONE);
 				}
 				break;
 			case TRUE:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(853); match(TRUE);
+				setState(853);
+				match(TRUE);
 				}
 				break;
 			case FALSE:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(854); match(FALSE);
+				setState(854);
+				match(FALSE);
 				}
 				break;
 			default:
@@ -5263,11 +5658,11 @@ public class Python3Parser extends Parser {
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
 		}
-		public Comp_forContext comp_for() {
-			return getRuleContext(Comp_forContext.class,0);
-		}
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
+		}
+		public Comp_forContext comp_for() {
+			return getRuleContext(Comp_forContext.class,0);
 		}
 		public Testlist_compContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5296,12 +5691,14 @@ public class Python3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(857); test();
+			setState(857);
+			test();
 			setState(869);
 			switch (_input.LA(1)) {
 			case FOR:
 				{
-				setState(858); comp_for();
+				setState(858);
+				comp_for();
 				}
 				break;
 			case CLOSE_PAREN:
@@ -5315,8 +5712,10 @@ public class Python3Parser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(859); match(COMMA);
-						setState(860); test();
+						setState(859);
+						match(COMMA);
+						setState(860);
+						test();
 						}
 						} 
 					}
@@ -5328,7 +5727,8 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(866); match(COMMA);
+					setState(866);
+					match(COMMA);
 					}
 				}
 
@@ -5351,13 +5751,13 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class TrailerContext extends ParserRuleContext {
+		public ArglistContext arglist() {
+			return getRuleContext(ArglistContext.class,0);
+		}
 		public SubscriptlistContext subscriptlist() {
 			return getRuleContext(SubscriptlistContext.class,0);
 		}
 		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
-		public ArglistContext arglist() {
-			return getRuleContext(ArglistContext.class,0);
-		}
 		public TrailerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -5387,31 +5787,39 @@ public class Python3Parser extends Parser {
 			case OPEN_PAREN:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(871); match(OPEN_PAREN);
+				setState(871);
+				match(OPEN_PAREN);
 				setState(873);
 				_la = _input.LA(1);
 				if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (POWER - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 					{
-					setState(872); arglist();
+					setState(872);
+					arglist();
 					}
 				}
 
-				setState(875); match(CLOSE_PAREN);
+				setState(875);
+				match(CLOSE_PAREN);
 				}
 				break;
 			case OPEN_BRACK:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(876); match(OPEN_BRACK);
-				setState(877); subscriptlist();
-				setState(878); match(CLOSE_BRACK);
+				setState(876);
+				match(OPEN_BRACK);
+				setState(877);
+				subscriptlist();
+				setState(878);
+				match(CLOSE_BRACK);
 				}
 				break;
 			case DOT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(880); match(DOT);
-				setState(881); match(NAME);
+				setState(880);
+				match(DOT);
+				setState(881);
+				match(NAME);
 				}
 				break;
 			default:
@@ -5463,7 +5871,8 @@ public class Python3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(884); subscript();
+			setState(884);
+			subscript();
 			setState(889);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,117,_ctx);
@@ -5471,8 +5880,10 @@ public class Python3Parser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(885); match(COMMA);
-					setState(886); subscript();
+					setState(885);
+					match(COMMA);
+					setState(886);
+					subscript();
 					}
 					} 
 				}
@@ -5484,7 +5895,8 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(892); match(COMMA);
+				setState(892);
+				match(COMMA);
 				}
 			}
 
@@ -5502,14 +5914,14 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class SubscriptContext extends ParserRuleContext {
-		public SliceopContext sliceop() {
-			return getRuleContext(SliceopContext.class,0);
-		}
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
 		}
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
+		}
+		public SliceopContext sliceop() {
+			return getRuleContext(SliceopContext.class,0);
 		}
 		public SubscriptContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5540,7 +5952,8 @@ public class Python3Parser extends Parser {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(895); test();
+				setState(895);
+				test();
 				}
 				break;
 			case 2:
@@ -5550,16 +5963,19 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 					{
-					setState(896); test();
+					setState(896);
+					test();
 					}
 				}
 
-				setState(899); match(COLON);
+				setState(899);
+				match(COLON);
 				setState(901);
 				_la = _input.LA(1);
 				if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 					{
-					setState(900); test();
+					setState(900);
+					test();
 					}
 				}
 
@@ -5567,7 +5983,8 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==COLON) {
 					{
-					setState(903); sliceop();
+					setState(903);
+					sliceop();
 					}
 				}
 
@@ -5616,12 +6033,14 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(908); match(COLON);
+			setState(908);
+			match(COLON);
 			setState(910);
 			_la = _input.LA(1);
 			if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 				{
-				setState(909); test();
+				setState(909);
+				test();
 				}
 			}
 
@@ -5672,7 +6091,8 @@ public class Python3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(912); star_expr();
+			setState(912);
+			star_expr();
 			setState(917);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,124,_ctx);
@@ -5680,8 +6100,10 @@ public class Python3Parser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(913); match(COMMA);
-					setState(914); star_expr();
+					setState(913);
+					match(COMMA);
+					setState(914);
+					star_expr();
 					}
 					} 
 				}
@@ -5693,7 +6115,8 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(920); match(COMMA);
+				setState(920);
+				match(COMMA);
 				}
 			}
 
@@ -5744,7 +6167,8 @@ public class Python3Parser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(923); test();
+			setState(923);
+			test();
 			setState(928);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,126,_ctx);
@@ -5752,8 +6176,10 @@ public class Python3Parser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(924); match(COMMA);
-					setState(925); test();
+					setState(924);
+					match(COMMA);
+					setState(925);
+					test();
 					}
 					} 
 				}
@@ -5765,7 +6191,8 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(931); match(COMMA);
+				setState(931);
+				match(COMMA);
 				}
 			}
 
@@ -5786,11 +6213,11 @@ public class Python3Parser extends Parser {
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
 		}
-		public Comp_forContext comp_for() {
-			return getRuleContext(Comp_forContext.class,0);
-		}
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
+		}
+		public Comp_forContext comp_for() {
+			return getRuleContext(Comp_forContext.class,0);
 		}
 		public DictorsetmakerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5822,14 +6249,18 @@ public class Python3Parser extends Parser {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(934); test();
-				setState(935); match(COLON);
-				setState(936); test();
+				setState(934);
+				test();
+				setState(935);
+				match(COLON);
+				setState(936);
+				test();
 				setState(951);
 				switch (_input.LA(1)) {
 				case FOR:
 					{
-					setState(937); comp_for();
+					setState(937);
+					comp_for();
 					}
 					break;
 				case COMMA:
@@ -5842,10 +6273,14 @@ public class Python3Parser extends Parser {
 						if ( _alt==1 ) {
 							{
 							{
-							setState(938); match(COMMA);
-							setState(939); test();
-							setState(940); match(COLON);
-							setState(941); test();
+							setState(938);
+							match(COMMA);
+							setState(939);
+							test();
+							setState(940);
+							match(COLON);
+							setState(941);
+							test();
 							}
 							} 
 						}
@@ -5857,7 +6292,8 @@ public class Python3Parser extends Parser {
 					_la = _input.LA(1);
 					if (_la==COMMA) {
 						{
-						setState(948); match(COMMA);
+						setState(948);
+						match(COMMA);
 						}
 					}
 
@@ -5871,12 +6307,14 @@ public class Python3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(953); test();
+				setState(953);
+				test();
 				setState(965);
 				switch (_input.LA(1)) {
 				case FOR:
 					{
-					setState(954); comp_for();
+					setState(954);
+					comp_for();
 					}
 					break;
 				case COMMA:
@@ -5889,8 +6327,10 @@ public class Python3Parser extends Parser {
 						if ( _alt==1 ) {
 							{
 							{
-							setState(955); match(COMMA);
-							setState(956); test();
+							setState(955);
+							match(COMMA);
+							setState(956);
+							test();
 							}
 							} 
 						}
@@ -5902,7 +6342,8 @@ public class Python3Parser extends Parser {
 					_la = _input.LA(1);
 					if (_la==COMMA) {
 						{
-						setState(962); match(COMMA);
+						setState(962);
+						match(COMMA);
 						}
 					}
 
@@ -5927,13 +6368,13 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class ClassdefContext extends ParserRuleContext {
-		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
 		public TerminalNode CLASS() { return getToken(Python3Parser.CLASS, 0); }
-		public ArglistContext arglist() {
-			return getRuleContext(ArglistContext.class,0);
-		}
+		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
 		public SuiteContext suite() {
 			return getRuleContext(SuiteContext.class,0);
+		}
+		public ArglistContext arglist() {
+			return getRuleContext(ArglistContext.class,0);
 		}
 		public ClassdefContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5961,27 +6402,34 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(969); match(CLASS);
-			setState(970); match(NAME);
+			setState(969);
+			match(CLASS);
+			setState(970);
+			match(NAME);
 			setState(976);
 			_la = _input.LA(1);
 			if (_la==OPEN_PAREN) {
 				{
-				setState(971); match(OPEN_PAREN);
+				setState(971);
+				match(OPEN_PAREN);
 				setState(973);
 				_la = _input.LA(1);
 				if (((((_la - 20)) & ~0x3f) == 0 && ((1L << (_la - 20)) & ((1L << (LAMBDA - 20)) | (1L << (NOT - 20)) | (1L << (NONE - 20)) | (1L << (TRUE - 20)) | (1L << (FALSE - 20)) | (1L << (NAME - 20)) | (1L << (STRING_LITERAL - 20)) | (1L << (BYTES_LITERAL - 20)) | (1L << (DECIMAL_INTEGER - 20)) | (1L << (OCT_INTEGER - 20)) | (1L << (HEX_INTEGER - 20)) | (1L << (BIN_INTEGER - 20)) | (1L << (FLOAT_NUMBER - 20)) | (1L << (IMAG_NUMBER - 20)) | (1L << (ELLIPSIS - 20)) | (1L << (STAR - 20)) | (1L << (OPEN_PAREN - 20)) | (1L << (POWER - 20)) | (1L << (OPEN_BRACK - 20)) | (1L << (ADD - 20)) | (1L << (MINUS - 20)) | (1L << (NOT_OP - 20)) | (1L << (OPEN_BRACE - 20)))) != 0)) {
 					{
-					setState(972); arglist();
+					setState(972);
+					arglist();
 					}
 				}
 
-				setState(975); match(CLOSE_PAREN);
+				setState(975);
+				match(CLOSE_PAREN);
 				}
 			}
 
-			setState(978); match(COLON);
-			setState(979); suite();
+			setState(978);
+			match(COLON);
+			setState(979);
+			suite();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5996,14 +6444,14 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class ArglistContext extends ParserRuleContext {
-		public List<TestContext> test() {
-			return getRuleContexts(TestContext.class);
-		}
 		public List<ArgumentContext> argument() {
 			return getRuleContexts(ArgumentContext.class);
 		}
 		public ArgumentContext argument(int i) {
 			return getRuleContext(ArgumentContext.class,i);
+		}
+		public List<TestContext> test() {
+			return getRuleContexts(TestContext.class);
 		}
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
@@ -6042,8 +6490,10 @@ public class Python3Parser extends Parser {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(981); argument();
-					setState(982); match(COMMA);
+					setState(981);
+					argument();
+					setState(982);
+					match(COMMA);
 					}
 					} 
 				}
@@ -6055,12 +6505,14 @@ public class Python3Parser extends Parser {
 			switch ( getInterpreter().adaptivePredict(_input,141,_ctx) ) {
 			case 1:
 				{
-				setState(989); argument();
+				setState(989);
+				argument();
 				setState(991);
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(990); match(COMMA);
+					setState(990);
+					match(COMMA);
 					}
 				}
 
@@ -6068,8 +6520,10 @@ public class Python3Parser extends Parser {
 				break;
 			case 2:
 				{
-				setState(993); match(STAR);
-				setState(994); test();
+				setState(993);
+				match(STAR);
+				setState(994);
+				test();
 				setState(999);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,139,_ctx);
@@ -6077,8 +6531,10 @@ public class Python3Parser extends Parser {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(995); match(COMMA);
-						setState(996); argument();
+						setState(995);
+						match(COMMA);
+						setState(996);
+						argument();
 						}
 						} 
 					}
@@ -6090,9 +6546,12 @@ public class Python3Parser extends Parser {
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(1002); match(COMMA);
-					setState(1003); match(POWER);
-					setState(1004); test();
+					setState(1002);
+					match(COMMA);
+					setState(1003);
+					match(POWER);
+					setState(1004);
+					test();
 					}
 				}
 
@@ -6100,8 +6559,10 @@ public class Python3Parser extends Parser {
 				break;
 			case 3:
 				{
-				setState(1007); match(POWER);
-				setState(1008); test();
+				setState(1007);
+				match(POWER);
+				setState(1008);
+				test();
 				}
 				break;
 			}
@@ -6122,11 +6583,11 @@ public class Python3Parser extends Parser {
 		public List<TestContext> test() {
 			return getRuleContexts(TestContext.class);
 		}
-		public Comp_forContext comp_for() {
-			return getRuleContext(Comp_forContext.class,0);
-		}
 		public TestContext test(int i) {
 			return getRuleContext(TestContext.class,i);
+		}
+		public Comp_forContext comp_for() {
+			return getRuleContext(Comp_forContext.class,0);
 		}
 		public ArgumentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6157,12 +6618,14 @@ public class Python3Parser extends Parser {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1011); test();
+				setState(1011);
+				test();
 				setState(1013);
 				_la = _input.LA(1);
 				if (_la==FOR) {
 					{
-					setState(1012); comp_for();
+					setState(1012);
+					comp_for();
 					}
 				}
 
@@ -6171,9 +6634,12 @@ public class Python3Parser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1015); test();
-				setState(1016); match(ASSIGN);
-				setState(1017); test();
+				setState(1015);
+				test();
+				setState(1016);
+				match(ASSIGN);
+				setState(1017);
+				test();
 				}
 				break;
 			}
@@ -6224,13 +6690,15 @@ public class Python3Parser extends Parser {
 			case FOR:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1021); comp_for();
+				setState(1021);
+				comp_for();
 				}
 				break;
 			case IF:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1022); comp_if();
+				setState(1022);
+				comp_if();
 				}
 				break;
 			default:
@@ -6249,17 +6717,17 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Comp_forContext extends ParserRuleContext {
-		public Or_testContext or_test() {
-			return getRuleContext(Or_testContext.class,0);
-		}
 		public TerminalNode FOR() { return getToken(Python3Parser.FOR, 0); }
 		public ExprlistContext exprlist() {
 			return getRuleContext(ExprlistContext.class,0);
 		}
+		public TerminalNode IN() { return getToken(Python3Parser.IN, 0); }
+		public Or_testContext or_test() {
+			return getRuleContext(Or_testContext.class,0);
+		}
 		public Comp_iterContext comp_iter() {
 			return getRuleContext(Comp_iterContext.class,0);
 		}
-		public TerminalNode IN() { return getToken(Python3Parser.IN, 0); }
 		public Comp_forContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -6286,15 +6754,20 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1025); match(FOR);
-			setState(1026); exprlist();
-			setState(1027); match(IN);
-			setState(1028); or_test();
+			setState(1025);
+			match(FOR);
+			setState(1026);
+			exprlist();
+			setState(1027);
+			match(IN);
+			setState(1028);
+			or_test();
 			setState(1030);
 			_la = _input.LA(1);
 			if (_la==IF || _la==FOR) {
 				{
-				setState(1029); comp_iter();
+				setState(1029);
+				comp_iter();
 				}
 			}
 
@@ -6345,13 +6818,16 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1032); match(IF);
-			setState(1033); test_nocond();
+			setState(1032);
+			match(IF);
+			setState(1033);
+			test_nocond();
 			setState(1035);
 			_la = _input.LA(1);
 			if (_la==IF || _la==FOR) {
 				{
-				setState(1034); comp_iter();
+				setState(1034);
+				comp_iter();
 				}
 			}
 
@@ -6369,10 +6845,10 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Yield_exprContext extends ParserRuleContext {
+		public TerminalNode YIELD() { return getToken(Python3Parser.YIELD, 0); }
 		public Yield_argContext yield_arg() {
 			return getRuleContext(Yield_argContext.class,0);
 		}
-		public TerminalNode YIELD() { return getToken(Python3Parser.YIELD, 0); }
 		public Yield_exprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -6399,12 +6875,14 @@ public class Python3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(1037); match(YIELD);
+			setState(1037);
+			match(YIELD);
 			setState(1039);
 			_la = _input.LA(1);
 			if (((((_la - 4)) & ~0x3f) == 0 && ((1L << (_la - 4)) & ((1L << (FROM - 4)) | (1L << (LAMBDA - 4)) | (1L << (NOT - 4)) | (1L << (NONE - 4)) | (1L << (TRUE - 4)) | (1L << (FALSE - 4)) | (1L << (NAME - 4)) | (1L << (STRING_LITERAL - 4)) | (1L << (BYTES_LITERAL - 4)) | (1L << (DECIMAL_INTEGER - 4)) | (1L << (OCT_INTEGER - 4)) | (1L << (HEX_INTEGER - 4)) | (1L << (BIN_INTEGER - 4)) | (1L << (FLOAT_NUMBER - 4)) | (1L << (IMAG_NUMBER - 4)) | (1L << (ELLIPSIS - 4)) | (1L << (STAR - 4)) | (1L << (OPEN_PAREN - 4)) | (1L << (OPEN_BRACK - 4)) | (1L << (ADD - 4)) | (1L << (MINUS - 4)) | (1L << (NOT_OP - 4)) | (1L << (OPEN_BRACE - 4)))) != 0)) {
 				{
-				setState(1038); yield_arg();
+				setState(1038);
+				yield_arg();
 				}
 			}
 
@@ -6422,10 +6900,10 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class Yield_argContext extends ParserRuleContext {
+		public TerminalNode FROM() { return getToken(Python3Parser.FROM, 0); }
 		public TestContext test() {
 			return getRuleContext(TestContext.class,0);
 		}
-		public TerminalNode FROM() { return getToken(Python3Parser.FROM, 0); }
 		public TestlistContext testlist() {
 			return getRuleContext(TestlistContext.class,0);
 		}
@@ -6457,8 +6935,10 @@ public class Python3Parser extends Parser {
 			case FROM:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1041); match(FROM);
-				setState(1042); test();
+				setState(1041);
+				match(FROM);
+				setState(1042);
+				test();
 				}
 				break;
 			case LAMBDA:
@@ -6485,7 +6965,8 @@ public class Python3Parser extends Parser {
 			case OPEN_BRACE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1043); testlist();
+				setState(1043);
+				testlist();
 				}
 				break;
 			default:
@@ -6504,8 +6985,8 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class StringContext extends ParserRuleContext {
-		public TerminalNode BYTES_LITERAL() { return getToken(Python3Parser.BYTES_LITERAL, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(Python3Parser.STRING_LITERAL, 0); }
+		public TerminalNode BYTES_LITERAL() { return getToken(Python3Parser.BYTES_LITERAL, 0); }
 		public StringContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -6536,8 +7017,9 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==STRING_LITERAL || _la==BYTES_LITERAL) ) {
 			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -6555,8 +7037,8 @@ public class Python3Parser extends Parser {
 		public IntegerContext integer() {
 			return getRuleContext(IntegerContext.class,0);
 		}
-		public TerminalNode IMAG_NUMBER() { return getToken(Python3Parser.IMAG_NUMBER, 0); }
 		public TerminalNode FLOAT_NUMBER() { return getToken(Python3Parser.FLOAT_NUMBER, 0); }
+		public TerminalNode IMAG_NUMBER() { return getToken(Python3Parser.IMAG_NUMBER, 0); }
 		public NumberContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -6588,19 +7070,22 @@ public class Python3Parser extends Parser {
 			case BIN_INTEGER:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(1048); integer();
+				setState(1048);
+				integer();
 				}
 				break;
 			case FLOAT_NUMBER:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(1049); match(FLOAT_NUMBER);
+				setState(1049);
+				match(FLOAT_NUMBER);
 				}
 				break;
 			case IMAG_NUMBER:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(1050); match(IMAG_NUMBER);
+				setState(1050);
+				match(IMAG_NUMBER);
 				}
 				break;
 			default:
@@ -6619,9 +7104,9 @@ public class Python3Parser extends Parser {
 	}
 
 	public static class IntegerContext extends ParserRuleContext {
-		public TerminalNode HEX_INTEGER() { return getToken(Python3Parser.HEX_INTEGER, 0); }
 		public TerminalNode DECIMAL_INTEGER() { return getToken(Python3Parser.DECIMAL_INTEGER, 0); }
 		public TerminalNode OCT_INTEGER() { return getToken(Python3Parser.OCT_INTEGER, 0); }
+		public TerminalNode HEX_INTEGER() { return getToken(Python3Parser.HEX_INTEGER, 0); }
 		public TerminalNode BIN_INTEGER() { return getToken(Python3Parser.BIN_INTEGER, 0); }
 		public IntegerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6653,8 +7138,9 @@ public class Python3Parser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << DECIMAL_INTEGER) | (1L << OCT_INTEGER) | (1L << HEX_INTEGER) | (1L << BIN_INTEGER))) != 0)) ) {
 			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-			consume();
 			}
 		}
 		catch (RecognitionException re) {
