@@ -2,12 +2,17 @@
 Python based programming language with functional programming, using ANTLR V4.5
 
 Proyecto Final - Airi
+
 Un lenguaje funcional basado en Python
+
 Lenguajes de Programación
 
 Juan Camilo Neiva Aranguren
+
 Ciro Iván García López
+
 Universidad Nacional de Colombia
+
 Noviembre 29 de 2015
 
 Se puede encontrar el proyecto en el siguiente repositorio.
